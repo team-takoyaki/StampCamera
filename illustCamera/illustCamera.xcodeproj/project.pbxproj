@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16016DB518BF87D600C3FC24 /* TTK_StampRotateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16016DB418BF87D600C3FC24 /* TTK_StampRotateView.m */; };
 		591B670C18B3C37700263158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591B670B18B3C37700263158 /* Foundation.framework */; };
 		591B670E18B3C37700263158 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591B670D18B3C37700263158 /* CoreGraphics.framework */; };
 		591B671018B3C37700263158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591B670F18B3C37700263158 /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16016DB318BF87D600C3FC24 /* TTK_StampRotateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_StampRotateView.h; sourceTree = "<group>"; };
+		16016DB418BF87D600C3FC24 /* TTK_StampRotateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_StampRotateView.m; sourceTree = "<group>"; };
 		591B670818B3C37700263158 /* illustCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = illustCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		591B670B18B3C37700263158 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		591B670D18B3C37700263158 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -188,6 +191,8 @@
 				599FB41118B8343F009377EE /* TTK_StampView.h */,
 				599FB41218B8343F009377EE /* TTK_StampView.m */,
 				59C8EC4018B65020002A1197 /* TTK_Macro.h */,
+				16016DB318BF87D600C3FC24 /* TTK_StampRotateView.h */,
+				16016DB418BF87D600C3FC24 /* TTK_StampRotateView.m */,
 			);
 			path = TTKLibrary;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				591B674718B3CB0400263158 /* CameraViewController.m in Sources */,
+				16016DB518BF87D600C3FC24 /* TTK_StampRotateView.m in Sources */,
 				591B674418B3C94100263158 /* TopViewController.m in Sources */,
 				591B675118B64A0300263158 /* TTK_Camera.m in Sources */,
 				591B671C18B3C37700263158 /* AppDelegate.m in Sources */,

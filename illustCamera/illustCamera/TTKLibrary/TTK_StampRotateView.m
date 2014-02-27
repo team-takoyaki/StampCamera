@@ -1,20 +1,21 @@
 //
-//  TTK_Stamp.m
+//  TTK_StampRotateView.m
 //  illustCamera
 //
-//  Created by Kashima Takumi on 2014/02/22.
+//  Created by Takashi Honda on 2014/02/27.
 //  Copyright (c) 2014年 TEAM TAKOYAKI. All rights reserved.
 //
 
-#import "TTK_StampView.h"
+#import "TTK_StampRotateView.h"
 
 #define DIRECTION_VIEW_SIZE 50.0f
 #define STROKE_WIDTH 1.5f
 
-@interface TTK_StampView()
+@interface TTK_StampRotateView()
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIImageView *directionView;
 @property (nonatomic) CGPoint beganTouchPoint;
+@property (nonatomic) CGPoint tmpTouchPoint;
 @property (nonatomic) CGPoint startViewPoint;
 @property (nonatomic) CGPoint startViewCenterPoint;
 @property (nonatomic) CGSize startDirectionViewSize;
@@ -24,7 +25,7 @@
 @property (nonatomic) BOOL isDrawRect;
 @end
 
-@implementation TTK_StampView
+@implementation TTK_StampRotateView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -83,6 +84,7 @@
 
     // スタート位置を保存する
     self.beganTouchPoint = pointFromSuperView;
+    self.tmpTouchPoint = pointFromSuperView;
     
     // スタート時のtransformを保存する
     self.startTransform = self.transform;
@@ -102,27 +104,27 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UITouch *touch = [touches anyObject];
-    CGPoint point = [touch locationInView:self];
+//    UITouch *touch = [touches anyObject];
+//    CGPoint point = [touch locationInView:self];
+//    
+//    // タッチの座標を親Viewの座標からに変換する
+//    CGPoint pointFromSuperView = [self convertPoint:point toView:self.superview];
+//    
+//    // 移動量
+//    float moveX = pointFromSuperView.x - _beganTouchPoint.x;
+//    float moveY = pointFromSuperView.y - _beganTouchPoint.y;
     
-    // タッチの座標を親Viewの座標からに変換する
-    CGPoint pointFromSuperView = [self convertPoint:point toView:self.superview];
-    
-    // 移動量
-    float moveX = pointFromSuperView.x - _beganTouchPoint.x;
-    float moveY = pointFromSuperView.y - _beganTouchPoint.y;
-    
-//    self.
 
-    // 指示Viewをタッチしている時は回転か拡大
+//    // 指示Viewをタッチしている時は回転か拡大
 //    if (self.isDirection) {
-//        float radian = atan2f((pointFromSuperView.y - _startViewPoint.y),
-//                              (pointFromSuperView.x - _startViewPoint.x));
-//        float radian2 = atan2f((_beganTouchPoint.y - _startViewPoint.y),
-//                              (_beganTouchPoint.x - _startViewPoint.x));
-//        radian = radian - radian2;
-//        
-//        self.transform = CGAffineTransformRotate(self.startTransform, radian);
+//        NSLog(@"hogehoge");
+////        float radian = atan2f((pointFromSuperView.y - _startViewPoint.y),
+////                              (pointFromSuperView.x - _startViewPoint.x));
+////        float radian2 = atan2f((_beganTouchPoint.y - _startViewPoint.y),
+////                              (_beganTouchPoint.x - _startViewPoint.x));
+////        radian = radian - radian2;
+////        
+////        self.transform = CGAffineTransformRotate(self.startTransform, radian);
 //        return;
 //    }
     
@@ -156,8 +158,21 @@
 //    }
 //
 
-    // 移動先の座標
-    self.transform = CGAffineTransformTranslate(self.startTransform, moveX, moveY);
+    UITouch *touch = [touches anyObject];
+    CGPoint point = [touch locationInView:self];
+    
+    // タッチの座標を親Viewの座標からに変換する
+    CGPoint pointFromSuperView = [self convertPoint:point toView:self.superview];
+    
+
+    //atan2fで移動前後のベクトルのなす角取得
+    //符号逆にしてタッチの方向と合わせてあげる(そのままだと標準座標の正方向に回るよ)
+    float theta = - atan2f(pointFromSuperView.x - self.center.x, pointFromSuperView.y - self.center.y);
+    
+    //thetaだけ回転する
+    self.transform = CGAffineTransformMakeRotation(theta);
+    //4点の座標のCGRectの作り方わからんからこれで
+
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
