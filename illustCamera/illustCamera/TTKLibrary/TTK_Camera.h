@@ -11,6 +11,11 @@
 @protocol TTK_CameraDelegate;
 
 @interface TTK_Camera : UIView
+typedef enum : NSInteger {
+    kDeviceTypeRearCamera,
+    kDeviceTypeFrontCamera
+} DeviceType;
+
 /**
 * @brief プレビュースタート
 */
@@ -26,6 +31,12 @@
 * 撮影後にdelegateのdidTakePictureが呼ばれる
 */
 - (void)take;
+
+/**
+* @brief デバイスのinputを設定する
+* @param type 設定するデバイスのタイプ
+*/
+- (void)setDeviceInputWithType:(DeviceType)type;
 
 @end
 

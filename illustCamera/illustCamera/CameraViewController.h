@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface CameraViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIView *previewView;
 - (IBAction)takenPicture:(id)sender;
+- (IBAction)gotoTop:(id)sender;
+- (IBAction)changeAspect:(id)sender;
+- (IBAction)changeCamera:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIView *previewView;
+
+@property (strong, nonatomic) IBOutlet UIView *changeAspectView1;
+@property (strong, nonatomic) IBOutlet UIView *changeAspectView2;
 @end

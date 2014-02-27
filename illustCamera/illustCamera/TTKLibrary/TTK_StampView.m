@@ -115,7 +115,7 @@
     self.
 
     // 指示Viewをタッチしている時は回転か拡大
-    if (self.isDirection) {
+//    if (self.isDirection) {
 //        float radian = atan2f((pointFromSuperView.y - _startViewPoint.y),
 //                              (pointFromSuperView.x - _startViewPoint.x));
 //        float radian2 = atan2f((_beganTouchPoint.y - _startViewPoint.y),
@@ -123,8 +123,8 @@
 //        radian = radian - radian2;
 //        
 //        self.transform = CGAffineTransformRotate(self.startTransform, radian);
-        return;
-    }
+//        return;
+//    }
     
 //    // 指示Viewの座標を親Viewからに変換する
 //        float halfWidthSize = self.startDirectionViewSize.width / 2;

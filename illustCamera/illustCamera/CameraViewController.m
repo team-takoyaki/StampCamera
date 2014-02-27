@@ -14,6 +14,8 @@
 @interface CameraViewController () <TTK_CameraDelegate>
 @property (strong, nonatomic) TTK_Camera *camera;
 @property (strong, nonatomic) UIImage *takenImage;
+@property (nonatomic) BOOL isSquare;
+@property (nonatomic) BOOL isRearCamera;
 @end
 
 @implementation CameraViewController
@@ -22,18 +24,46 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
+}
+
+- (void)initWithView
+{
+    // Aspect
+    self.isSquare = YES;
+    [self changeAspect];
+    
+    // Camera kind
+    self.isRearCamera = YES;
+    [self changeCamera];
+}
+
+/**
+* アスペクト比の設定
+*/
+- (void)changeAspect
+{
+    // 正方形の時は正方形になるように薄黒いViewを表示
+    if (self.isSquare) {
+        [self.changeAspectView1 setHidden:NO];
+        [self.changeAspectView2 setHidden:NO];
+    // 3:4の時は薄黒いViewを非表示
+    } else {
+        [self.changeAspectView1 setHidden:YES];
+        [self.changeAspectView2 setHidden:YES];
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.camera = [[TTK_Camera alloc] initWithFrame:self.previewView.bounds WithDelegate:self];
     [self.previewView addSubview:self.camera];
     [self.camera start];
+
+    [self initWithView];
     
 	// Do any additional setup after loading the view.
 }
@@ -57,6 +87,34 @@
 - (IBAction)takenPicture:(id)sender
 {
     [self.camera take];
+}
+
+- (IBAction)gotoTop:(id)sender
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (IBAction)changeAspect:(id)sender
+{
+    // アスペクト比を変更する
+    self.isSquare = !self.isSquare;
+    [self changeAspect];
+}
+
+- (IBAction)changeCamera:(id)sender
+{
+    // カメラの前後を変更する
+    self.isRearCamera = !self.isRearCamera;
+    [self changeCamera];
+}
+
+- (void)changeCamera
+{
+    if (self.isRearCamera) {
+        [self.camera setDeviceInputWithType:kDeviceTypeRearCamera];
+    } else {
+        [self.camera setDeviceInputWithType:kDeviceTypeFrontCamera];
+    }
 }
 
 - (void)gotoEdit
