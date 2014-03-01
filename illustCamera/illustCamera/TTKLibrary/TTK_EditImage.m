@@ -51,4 +51,29 @@
  
     return compositeImage;
 }
+
+/**
+* @brief 画像を指定した座標で切り抜く
+* @param image 対象の画像
+* @param rect 切り抜く座標
+* @return 切り抜いた画像
+*/
++ (UIImage *)cutImage:(UIImage *)image WithRect:(CGRect)rect
+{
+    CGFloat imageWidth = CGImageGetWidth(image.CGImage);
+    CGFloat imageHeight = CGImageGetHeight(image.CGImage);
+
+    // 描画するためのキャンバスを生成する
+    UIGraphicsBeginImageContext(CGSizeMake(rect.size.width, rect.size.height));
+    
+    // 画像2を描画する
+    [image drawInRect:CGRectMake(-rect.origin.x, -rect.origin.y, imageWidth, imageHeight)];
+    
+    // 合成した画像を取得する
+    UIImage *cutImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+ 
+    return cutImage;
+}
 @end

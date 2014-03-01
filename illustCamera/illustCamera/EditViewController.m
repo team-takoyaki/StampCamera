@@ -43,36 +43,49 @@
 - (IBAction)save:(id)sender
 {
     // ダミー画像を追加する
-    TTK_Stamp *stamp = [[TTK_Stamp alloc] init];
-    [stamp setImage:[UIImage imageNamed:@"suntv.png"]];
-    [stamp setPlacePoint:CGPointMake(100, 10)];
+//    TTK_Stamp *stamp = [[TTK_Stamp alloc] init];
+//    [stamp setImage:[UIImage imageNamed:@"suntv.png"]];
+//    [stamp setPlacePoint:CGPointMake(100, 10)];
+//    
+//    AppManager *manager = [AppManager sharedManager];
+//    UIImage *image = [manager takenImage];
+//    
+//    UIImage *cutImage = [TTK_EditImage cutImage:image WithRect:CGRectMake(50, 50, 220, 220)];
+//    [self.imageView setImage:cutImage];
     
-    AppManager *manager = [AppManager sharedManager];
-    NSMutableArray *stamps = [manager stamps];
-    [stamps addObject:stamp];
+//    NSMutableArray *stamps = [manager stamps];
+//    [stamps addObject:stamp];
     
-    UIImage *image = [manager takenImage];
-    
-    TTK_Image *compositeImageData = [[TTK_Image alloc] init];
-    [compositeImageData setImage:image];
-    
-    UIImage *compositeImage = nil;
-    for (TTK_Stamp *stamp in stamps) {
-        TTK_Image *imageData = [[TTK_Image alloc] init];
-        [imageData setImage:[stamp image]];
-        [imageData setPoint:[stamp placePoint]];
-        
-        compositeImage = [TTK_EditImage compositeImage:compositeImageData AndImage:imageData];
-        [compositeImageData setImage:compositeImage];
-    }
+//    TTK_Image *compositeImageData = [[TTK_Image alloc] init];
+//    [compositeImageData setImage:image];
+//    
+//    UIImage *compositeImage = nil;
+//    for (TTK_Stamp *stamp in stamps) {
+//        TTK_Image *imageData = [[TTK_Image alloc] init];
+//        [imageData setImage:[stamp image]];
+//        [imageData setPoint:[stamp placePoint]];
+//        
+//        compositeImage = [TTK_EditImage compositeImage:compositeImageData AndImage:imageData];
+//        [compositeImageData setImage:compositeImage];
+//    }
     // [self.imageView setImage:compositeImage];
     
     // アルバムに保存する
-    UIImageWriteToSavedPhotosAlbum(compositeImage, self, nil, nil);
+//    UIImageWriteToSavedPhotosAlbum(compositeImage, self, nil, nil);
 }
 
+/**
+* @brief 画像の保存後に呼ばれる
+* @param image 保存した画像
+* @param error エラー
+* @param contextInfo コンテキスト情報
+*/
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
+    if (error) {
+        NSLog(@"%@", [error description]);
+        return;
+    }
     NSLog(@"saved");
 }
 
