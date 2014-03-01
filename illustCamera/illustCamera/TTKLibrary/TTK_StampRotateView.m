@@ -164,7 +164,6 @@
     // タッチの座標を親Viewの座標からに変換する
     CGPoint pointFromSuperView = [self convertPoint:point toView:self.superview];
     
-
     //atan2fで移動前後のベクトルのなす角取得
     //符号逆にしてタッチの方向と合わせてあげる(そのままだと標準座標の正方向に回るよ)
     float theta = - atan2f(pointFromSuperView.x - self.center.x, pointFromSuperView.y - self.center.y);
@@ -172,7 +171,6 @@
     //thetaだけ回転する
     self.transform = CGAffineTransformMakeRotation(theta);
     //4点の座標のCGRectの作り方わからんからこれで
-
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event

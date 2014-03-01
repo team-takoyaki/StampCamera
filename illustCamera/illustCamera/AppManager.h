@@ -12,4 +12,5 @@
 + (id)sharedManager;
 
 @property (nonatomic, strong) UIImage *takenImage;
+@property (nonatomic, strong) NSMutableArray *stamps;
 @end

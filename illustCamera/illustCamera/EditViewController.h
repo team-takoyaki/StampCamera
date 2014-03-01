@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface EditViewController : UIViewController
-@property (strong, nonatomic) UIImage *image;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 - (IBAction)retake:(id)sender;
+- (IBAction)save:(id)sender;
 @end

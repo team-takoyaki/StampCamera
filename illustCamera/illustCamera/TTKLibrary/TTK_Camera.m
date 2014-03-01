@@ -103,9 +103,6 @@
                 [self.delegate didTakePicture:image];
             }
         }
-        
-        // アルバムに保存する
-        // UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
     }];
 }
 
@@ -171,5 +168,4 @@
     }
     return deviceInput;
 }
-
 @end

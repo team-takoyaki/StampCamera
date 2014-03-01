@@ -28,6 +28,8 @@ static AppManager* sharedInstance = nil;
 {
     AppManager *manager = [super init];
     if (manager) {
+        self.takenImage = [UIImage imageNamed:@"abc.jpg"];
+        self.stamps = [[NSMutableArray alloc] init];
     }
     return manager;
 }
