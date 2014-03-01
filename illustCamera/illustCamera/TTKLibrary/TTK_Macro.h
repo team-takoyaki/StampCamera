@@ -8,3 +8,5 @@
 
 #define NSLogRect(rect) \
 NSLog(@"%f, %f, %f, %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+
+#define GET_WINSIZE [[UIScreen mainScreen] bounds].size

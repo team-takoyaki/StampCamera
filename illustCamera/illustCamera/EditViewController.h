@@ -12,4 +12,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 - (IBAction)retake:(id)sender;
 - (IBAction)save:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIView *changeAspectView1;
+@property (strong, nonatomic) IBOutlet UIView *changeAspectView2;
 @end

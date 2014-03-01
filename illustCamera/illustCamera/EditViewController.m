@@ -27,6 +27,26 @@
     if (image) {
         [self.imageView setImage:image];
     }
+    
+    [manager setIsSquare:YES];
+    // アスペクト比を実現するためにViewを設定する
+    [self settingAspect:[manager isSquare]];
+}
+
+/**
+* アスペクト比の設定
+*/
+- (void)settingAspect:(BOOL)isSquare
+{
+    // 正方形の時は正方形になるように薄黒いViewを表示
+    if (isSquare) {
+        [self.changeAspectView1 setHidden:NO];
+        [self.changeAspectView2 setHidden:NO];
+    // 3:4の時は薄黒いViewを非表示
+    } else {
+        [self.changeAspectView1 setHidden:YES];
+        [self.changeAspectView2 setHidden:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning

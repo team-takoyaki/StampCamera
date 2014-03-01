@@ -10,6 +10,7 @@
 #import "TTKLibrary/TTK_Camera.h"
 #import "EditViewController.h"
 #import "AppManager.h"
+#import "TTK_Macro.h"
 
 @interface CameraViewController () <TTK_CameraDelegate>
 @property (strong, nonatomic) TTK_Camera *camera;
@@ -32,27 +33,11 @@
 {
     // Aspect
     self.isSquare = YES;
-    [self changeAspect];
+    [self settingAspect:_isSquare];
     
     // Camera kind
     self.isRearCamera = YES;
-    [self changeCamera];
-}
-
-/**
-* アスペクト比の設定
-*/
-- (void)changeAspect
-{
-    // 正方形の時は正方形になるように薄黒いViewを表示
-    if (self.isSquare) {
-        [self.changeAspectView1 setHidden:NO];
-        [self.changeAspectView2 setHidden:NO];
-    // 3:4の時は薄黒いViewを非表示
-    } else {
-        [self.changeAspectView1 setHidden:YES];
-        [self.changeAspectView2 setHidden:YES];
-    }
+    [self settingCamera:_isRearCamera];
 }
 
 - (void)viewDidLoad
@@ -98,19 +83,40 @@
 {
     // アスペクト比を変更する
     self.isSquare = !self.isSquare;
-    [self changeAspect];
+    
+    // 正方形かどうかをシングルトンに保存する
+    AppManager *manager = [AppManager sharedManager];
+    [manager setIsSquare:self.isSquare];
+    
+    [self settingAspect:_isSquare];
+}
+
+/**
+* アスペクト比の設定
+*/
+- (void)settingAspect:(BOOL)isSquare
+{
+    // 正方形の時は正方形になるように薄黒いViewを表示
+    if (isSquare) {
+        [self.changeAspectView1 setHidden:NO];
+        [self.changeAspectView2 setHidden:NO];
+    // 3:4の時は薄黒いViewを非表示
+    } else {
+        [self.changeAspectView1 setHidden:YES];
+        [self.changeAspectView2 setHidden:YES];
+    }
 }
 
 - (IBAction)changeCamera:(id)sender
 {
     // カメラの前後を変更する
     self.isRearCamera = !self.isRearCamera;
-    [self changeCamera];
+    [self settingCamera:_isRearCamera];
 }
 
-- (void)changeCamera
+- (void)settingCamera:(BOOL)isRearCamera
 {
-    if (self.isRearCamera) {
+    if (isRearCamera) {
         [self.camera setDeviceInputWithType:kDeviceTypeRearCamera];
     } else {
         [self.camera setDeviceInputWithType:kDeviceTypeFrontCamera];
