@@ -17,4 +17,12 @@
 * @return 画像1と画像2を合成した画像
 */
 + (UIImage *)compositeImage:(TTK_Image *)aImageData AndImage:(TTK_Image *)bImageData;
+
+/**
+* @brief 画像を指定した座標で切り抜く
+* @param image 対象の画像
+* @param rect 切り抜く座標
+* @return 切り抜いた画像
+*/
++ (UIImage *)cutImage:(UIImage *)image WithRect:(CGRect)rect;
 @end
