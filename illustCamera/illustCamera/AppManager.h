@@ -8,13 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
+#define NOT_SELECTED_STAMP_IDX -1
+#define GET_STAMP_RECT CGRectMake(0, 0, 75, 75)
+
 @interface AppManager : NSObject
 + (id)sharedManager;
 
 // 撮影した写真
 @property (nonatomic, strong) UIImage *takenImage;
-// スタンプの情報
+
+// 全てのスタンプの一覧
 @property (nonatomic, strong) NSMutableArray *stamps;
+
+// スタンプリストで選択されたスタンプのindex
+@property (nonatomic) NSInteger selectedStampIdx;
+
+// 選択されたスタンプの情報
+@property (nonatomic, strong) NSMutableArray *selectedStamps;
+
 // 正方形かどうか
 @property (nonatomic) BOOL isSquare;
+
 @end

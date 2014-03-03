@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StampListViewController.h"
 
-@interface EditViewController : UIViewController
+@interface EditViewController : UIViewController <StampListViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 - (IBAction)retake:(id)sender;
 - (IBAction)save:(id)sender;
+- (IBAction)stampList:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIView *changeAspectView1;
 @property (strong, nonatomic) IBOutlet UIView *changeAspectView2;

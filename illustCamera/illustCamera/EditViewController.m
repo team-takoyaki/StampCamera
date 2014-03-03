@@ -94,6 +94,16 @@
 //    UIImageWriteToSavedPhotosAlbum(compositeImage, self, nil, nil);
 }
 
+- (IBAction)stampList:(id)sender
+{
+    [self gotoStampList];
+}
+
+- (void)gotoStampList
+{
+    [self performSegueWithIdentifier:@"gotoStampListView" sender:self];
+}
+
 /**
 * @brief 画像の保存後に呼ばれる
 * @param image 保存した画像
@@ -107,6 +117,49 @@
         return;
     }
     NSLog(@"saved");
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender {
+
+    // 対象セグエ以外ならここでリターン
+    if(![[segue identifier] isEqualToString:@"gotoStampListView"]) {
+        return;
+    }
+
+    // 遷移先コントローラを取得
+    StampListViewController *controller = (StampListViewController *)[segue destinationViewController];
+
+    // 遷移元ポインタを渡しておく
+    controller.delegate = self;
+}
+
+/**
+* @brief StampListViewControllerを閉じた時に呼ばれる
+*/
+- (void)didDismissStampListViewController
+{
+    AppManager *manager = [AppManager sharedManager];
+    NSInteger stampIdx = [manager selectedStampIdx];
+    // スタンプが選択されていない時は何もしない
+    if (stampIdx == NOT_SELECTED_STAMP_IDX) {
+        return;
+    }
+    
+    // 選択されたスタンプを取得する
+    NSArray *stamps = [manager stamps];
+    NSString *stampName = [stamps objectAtIndex:stampIdx];
+    UIImage *stampImage = [UIImage imageNamed:stampName];
+    
+    UIImageView *stampView = [[UIImageView alloc] initWithImage:stampImage];
+    stampView.frame = GET_STAMP_RECT;
+    
+    CGSize imageSize = _imageView.frame.size;
+    CGSize stampSize = stampView.frame.size;
+    
+    stampView.frame = CGRectMake(imageSize.width / 2 - stampSize.width / 2,
+                                 imageSize.height / 2 - stampSize.height / 2,
+                                 stampSize.width, stampSize.height);
+    [self.imageView addSubview:stampView];
 }
 
 @end

@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StampListViewController : UIViewController
+@protocol StampListViewControllerDelegate;
 
+@interface StampListViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+- (IBAction)cancel:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (weak, nonatomic) id <StampListViewControllerDelegate> delegate;
+@end
+
+@protocol StampListViewControllerDelegate <NSObject>
+- (void)didDismissStampListViewController;
 @end
