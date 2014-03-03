@@ -31,6 +31,7 @@
 		597564CD18C176A0008F61D0 /* TTK_EditImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564CC18C176A0008F61D0 /* TTK_EditImage.m */; };
 		597564D018C18397008F61D0 /* TTK_Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564CF18C18397008F61D0 /* TTK_Image.m */; };
 		597564D318C1879F008F61D0 /* TTK_Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D218C1879F008F61D0 /* TTK_Utility.m */; };
+		597564D618C3759E008F61D0 /* StampListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D518C3759E008F61D0 /* StampListViewController.m */; };
 		599FB41018B833C9009377EE /* StampViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB40F18B833C9009377EE /* StampViewController.m */; };
 		599FB41318B8343F009377EE /* TTK_StampView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41218B8343F009377EE /* TTK_StampView.m */; };
 		599FB41618B83818009377EE /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41518B83818009377EE /* AppManager.m */; };
@@ -85,6 +86,8 @@
 		597564CF18C18397008F61D0 /* TTK_Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_Image.m; sourceTree = "<group>"; };
 		597564D118C1879F008F61D0 /* TTK_Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Utility.h; sourceTree = "<group>"; };
 		597564D218C1879F008F61D0 /* TTK_Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_Utility.m; sourceTree = "<group>"; };
+		597564D418C3759E008F61D0 /* StampListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampListViewController.h; sourceTree = "<group>"; };
+		597564D518C3759E008F61D0 /* StampListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampListViewController.m; sourceTree = "<group>"; };
 		599FB40E18B833C9009377EE /* StampViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampViewController.h; sourceTree = "<group>"; };
 		599FB40F18B833C9009377EE /* StampViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampViewController.m; sourceTree = "<group>"; };
 		599FB41118B8343F009377EE /* TTK_StampView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_StampView.h; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 				591B674318B3C94100263158 /* TopViewController.m */,
 				591B674518B3CB0300263158 /* CameraViewController.h */,
 				591B674618B3CB0400263158 /* CameraViewController.m */,
+				597564D418C3759E008F61D0 /* StampListViewController.h */,
+				597564D518C3759E008F61D0 /* StampListViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				597564CD18C176A0008F61D0 /* TTK_EditImage.m in Sources */,
 				591B671C18B3C37700263158 /* AppDelegate.m in Sources */,
 				599FB41018B833C9009377EE /* StampViewController.m in Sources */,
+				597564D618C3759E008F61D0 /* StampListViewController.m in Sources */,
 				599FB41318B8343F009377EE /* TTK_StampView.m in Sources */,
 				591B674A18B3CD6500263158 /* EditViewController.m in Sources */,
 				591B671818B3C37700263158 /* main.m in Sources */,
