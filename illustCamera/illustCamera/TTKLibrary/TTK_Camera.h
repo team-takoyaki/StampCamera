@@ -16,6 +16,9 @@ typedef enum : NSInteger {
     kDeviceTypeFrontCamera
 } DeviceType;
 
+// 写真を正方形に撮影するかどうか
+@property (nonatomic, readwrite) BOOL isSquare;
+
 - (id)initWithFrame:(CGRect)frame WithDelegate:(id)delegate;
 
 /**

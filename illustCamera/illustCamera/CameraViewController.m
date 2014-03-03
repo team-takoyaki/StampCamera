@@ -33,8 +33,7 @@
 {
     // Aspect
     self.isSquare = YES;
-    AppManager *manager = [AppManager sharedManager];
-    [manager setIsSquare:self.isSquare];
+    [self.camera setIsSquare:self.isSquare];
     [self settingAspect:_isSquare];
     
     // Camera kind
@@ -86,10 +85,8 @@
     // アスペクト比を変更する
     self.isSquare = !self.isSquare;
     
-    // 正方形かどうかをシングルトンに保存する
-    AppManager *manager = [AppManager sharedManager];
-    [manager setIsSquare:self.isSquare];
-    
+    // カメラの設定に設定する
+    [self.camera setIsSquare:self.isSquare];
     [self settingAspect:_isSquare];
 }
 

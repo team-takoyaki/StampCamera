@@ -26,7 +26,4 @@
 // 選択されたスタンプの情報
 @property (nonatomic, strong) NSMutableArray *selectedStamps;
 
-// 正方形かどうか
-@property (nonatomic) BOOL isSquare;
-
 @end

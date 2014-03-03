@@ -9,5 +9,4 @@
 #import <Foundation/Foundation.h>
 
 @interface TTK_Utility : NSObject
-
 @end

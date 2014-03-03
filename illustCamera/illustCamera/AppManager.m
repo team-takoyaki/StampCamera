@@ -41,8 +41,6 @@ static AppManager* sharedInstance = nil;
     
     self.selectedStampIdx = NOT_SELECTED_STAMP_IDX;
     
-    [self setIsSquare:YES];
-    
     // スタンプを読み込む
     [self updateStamps];
 }

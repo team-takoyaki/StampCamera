@@ -29,23 +29,8 @@
     }
     
     // アスペクト比を実現するためにViewを設定する
-    [self settingAspect:[manager isSquare]];
-}
-
-/**
-* アスペクト比の設定
-*/
-- (void)settingAspect:(BOOL)isSquare
-{
-    // 正方形の時は正方形になるように薄黒いViewを表示
-    if (isSquare) {
-        [self.changeAspectView1 setHidden:NO];
-        [self.changeAspectView2 setHidden:NO];
-    // 3:4の時は薄黒いViewを非表示
-    } else {
-        [self.changeAspectView1 setHidden:YES];
-        [self.changeAspectView2 setHidden:YES];
-    }
+    // カメラの設定に正方形かどうかを設定する
+//    [self settingAspect:[self.camera isSquare]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,31 +51,28 @@
 //    [stamp setImage:[UIImage imageNamed:@"suntv.png"]];
 //    [stamp setPlacePoint:CGPointMake(100, 10)];
 //    
-//    AppManager *manager = [AppManager sharedManager];
-//    UIImage *image = [manager takenImage];
-//    
-//    UIImage *cutImage = [TTK_EditImage cutImage:image WithRect:CGRectMake(50, 50, 220, 220)];
-//    [self.imageView setImage:cutImage];
-    
-//    NSMutableArray *stamps = [manager stamps];
+    AppManager *manager = [AppManager sharedManager];
+    UIImage *image = [manager takenImage];
+
+    NSMutableArray *stamps = [manager selectedStamps];
 //    [stamps addObject:stamp];
     
-//    TTK_Image *compositeImageData = [[TTK_Image alloc] init];
-//    [compositeImageData setImage:image];
-//    
-//    UIImage *compositeImage = nil;
-//    for (TTK_Stamp *stamp in stamps) {
-//        TTK_Image *imageData = [[TTK_Image alloc] init];
-//        [imageData setImage:[stamp image]];
-//        [imageData setPoint:[stamp placePoint]];
-//        
-//        compositeImage = [TTK_EditImage compositeImage:compositeImageData AndImage:imageData];
-//        [compositeImageData setImage:compositeImage];
-//    }
-    // [self.imageView setImage:compositeImage];
+    TTK_Image *compositeImageData = [[TTK_Image alloc] init];
+    [compositeImageData setImage:image];
     
-    // アルバムに保存する
-//    UIImageWriteToSavedPhotosAlbum(compositeImage, self, nil, nil);
+    UIImage *compositeImage = compositeImageData.image;
+    
+    for (TTK_Stamp *stamp in stamps) {
+        TTK_Image *imageData = [[TTK_Image alloc] init];
+        [imageData setImage:[stamp image]];
+        [imageData setPoint:[stamp placePoint]];
+    
+        compositeImage = [TTK_EditImage compositeImage:compositeImageData AndImage:imageData];
+        [compositeImageData setImage:compositeImage];
+    }
+    
+    // アルバムに保存して保存後にメソッドを呼び出す
+    UIImageWriteToSavedPhotosAlbum(compositeImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 
 - (IBAction)stampList:(id)sender
@@ -111,11 +93,25 @@
 */
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
+    // 保存に失敗した時
     if (error) {
+        NSString *errorMessage = [NSString stringWithFormat:@"%@", [error description]];
+        
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"失敗" message:errorMessage
+                                  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        
         NSLog(@"%@", [error description]);
+        
         return;
     }
     NSLog(@"saved");
+    
+    UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"完了" message:@"保存しました"
+                                  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender {

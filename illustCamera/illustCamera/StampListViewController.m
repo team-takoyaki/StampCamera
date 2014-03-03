@@ -72,7 +72,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Clicked row: %d", (int)indexPath.row);
+    NSLog(@"Touched stampIdx: %d", (int)indexPath.row);
 
     // 選択されたスタンプのindexを保存する
     NSInteger idx = (NSInteger)indexPath.row;

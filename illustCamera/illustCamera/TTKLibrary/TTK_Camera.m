@@ -37,6 +37,8 @@
     CGRect rect = self.frame;
     self.previewView = [[UIView alloc] initWithFrame:rect];
     
+    self.isSquare = YES;
+    
     [self setupAVCapture];
 }
 
@@ -103,22 +105,35 @@
         
         UIImage *image = [[UIImage alloc] initWithData:imageData];
 
+        CGFloat distImageWidth  = 0;
+        CGFloat distImageHeight = 0;
+        
+        // 最終的な画像の大きさ(比)を設定する
+        // 正方形の時
+        if (_isSquare) {
+            distImageWidth = self.frame.size.width;
+            distImageHeight = self.frame.size.width;
+        } else {
+            distImageWidth = self.frame.size.width;
+            distImageHeight = self.frame.size.height;
+        }
+
         // 画像の大きさを取得する
         // 画面とは縦、横が逆のため逆にする
         CGFloat realImageWidth = CGImageGetHeight(image.CGImage);
         CGFloat realImageHeight = CGImageGetWidth(image.CGImage);
         
-        // 画像の大きさとプレビューの大きさの比を取得する
-        // プレビューより写真の方が大きい
-        float rate = self.frame.size.width / realImageWidth;
+        // 画像の大きさと最終的な画像の大きさの比を取得する
+        // 最終的な画像の大きさより写真の方が大きい
+        float rate = distImageWidth / realImageWidth;
         
-        // 写真の縦の大きさに比をかけてプレビューの大きさに直す
+        // 写真の縦の大きさに比をかけて最終的な画像の大きさに直す
         float imageHeight = realImageHeight * rate;
         
-        // 画像の大きさとプレビューの大きさの差を取得する
-        float h = imageHeight - self.frame.size.height;
+        // 画像の大きさと最終的な画像の大きさの差を取得する
+        float h = imageHeight - distImageHeight;
     
-        // 画像の方が縦がプレビューより大きいため上下を切りとる
+        // 画像の方が縦が最終的な画像より大きいため上下を切りとる
         // そのための上下のスペースの大きさ
         float oneSpace = h / 2;
 

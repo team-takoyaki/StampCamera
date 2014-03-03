@@ -14,7 +14,4 @@
 - (IBAction)retake:(id)sender;
 - (IBAction)save:(id)sender;
 - (IBAction)stampList:(id)sender;
-
-@property (strong, nonatomic) IBOutlet UIView *changeAspectView1;
-@property (strong, nonatomic) IBOutlet UIView *changeAspectView2;
 @end
