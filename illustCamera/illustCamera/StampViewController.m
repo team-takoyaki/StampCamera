@@ -29,20 +29,20 @@
 {
     [super viewDidLoad];
     
-    CGRect rect = CGRectMake(0, 0, 100, 100);
-    TTK_StampView *stampView = [[TTK_StampView alloc] initWithFrame:rect];
-    UIImage *image = [UIImage imageNamed:@"suntv.png"];
-    [stampView setImage:image];
+//    CGRect rect = CGRectMake(0, 0, 100, 100);
+//    TTK_StampView *stampView = [[TTK_StampView alloc] initWithFrame:rect];
+//    UIImage *image = [UIImage imageNamed:@"suntv.png"];
+//    [stampView setImage:image];
     
     //回転用のImage
-    CGRect rectRotate = CGRectMake(50, 50, 100, 100);
+    CGRect rectRotate = CGRectMake(0, 0, 100, 100);
     TTK_StampRotateView *stampRotateView = [[TTK_StampRotateView alloc] initWithFrame:rectRotate];
     UIImage *imageRotate = [UIImage imageNamed:@"suntv.png"];
     [stampRotateView setImage:imageRotate];
 
 //    UIImageView *stampView = [[UIImageView alloc] initWithImage:image];
     
-    [self.view addSubview:stampView];
+//    [self.view addSubview:stampView];
     [self.view addSubview:stampRotateView];
 	// Do any additional setup after loading the view.
 }
