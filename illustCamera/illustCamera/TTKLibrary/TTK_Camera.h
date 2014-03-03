@@ -16,15 +16,17 @@ typedef enum : NSInteger {
     kDeviceTypeFrontCamera
 } DeviceType;
 
-/**
-* @brief プレビュースタート
-*/
 - (id)initWithFrame:(CGRect)frame WithDelegate:(id)delegate;
 
 /**
-* @brief プレビュースタート
+* @brief プレビューをスタート
 */
 - (void)start;
+
+/**
+* @brief プレビューを止める
+*/
+- (void)stop;
 
 /**
 * @brief 撮影する

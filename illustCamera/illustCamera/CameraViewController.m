@@ -7,7 +7,7 @@
 //
 
 #import "CameraViewController.h"
-#import "TTKLibrary/TTK_Camera.h"
+#import "TTK_Camera.h"
 #import "EditViewController.h"
 #import "AppManager.h"
 #import "TTK_Macro.h"
@@ -33,6 +33,8 @@
 {
     // Aspect
     self.isSquare = YES;
+    AppManager *manager = [AppManager sharedManager];
+    [manager setIsSquare:self.isSquare];
     [self settingAspect:_isSquare];
     
     // Camera kind

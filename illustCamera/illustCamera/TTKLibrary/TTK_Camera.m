@@ -9,13 +9,14 @@
 #import "TTK_Camera.h"
 #import "TTK_Macro.h"
 #import <AVFoundation/AVFoundation.h>
+#import "TTK_EditImage.h"
 
 @interface TTK_Camera ()
 @property (strong, nonatomic) UIView *previewView;
 @property (strong, nonatomic) AVCaptureSession *session;
 @property (strong, nonatomic) AVCaptureDeviceInput *videoInput;
 @property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
-@property (strong, nonatomic) id delegate;
+@property (weak, nonatomic) id <TTK_CameraDelegate> delegate;
 @end
 
 @implementation TTK_Camera
@@ -33,7 +34,7 @@
 
 - (void)initWithView
 {
-    CGRect rect = self.bounds;
+    CGRect rect = self.frame;
     self.previewView = [[UIView alloc] initWithFrame:rect];
     
     [self setupAVCapture];
@@ -74,6 +75,11 @@
     [self.session startRunning];
 }
 
+- (void)stop
+{
+    [self.session stopRunning];
+}
+
 /**
 * @brief 撮影する
 * 撮影後にdelegateのdidTakePictureが呼ばれる
@@ -97,10 +103,38 @@
         
         UIImage *image = [[UIImage alloc] initWithData:imageData];
 
-        // 撮影した画像をデリゲートに渡す
+        // 画像の大きさを取得する
+        // 画面とは縦、横が逆のため逆にする
+        CGFloat realImageWidth = CGImageGetHeight(image.CGImage);
+        CGFloat realImageHeight = CGImageGetWidth(image.CGImage);
+        
+        // 画像の大きさとプレビューの大きさの比を取得する
+        // プレビューより写真の方が大きい
+        float rate = self.frame.size.width / realImageWidth;
+        
+        // 写真の縦の大きさに比をかけてプレビューの大きさに直す
+        float imageHeight = realImageHeight * rate;
+        
+        // 画像の大きさとプレビューの大きさの差を取得する
+        float h = imageHeight - self.frame.size.height;
+    
+        // 画像の方が縦がプレビューより大きいため上下を切りとる
+        // そのための上下のスペースの大きさ
+        float oneSpace = h / 2;
+
+        // スペースを実際の写真の大きさの比をかけて取得する
+        float realOneSpace = oneSpace * (1 / rate);
+        
+        // 切り取る領域を取得する
+        CGRect cutRect = CGRectMake(0, realOneSpace, realImageWidth, realImageHeight - realOneSpace * 2);
+        
+        // 写真を切り取る
+        UIImage *cutImage = [TTK_EditImage cutImage:image WithRect:cutRect];
+        
+        // 撮影して切り抜いた画像をデリゲートに渡す
         if (self.delegate) {
             if ([self.delegate respondsToSelector:@selector(didTakePicture:)]) {
-                [self.delegate didTakePicture:image];
+                [self.delegate didTakePicture:cutImage];
             }
         }
     }];

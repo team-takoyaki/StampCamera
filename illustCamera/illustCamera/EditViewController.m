@@ -28,7 +28,6 @@
         [self.imageView setImage:image];
     }
     
-    [manager setIsSquare:YES];
     // アスペクト比を実現するためにViewを設定する
     [self settingAspect:[manager isSquare]];
 }
@@ -149,10 +148,12 @@
     NSArray *stamps = [manager stamps];
     NSString *stampName = [stamps objectAtIndex:stampIdx];
     UIImage *stampImage = [UIImage imageNamed:stampName];
-    
+
+    // スタンプの大きさを設定する
     UIImageView *stampView = [[UIImageView alloc] initWithImage:stampImage];
     stampView.frame = GET_STAMP_RECT;
-    
+
+    // 真ん中にスタンプを配置する
     CGSize imageSize = _imageView.frame.size;
     CGSize stampSize = stampView.frame.size;
     
