@@ -80,6 +80,32 @@
     [self gotoStampList];
 }
 
+- (IBAction)rotate:(id)sender
+{
+    AppManager *manager = [AppManager sharedManager];
+    UIImage *image = [manager takenImage];
+    
+    // 画像を90度回転させる
+    UIImage *rotateImage = [TTK_EditImage rotateImage:image withAngle:90];
+    [manager setTakenImage:rotateImage];
+    
+    // 回転させた画像を表示する
+    [self.imageView setImage:rotateImage];
+}
+
+- (IBAction)reverse:(id)sender
+{
+    AppManager *manager = [AppManager sharedManager];
+    UIImage *image = [manager takenImage];
+    
+    // 画像を反転させる
+    UIImage *reverseImage = [TTK_EditImage reverseImage:image];
+    [manager setTakenImage:reverseImage];
+    
+    // 回転させた画像を表示する
+    [self.imageView setImage:reverseImage];
+}
+
 - (void)gotoStampList
 {
     [self performSegueWithIdentifier:@"gotoStampListView" sender:self];
