@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EditViewController.h"
 
-@interface CameraViewController : UIViewController
+@interface CameraViewController : UIViewController <EditViewControllerDelegate>
 - (IBAction)takenPicture:(id)sender;
 - (IBAction)gotoTop:(id)sender;
 - (IBAction)changeAspect:(id)sender;

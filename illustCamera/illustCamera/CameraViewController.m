@@ -122,9 +122,32 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender {
+
+    // 対象セグエ以外ならここでリターン
+    if(![[segue identifier] isEqualToString:@"gotoEditView"]) {
+        return;
+    }
+
+    // 遷移先コントローラを取得
+    EditViewController *controller = (EditViewController *)[segue destinationViewController];
+
+    // 遷移元ポインタを渡しておく
+    controller.delegate = self;
+}
+
 - (void)gotoEdit
 {
     [self performSegueWithIdentifier:@"gotoEditView" sender:self];
+}
+
+/**
+* EditViewControllerを閉じてTopViewControllerに戻りたい時に呼ばれる
+*/
+- (void)didDismissEditViewControllerAndGotoTop
+{
+    // CameraViewControllerを閉じてTopViewControllerに戻る
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end

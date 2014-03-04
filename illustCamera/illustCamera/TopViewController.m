@@ -39,4 +39,9 @@
 {
     [self performSegueWithIdentifier:@"gotoCameraView" sender:self];
 }
+
+- (IBAction)didTapAlbumButton:(id)sender
+{
+    
+}
 @end

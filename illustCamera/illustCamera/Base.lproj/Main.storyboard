@@ -32,6 +32,9 @@
                                     <color key="titleColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didTapAlbumButton:" destination="WQ4-0b-UrL" eventType="touchUpInside" id="6tm-Yn-BK4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -206,6 +209,16 @@
                                 </state>
                                 <connections>
                                     <action selector="reverse:" destination="0dN-57-r6D" eventType="touchUpInside" id="foU-Lx-7jt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pxl-t3-Zfm">
+                                <rect key="frame" x="13" y="515" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="T">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gotoTop:" destination="0dN-57-r6D" eventType="touchUpInside" id="8de-KR-6bz"/>
                                 </connections>
                             </button>
                         </subviews>

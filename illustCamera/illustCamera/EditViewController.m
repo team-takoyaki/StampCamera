@@ -41,7 +41,7 @@
 
 - (IBAction)retake:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (IBAction)save:(id)sender
@@ -104,6 +104,15 @@
     
     // 回転させた画像を表示する
     [self.imageView setImage:reverseImage];
+}
+
+- (IBAction)gotoTop:(id)sender
+{
+    [self dismissViewControllerAnimated:NO completion:^{
+        if (_delegate) {
+            [_delegate didDismissEditViewControllerAndGotoTop];
+        }
+    }];
 }
 
 - (void)gotoStampList

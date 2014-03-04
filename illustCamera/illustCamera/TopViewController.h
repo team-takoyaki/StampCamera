@@ -12,4 +12,5 @@
 @property (strong, nonatomic) IBOutlet UIButton *cameraButton;
 @property (strong, nonatomic) IBOutlet UIButton *albumButton;
 - (IBAction)didTapCameraButton:(id)sender;
+- (IBAction)didTapAlbumButton:(id)sender;
 @end
