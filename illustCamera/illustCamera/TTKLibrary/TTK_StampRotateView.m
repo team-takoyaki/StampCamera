@@ -85,6 +85,19 @@
     // タッチの座標を親Viewの座標からに変換する
     CGPoint pointFromSuperView = [self convertPoint:point toView:self.superview];
 
+    // 指示Viewの座標を親Viewからに変換する
+    CGRect directionRect = [self convertRect:self.directionView.frame toView:self.superview];
+    
+    // タッチした領域が指示Viewかどうか
+    if (CGRectContainsPoint(directionRect, pointFromSuperView)) {
+        self.isDirection = YES;
+    } else {
+        self.isDirection = NO;
+    }
+    
+    // TODO: メインの画像部分
+    self.imageView;
+    
     // スタート位置を保存する
     self.beganTouchPoint = pointFromSuperView;
     
@@ -92,16 +105,6 @@
     self.startTransform = self.transform;
     
     [self drawRect];
-    
-    // 指示Viewの座標を親Viewからに変換する
-    CGRect dRect = [self convertRect:self.directionView.frame toView:self.superview];
-    
-    // タッチした領域が指示Viewかどうか
-    if (CGRectContainsPoint(dRect, pointFromSuperView)) {
-        self.isDirection = YES;
-    } else {
-        self.isDirection = NO;
-    }
     
     //tmpThetaの初期化
     self.tmpTheta = [self getTheta:pointFromSuperView.x y:pointFromSuperView.y];
@@ -120,27 +123,34 @@
     // タッチの座標を親Viewの座標からに変換する
     CGPoint pointFromSuperView = [self convertPoint:point toView:self.superview];
     
-    float theta = [self getTheta:pointFromSuperView.x y:pointFromSuperView.y];
+    // 指示Viewがタッチされている時
+    if (self.isDirection) {
+        // TODO: 縮小拡大、回転をする
+        float theta = [self getTheta:pointFromSuperView.x y:pointFromSuperView.y];
     
-    float radius = [self getRadius:pointFromSuperView.x y:pointFromSuperView.y];
+        float radius = [self getRadius:pointFromSuperView.x y:pointFromSuperView.y];
     
     
-    //拡大変化率を求める
-    float zoomRate = radius / self.tmpRadius;
+        //拡大変化率を求める
+        float zoomRate = radius / self.tmpRadius;
     
-    //移動量を求める(回転する角度)
-    //逆回転もあるので絶対値は取らない
-    float arg = theta - self.tmpTheta;
+        //移動量を求める(回転する角度)
+        //逆回転もあるので絶対値は取らない
+        float arg = theta - self.tmpTheta;
     
-    //拡大処理
-    self.transform = CGAffineTransformScale(self.transform, zoomRate, zoomRate);
+        //拡大処理
+        self.transform = CGAffineTransformScale(self.transform, zoomRate, zoomRate);
+        
+        //回転処理
+        self.transform = CGAffineTransformRotate(self.transform, arg);
     
-    //回転処理
-    self.transform = CGAffineTransformRotate(self.transform, arg);
+        //tmpデータ更新
+        self.tmpTheta = theta;
+        self.tmpRadius = radius;
+    } else {
+        // TODO: 移動の処理
     
-    //tmpデータ更新
-    self.tmpTheta = theta;
-    self.tmpRadius = radius;
+    }
     
 }
 
