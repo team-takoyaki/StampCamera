@@ -14,4 +14,6 @@
 - (IBAction)retake:(id)sender;
 - (IBAction)save:(id)sender;
 - (IBAction)stampList:(id)sender;
+- (IBAction)rotate:(id)sender;
+- (IBAction)reverse:(id)sender;
 @end

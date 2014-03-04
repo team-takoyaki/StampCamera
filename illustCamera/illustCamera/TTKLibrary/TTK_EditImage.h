@@ -25,4 +25,20 @@
 * @return 切り抜いた画像
 */
 + (UIImage *)cutImage:(UIImage *)image WithRect:(CGRect)rect;
+
+/**
+* @brief 画像を回転させる
+* @param image 対象の画像
+* @param angle 角度
+* @return 回転させた画像
+*/
++ (UIImage *)rotateImage:(UIImage *)image withAngle:(int)angle;
+
+/**
+* @brief 画像を反転させる
+* @param image 対象の画像
+* @return 反転させた画像
+*/
++ (UIImage *)reverseImage:(UIImage *)image;
+
 @end
