@@ -21,6 +21,9 @@
 @property (nonatomic) BOOL isDirection;
 @property (nonatomic) float tmpTheta;
 @property (nonatomic) float tmpRadius;
+@property (nonatomic) float tmpMoveX;
+@property (nonatomic) float tmpMoveY;
+@property (nonatomic) CGPoint tmpPoint;
 @property (nonatomic) CGAffineTransform startTransform;
 @property (nonatomic) CGRect imageFrame;
 @property (nonatomic) BOOL isDrawRect;
@@ -105,11 +108,15 @@
     self.startTransform = self.transform;
     
     [self drawRect];
+    //tmpMoveX, tmpMoveYの初期化
+    self.tmpMoveX = 0.0f;
+    self.tmpMoveY = 0.0f;
+    self.tmpPoint = pointFromSuperView;
     
     //tmpThetaの初期化
     self.tmpTheta = [self getTheta:pointFromSuperView.x y:pointFromSuperView.y];
     
-    //baseRadiusの初期化
+    //tmpRadiusの初期化
     self.tmpRadius = [self getRadius:pointFromSuperView.x y:pointFromSuperView.y];
     
 }
@@ -149,7 +156,20 @@
         self.tmpRadius = radius;
     } else {
         // TODO: 移動の処理
-    
+        float moveX, moveY;
+        
+        //移動量 = タッチされた場所 - 前いた場所
+        moveX = - self.tmpPoint.x + pointFromSuperView.x;
+        moveY = - self.tmpPoint.y + pointFromSuperView.y;
+        
+        //移動場所を一旦保存
+        CGAffineTransform t1 = CGAffineTransformMakeTranslation(moveX, moveY);
+        //回転後移動するために合わせる
+        self.transform = CGAffineTransformConcat(self.transform, t1);
+
+        //今いる場所を保存
+        self.tmpPoint = pointFromSuperView;
+        
     }
     
 }
