@@ -98,9 +98,6 @@
         self.isDirection = NO;
     }
     
-    // TODO: メインの画像部分
-    self.imageView;
-    
     // スタート位置を保存する
     self.beganTouchPoint = pointFromSuperView;
     
