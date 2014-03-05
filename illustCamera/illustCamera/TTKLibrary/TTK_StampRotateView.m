@@ -127,7 +127,7 @@
     
     // タッチの座標を親Viewの座標からに変換する
     CGPoint pointFromSuperView = [self convertPoint:point toView:self.superview];
-    
+
     // 指示Viewがタッチされている時
     if (self.isDirection) {
         // TODO: 縮小拡大、回転をする
@@ -143,12 +143,13 @@
         //逆回転もあるので絶対値は取らない
         float arg = theta - self.tmpTheta;
     
-        //拡大処理
+//        //拡大処理
         self.transform = CGAffineTransformScale(self.transform, zoomRate, zoomRate);
-        
-        //回転処理
+
+//        //回転処理
         self.transform = CGAffineTransformRotate(self.transform, arg);
-    
+        
+        
         //tmpデータ更新
         self.tmpTheta = theta;
         self.tmpRadius = radius;
@@ -167,7 +168,6 @@
 
         //今いる場所を保存
         self.tmpPoint = pointFromSuperView;
-        
     }
     
 }
@@ -220,8 +220,11 @@
     float vactorX, vectorY, theta;
     
     //Y座標はステータスバー方向が正
-    vectorY = - (pointY - self.center.y);
-    vactorX = pointX - self.center.x;
+    //XYの平行移動後は回転軸がずれる
+    //CP = OP - OC
+    //   = pointX - (imgViewの角 + 中心までの距離)
+    vectorY = - (pointY - self.center.y) + self.transform.ty;
+    vactorX = pointX - self.center.x - self.transform.tx;
     
     //atan2の引数の順番は違う
     theta = atan2(vectorY, vactorX);
@@ -240,8 +243,8 @@
 {
     float vactorX, vectorY;
     
-    vectorY = - (pointY - self.center.y);
-    vactorX = pointX - self.center.x;
+    vectorY = - (pointY - self.center.y) + self.transform.ty;
+    vactorX = pointX - self.center.x - self.transform.tx;
     
     return sqrtf(vactorX * vactorX + vectorY * vectorY);
 }
