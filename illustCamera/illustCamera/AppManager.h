@@ -24,6 +24,6 @@
 @property (nonatomic) NSInteger selectedStampIdx;
 
 // 選択されたスタンプの情報
-@property (nonatomic, strong) NSMutableArray *selectedStamps;
+@property (nonatomic, strong) NSMutableArray *selectedStampView;
 
 @end

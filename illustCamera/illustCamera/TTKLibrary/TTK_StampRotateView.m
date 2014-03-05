@@ -8,7 +8,6 @@
 
 #import "TTK_StampRotateView.h"
 
-#define DIRECTION_VIEW_SIZE 35.0f
 #define STROKE_WIDTH 1.5f
 #define DIRECTION_IMAGE @"direction.png"
 
@@ -70,8 +69,6 @@
     
     self.isDrawRect = YES;
     
-    self.transform = CGAffineTransformRotate(self.transform, M_PI / 2);
-    
     // 背景を透明にする
     self.backgroundColor = [UIColor clearColor];
     
@@ -82,6 +79,11 @@
 - (void)setImage:(UIImage *)image
 {
     [self.imageView setImage:image];
+}
+
+- (UIImage *)image
+{
+    return self.imageView.image;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

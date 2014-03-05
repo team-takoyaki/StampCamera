@@ -36,7 +36,7 @@ static AppManager* sharedInstance = nil;
 - (void)initWithSettings
 {
     self.takenImage = [UIImage imageNamed:@"abc.jpg"];
-    self.selectedStamps = [[NSMutableArray alloc] init];
+    self.selectedStampView = [[NSMutableArray alloc] init];
     self.stamps = [[NSMutableArray alloc] init];
     
     self.selectedStampIdx = NOT_SELECTED_STAMP_IDX;

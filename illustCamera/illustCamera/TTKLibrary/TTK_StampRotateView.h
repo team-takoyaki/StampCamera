@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#define DIRECTION_VIEW_SIZE 35.0f
+
 @interface TTK_StampRotateView : UIView
 
 - (void)setImage:(UIImage *)image;
-
+- (UIImage *)image;
 @end

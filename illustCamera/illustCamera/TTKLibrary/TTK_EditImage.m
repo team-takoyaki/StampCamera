@@ -32,13 +32,13 @@
     UIImage *bImage = [bImageData image];
     CGFloat bImageX = [bImageData point].x;
     CGFloat bImageY = [bImageData point].y;
-    CGFloat bImageWidth = CGImageGetWidth(bImage.CGImage);
-    CGFloat bImageHeight = CGImageGetHeight(bImage.CGImage);
+    CGFloat bImageWidth = CGImageGetWidth(bImage.CGImage) * [bImageData scale];
+    CGFloat bImageHeight = CGImageGetHeight(bImage.CGImage) * [bImageData scale];
 
     // 描画するためのキャンバスを生成する
     UIGraphicsBeginImageContext(CGSizeMake(aImageWidth, aImageHeight));
-    
     // 画像1を描画する
+    
     [aImage drawInRect:CGRectMake(aImageX, aImageY, aImageWidth, aImageHeight)];
     
     // 画像2を描画する
