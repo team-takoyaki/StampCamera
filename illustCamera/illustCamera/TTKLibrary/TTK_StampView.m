@@ -8,7 +8,7 @@
 
 #import "TTK_StampView.h"
 
-#define DIRECTION_VIEW_SIZE 50.0f
+#define DIRECTION_VIEW_SIZE 35.0f
 #define STROKE_WIDTH 1.5f
 
 @interface TTK_StampView()
@@ -57,7 +57,7 @@
                             DIRECTION_VIEW_SIZE ,
                             DIRECTION_VIEW_SIZE);
     self.directionView = [[UIImageView alloc] initWithFrame:frm];
-    [self.directionView setImage:[UIImage imageNamed:@"suntv.png"]];
+    [self.directionView setImage:[UIImage imageNamed:@"direction.png"]];
     [self addSubview:self.directionView];
     
     self.isDrawRect = YES;

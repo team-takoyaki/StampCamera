@@ -37,7 +37,7 @@
     //回転用のImage
     CGRect rectRotate = CGRectMake(0, 0, 100, 100);
     TTK_StampRotateView *stampRotateView = [[TTK_StampRotateView alloc] initWithFrame:rectRotate];
-    UIImage *imageRotate = [UIImage imageNamed:@"suntv.png"];
+    UIImage *imageRotate = [UIImage imageNamed:@"icon1.png"];
     [stampRotateView setImage:imageRotate];
 
 //    UIImageView *stampView = [[UIImageView alloc] initWithImage:image];

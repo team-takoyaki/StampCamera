@@ -34,10 +34,12 @@
 		597564D618C3759E008F61D0 /* StampListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D518C3759E008F61D0 /* StampListViewController.m */; };
 		597564D818C4C7CD008F61D0 /* stamps.json in Resources */ = {isa = PBXBuildFile; fileRef = 597564D718C4C7CD008F61D0 /* stamps.json */; };
 		597564DA18C75B53008F61D0 /* direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564D918C75B53008F61D0 /* direction.png */; };
+		597564DE18C75D96008F61D0 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564DB18C75D96008F61D0 /* icon3.png */; };
+		597564DF18C75D96008F61D0 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564DC18C75D96008F61D0 /* icon2.png */; };
+		597564E018C75D96008F61D0 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564DD18C75D96008F61D0 /* icon1.png */; };
 		599FB41018B833C9009377EE /* StampViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB40F18B833C9009377EE /* StampViewController.m */; };
 		599FB41318B8343F009377EE /* TTK_StampView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41218B8343F009377EE /* TTK_StampView.m */; };
 		599FB41618B83818009377EE /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41518B83818009377EE /* AppManager.m */; };
-		59C7D52C18B83EDF002CAA10 /* suntv.png in Resources */ = {isa = PBXBuildFile; fileRef = 59C7D52B18B83EDF002CAA10 /* suntv.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,13 +94,15 @@
 		597564D518C3759E008F61D0 /* StampListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampListViewController.m; sourceTree = "<group>"; };
 		597564D718C4C7CD008F61D0 /* stamps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stamps.json; sourceTree = "<group>"; };
 		597564D918C75B53008F61D0 /* direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction.png; sourceTree = "<group>"; };
+		597564DB18C75D96008F61D0 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
+		597564DC18C75D96008F61D0 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		597564DD18C75D96008F61D0 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
 		599FB40E18B833C9009377EE /* StampViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampViewController.h; sourceTree = "<group>"; };
 		599FB40F18B833C9009377EE /* StampViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampViewController.m; sourceTree = "<group>"; };
 		599FB41118B8343F009377EE /* TTK_StampView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_StampView.h; sourceTree = "<group>"; };
 		599FB41218B8343F009377EE /* TTK_StampView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_StampView.m; sourceTree = "<group>"; };
 		599FB41418B83818009377EE /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
 		599FB41518B83818009377EE /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
-		59C7D52B18B83EDF002CAA10 /* suntv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suntv.png; sourceTree = "<group>"; };
 		59C8EC4018B65020002A1197 /* TTK_Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Macro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,10 +250,12 @@
 		59C7D52A18B83EDF002CAA10 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				597564DB18C75D96008F61D0 /* icon3.png */,
+				597564DC18C75D96008F61D0 /* icon2.png */,
+				597564DD18C75D96008F61D0 /* icon1.png */,
 				597564D918C75B53008F61D0 /* direction.png */,
 				597564D718C4C7CD008F61D0 /* stamps.json */,
 				597564C918C172EE008F61D0 /* abc.jpg */,
-				59C7D52B18B83EDF002CAA10 /* suntv.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -330,13 +336,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59C7D52C18B83EDF002CAA10 /* suntv.png in Resources */,
+				597564DE18C75D96008F61D0 /* icon3.png in Resources */,
 				591B672418B3C37700263158 /* Images.xcassets in Resources */,
 				591B671618B3C37700263158 /* InfoPlist.strings in Resources */,
 				597564D818C4C7CD008F61D0 /* stamps.json in Resources */,
 				597564DA18C75B53008F61D0 /* direction.png in Resources */,
 				597564CA18C172EE008F61D0 /* abc.jpg in Resources */,
 				591B671F18B3C37700263158 /* Main.storyboard in Resources */,
+				597564E018C75D96008F61D0 /* icon1.png in Resources */,
+				597564DF18C75D96008F61D0 /* icon2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
