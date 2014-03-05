@@ -108,7 +108,9 @@
     // スタート時のtransformを保存する
     self.startTransform = self.transform;
     
+    // 枠を表示する
     [self drawRect];
+    
     //tmpMoveX, tmpMoveYの初期化
     self.tmpMoveX = 0.0f;
     self.tmpMoveY = 0.0f;
@@ -180,6 +182,7 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    // 枠を非表示にする
     [self clearRect];
 }
 
