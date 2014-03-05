@@ -33,6 +33,7 @@
 		597564D318C1879F008F61D0 /* TTK_Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D218C1879F008F61D0 /* TTK_Utility.m */; };
 		597564D618C3759E008F61D0 /* StampListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D518C3759E008F61D0 /* StampListViewController.m */; };
 		597564D818C4C7CD008F61D0 /* stamps.json in Resources */ = {isa = PBXBuildFile; fileRef = 597564D718C4C7CD008F61D0 /* stamps.json */; };
+		597564DA18C75B53008F61D0 /* direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564D918C75B53008F61D0 /* direction.png */; };
 		599FB41018B833C9009377EE /* StampViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB40F18B833C9009377EE /* StampViewController.m */; };
 		599FB41318B8343F009377EE /* TTK_StampView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41218B8343F009377EE /* TTK_StampView.m */; };
 		599FB41618B83818009377EE /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41518B83818009377EE /* AppManager.m */; };
@@ -90,6 +91,7 @@
 		597564D418C3759E008F61D0 /* StampListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampListViewController.h; sourceTree = "<group>"; };
 		597564D518C3759E008F61D0 /* StampListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampListViewController.m; sourceTree = "<group>"; };
 		597564D718C4C7CD008F61D0 /* stamps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stamps.json; sourceTree = "<group>"; };
+		597564D918C75B53008F61D0 /* direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction.png; sourceTree = "<group>"; };
 		599FB40E18B833C9009377EE /* StampViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampViewController.h; sourceTree = "<group>"; };
 		599FB40F18B833C9009377EE /* StampViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampViewController.m; sourceTree = "<group>"; };
 		599FB41118B8343F009377EE /* TTK_StampView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_StampView.h; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		59C7D52A18B83EDF002CAA10 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				597564D918C75B53008F61D0 /* direction.png */,
 				597564D718C4C7CD008F61D0 /* stamps.json */,
 				597564C918C172EE008F61D0 /* abc.jpg */,
 				59C7D52B18B83EDF002CAA10 /* suntv.png */,
@@ -331,6 +334,7 @@
 				591B672418B3C37700263158 /* Images.xcassets in Resources */,
 				591B671618B3C37700263158 /* InfoPlist.strings in Resources */,
 				597564D818C4C7CD008F61D0 /* stamps.json in Resources */,
+				597564DA18C75B53008F61D0 /* direction.png in Resources */,
 				597564CA18C172EE008F61D0 /* abc.jpg in Resources */,
 				591B671F18B3C37700263158 /* Main.storyboard in Resources */,
 			);

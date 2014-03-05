@@ -8,8 +8,9 @@
 
 #import "TTK_StampRotateView.h"
 
-#define DIRECTION_VIEW_SIZE 50.0f
+#define DIRECTION_VIEW_SIZE 35.0f
 #define STROKE_WIDTH 1.5f
+#define DIRECTION_IMAGE @"direction.png"
 
 @interface TTK_StampRotateView()
 @property (nonatomic, strong) UIImageView *imageView;
@@ -64,7 +65,7 @@
                             DIRECTION_VIEW_SIZE ,
                             DIRECTION_VIEW_SIZE);
     self.directionView = [[UIImageView alloc] initWithFrame:frm];
-    [self.directionView setImage:[UIImage imageNamed:@"suntv.png"]];
+    [self.directionView setImage:[UIImage imageNamed:DIRECTION_IMAGE]];
     [self addSubview:self.directionView];
     
     self.isDrawRect = YES;
