@@ -74,6 +74,9 @@
     
     // 背景を透明にする
     self.backgroundColor = [UIColor clearColor];
+    
+    // タッチを有効にする
+    self.userInteractionEnabled = YES;
 }
 
 - (void)setImage:(UIImage *)image
@@ -116,7 +119,6 @@
     
     //tmpRadiusの初期化
     self.tmpRadius = [self getRadius:pointFromSuperView.x y:pointFromSuperView.y];
-    
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event

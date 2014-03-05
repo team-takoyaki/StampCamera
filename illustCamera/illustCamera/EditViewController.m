@@ -10,9 +10,9 @@
 #import "AppManager.h"
 #import "TTK_Stamp.h"
 #import "TTK_EditImage.h"
+#import "TTK_StampRotateView.h"
 
 @interface EditViewController ()
-
 @end
 
 @implementation EditViewController
@@ -24,13 +24,21 @@
     // 撮影された画像を取得して表示する
     AppManager *manager = [AppManager sharedManager];
     UIImage *image = [manager takenImage];
+    
+    // 写真を表示するViewを表示する
     if (image) {
         [self.imageView setImage:image];
+        
+        CGRect rect = self.view.frame;
+        float rate = rect.size.width / image.size.width;
+        
+        float width = rect.size.width;
+        float height = image.size.height * rate;
+        
+        float y = (rect.size.height - height) / 2;
+        
+        self.imageView.frame = CGRectMake(0, y, width, height);
     }
-    
-    // アスペクト比を実現するためにViewを設定する
-    // カメラの設定に正方形かどうかを設定する
-//    [self settingAspect:[self.camera isSquare]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -176,19 +184,22 @@
     }
     
     // 選択されたスタンプを取得する
+    // 全てのスタンプを取得
     NSArray *stamps = [manager stamps];
+    // 選択されたスタンプの名前を取得
     NSString *stampName = [stamps objectAtIndex:stampIdx];
+    // 選択されたスタンプの画像を作る
     UIImage *stampImage = [UIImage imageNamed:stampName];
 
-    // スタンプの大きさを設定する
-    UIImageView *stampView = [[UIImageView alloc] initWithImage:stampImage];
-    stampView.frame = GET_STAMP_RECT;
+    // スタンプを作る
+    TTK_StampRotateView *stampView = [[TTK_StampRotateView alloc] initWithFrame:GET_STAMP_RECT];
+    [stampView setImage:stampImage];
 
     // 真ん中にスタンプを配置する
     CGSize imageSize = _imageView.frame.size;
     CGSize stampSize = stampView.frame.size;
     
-    stampView.frame = CGRectMake(imageSize.width / 2 - stampSize.width / 2,
+    stampView.frame = CGRectMake(imageSize.width  / 2 - stampSize.width  / 2,
                                  imageSize.height / 2 - stampSize.height / 2,
                                  stampSize.width, stampSize.height);
     [self.imageView addSubview:stampView];

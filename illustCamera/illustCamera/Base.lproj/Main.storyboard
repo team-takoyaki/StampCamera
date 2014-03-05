@@ -156,10 +156,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="abc.jpg" id="cud-uh-0cf">
+                            <view contentMode="scaleToFill" id="Pyh-1h-Deq">
+                                <rect key="frame" x="0.0" y="71" width="320" height="427"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="abc.jpg" id="s6Y-LS-78l">
                                 <rect key="frame" x="0.0" y="71" width="320" height="427"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yHH-6C-G90">
                                 <rect key="frame" x="13" y="13" width="40" height="40"/>
@@ -226,7 +230,8 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="imageView" destination="cud-uh-0cf" id="tLn-cI-gF3"/>
+                        <outlet property="imageView" destination="s6Y-LS-78l" id="KFi-dY-wde"/>
+                        <outlet property="view" destination="Pyh-1h-Deq" id="kOE-Jj-5vu"/>
                         <segue destination="JoB-xr-CoF" kind="modal" identifier="gotoStampListView" modalTransitionStyle="coverVertical" id="u1l-6q-MXy"/>
                     </connections>
                 </viewController>

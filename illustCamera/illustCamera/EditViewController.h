@@ -13,7 +13,6 @@
 @protocol EditViewControllerDelegate;
 
 @interface EditViewController : UIViewController <StampListViewControllerDelegate>
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 - (IBAction)retake:(id)sender;
 - (IBAction)save:(id)sender;
 - (IBAction)stampList:(id)sender;
@@ -22,6 +21,8 @@
 - (IBAction)gotoTop:(id)sender;
 
 @property (weak, nonatomic) id <EditViewControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UIView *view;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
