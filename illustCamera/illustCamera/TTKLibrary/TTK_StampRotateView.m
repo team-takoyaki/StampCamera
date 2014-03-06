@@ -149,12 +149,14 @@
         //逆回転もあるので絶対値は取らない
         float arg = theta - self.tmpTheta;
     
-//        //拡大処理
+        //拡大処理
         self.transform = CGAffineTransformScale(self.transform, zoomRate, zoomRate);
 
-//        //回転処理
+        //回転処理
         self.transform = CGAffineTransformRotate(self.transform, arg);
         
+        // 指示Viewを拡大率分小さくする処理を入れました
+        self.directionView.transform = CGAffineTransformScale(self.directionView.transform, 1 / zoomRate, 1 / zoomRate);
         
         //tmpデータ更新
         self.tmpTheta = theta;
