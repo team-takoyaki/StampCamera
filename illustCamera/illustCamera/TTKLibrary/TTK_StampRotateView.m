@@ -67,6 +67,8 @@
     [self.directionView setImage:[UIImage imageNamed:DIRECTION_IMAGE]];
     [self addSubview:self.directionView];
     
+    [self.directionView setHidden:NO];
+    
     self.isDrawRect = YES;
     
     // 背景を透明にする
@@ -112,6 +114,9 @@
     
     // 枠を表示する
     [self drawRect];
+
+    // 指示Viewを表示する
+    [self.directionView setHidden:NO];
     
     //tmpMoveX, tmpMoveYの初期化
     self.tmpMoveX = 0.0f;
@@ -186,6 +191,9 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    // 指示Viewを非表示にする
+    [self.directionView setHidden:YES];
+
     // 枠を非表示にする
     [self clearRect];
 }
