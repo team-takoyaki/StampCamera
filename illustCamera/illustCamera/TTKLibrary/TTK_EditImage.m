@@ -14,42 +14,19 @@
 @implementation TTK_EditImage
 
 /**
-* @brief 画像と画像を合成する
-* @param aImageData 合成する画像1の情報
-* @param bImageData 合成する画像2の情報
-* @return 画像1と画像2を合成した画像
+* @brief Viewから画像を取得する
+* @param view 画像を取得したいView
+* @return 取得した画像
 */
-+ (UIImage *)compositeImage:(TTK_Image *)aImageData AndImage:(TTK_Image *)bImageData
++ (UIImage *)getImageFromView:(UIView *)view
 {
-    // 画像1のサイズを取得する
-    UIImage *aImage = [aImageData image];
-    CGFloat aImageX = [aImageData point].x;
-    CGFloat aImageY = [aImageData point].y;
-    CGFloat aImageWidth = CGImageGetWidth(aImage.CGImage);
-    CGFloat aImageHeight = CGImageGetHeight(aImage.CGImage);
-    
-    // 画像2のサイズを取得する
-    UIImage *bImage = [bImageData image];
-    CGFloat bImageX = [bImageData point].x;
-    CGFloat bImageY = [bImageData point].y;
-    CGFloat bImageWidth = CGImageGetWidth(bImage.CGImage) * [bImageData scale];
-    CGFloat bImageHeight = CGImageGetHeight(bImage.CGImage) * [bImageData scale];
-
-    // 描画するためのキャンバスを生成する
-    UIGraphicsBeginImageContext(CGSizeMake(aImageWidth, aImageHeight));
-    // 画像1を描画する
-    
-    [aImage drawInRect:CGRectMake(aImageX, aImageY, aImageWidth, aImageHeight)];
-    
-    // 画像2を描画する
-    [bImage drawInRect:CGRectMake(bImageX, bImageY, bImageWidth, bImageHeight)];
-    
-    // 合成した画像を取得する
-    UIImage *compositeImage = UIGraphicsGetImageFromCurrentImageContext();
-    
+    CGSize size = view.frame.size;
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [(CALayer *)view.layer renderInContext:context];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
- 
-    return compositeImage;
+    return image;
 }
 
 /**

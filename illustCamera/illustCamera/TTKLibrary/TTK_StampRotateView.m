@@ -12,21 +12,20 @@
 #define DIRECTION_IMAGE @"direction.png"
 
 @interface TTK_StampRotateView()
-@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIImageView *directionView;
 @property (nonatomic) CGPoint beganTouchPoint;
 @property (nonatomic) CGPoint startViewPoint;
 @property (nonatomic) CGPoint startViewCenterPoint;
 @property (nonatomic) CGSize startDirectionViewSize;
 @property (nonatomic) BOOL isDirection;
-@property (nonatomic) float tmpTheta;
-@property (nonatomic) float tmpRadius;
 @property (nonatomic) float tmpMoveX;
 @property (nonatomic) float tmpMoveY;
 @property (nonatomic) CGPoint tmpPoint;
 @property (nonatomic) CGAffineTransform startTransform;
 @property (nonatomic) CGRect imageFrame;
 @property (nonatomic) BOOL isDrawRect;
+@property (nonatomic) float tmpTheta;
+@property (nonatomic) float tmpRadius;
 - (float) getTheta:(float)pointX y:(float) pointY;
 - (float) getRadius:(float)pointX y:(float) pointY;
 @end

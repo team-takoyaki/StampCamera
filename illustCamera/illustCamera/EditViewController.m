@@ -54,43 +54,11 @@
 
 - (IBAction)save:(id)sender
 {
-    AppManager *manager = [AppManager sharedManager];
-    UIImage *image = [manager takenImage];
-
-    NSMutableArray *selectedStampView = [manager selectedStampView];
-    
-    TTK_Image *compositeImageData = [[TTK_Image alloc] init];
-    [compositeImageData setImage:image];
-    
-    UIImage *compositeImage = compositeImageData.image;
-    
-    for (TTK_StampRotateView *stampView in selectedStampView) {
-        TTK_Image *imageData = [[TTK_Image alloc] init];
-        UIImage *stampImage = [stampView image];
-        [imageData setImage:stampImage];
-        
-        CGAffineTransform t = stampView.transform;
-        
-        // スタンプの位置
-        // 指示View分下にずらしてやる
-        CGPoint point = stampView.frame.origin;
-        [imageData setPoint:CGPointMake(point.x, point.y + DIRECTION_VIEW_SIZE / 2 * t.a)];
-        
-        // スタンプの拡縮率
-        CGRect r = GET_STAMP_RECT;
-        float scale = r.size.width / stampImage.size.width * t.a;
-        [imageData setScale:scale];
-        
-        float angle = atan2(t.b, t.a);
-        [imageData setAngle:angle];
-        
-        compositeImage = [TTK_EditImage compositeImage:compositeImageData AndImage:imageData];
-        [compositeImageData setImage:compositeImage];
-    }
+    // メインのImageViewから画像を生成する
+    UIImage *image = [TTK_EditImage getImageFromView:self.imageView];
     
     // アルバムに保存して保存後にメソッドを呼び出す
-    UIImageWriteToSavedPhotosAlbum(compositeImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-    // [self.imageView setImage:compositeImage];
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 
 - (IBAction)stampList:(id)sender
