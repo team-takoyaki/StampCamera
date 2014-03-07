@@ -174,9 +174,6 @@
     TTK_StampRotateView *stampView = [[TTK_StampRotateView alloc] initWithFrame:GET_STAMP_RECT];
     [stampView setImage:stampImage];
 
-    // スタンプを選択されたスタンプリストに追加する
-    [[manager selectedStampView] addObject:stampView];
-
     // 真ん中にスタンプを配置する
     CGSize imageSize = _imageView.frame.size;
     CGSize stampSize = stampView.frame.size;
