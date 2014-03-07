@@ -13,9 +13,10 @@
 /**
 * @brief Viewから画像を取得する
 * @param view 画像を取得したいView
+* @param scale スケール
 * @return 取得した画像
 */
-+ (UIImage *)getImageFromView:(UIView *)view;
++ (UIImage *)getImageFromView:(UIView *)view WithScale:(float)scale;
 
 /**
 * @brief 画像を指定した座標で切り抜く

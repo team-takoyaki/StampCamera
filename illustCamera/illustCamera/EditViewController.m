@@ -54,7 +54,9 @@
 - (IBAction)save:(id)sender
 {
     // メインのImageViewから画像を生成する
-    UIImage *image = [TTK_EditImage getImageFromView:self.imageView];
+    // 元の画像サイズのスケールで画像を生成する
+    float scale = self.imageView.image.size.width / self.imageView.frame.size.width;
+    UIImage *image = [TTK_EditImage getImageFromView:self.imageView WithScale:scale];
     
     // アルバムに保存して保存後にメソッドを呼び出す
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);

@@ -18,12 +18,13 @@
 * @param view 画像を取得したいView
 * @return 取得した画像
 */
-+ (UIImage *)getImageFromView:(UIView *)view
++ (UIImage *)getImageFromView:(UIView *)view WithScale:(float)scale
 {
     CGSize size = view.frame.size;
-    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    CALayer *layer = view.layer;
+    UIGraphicsBeginImageContextWithOptions(size, NO, scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    [(CALayer *)view.layer renderInContext:context];
+    [layer renderInContext:context];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
