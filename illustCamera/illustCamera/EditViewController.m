@@ -8,7 +8,6 @@
 
 #import "EditViewController.h"
 #import "AppManager.h"
-#import "TTK_Stamp.h"
 #import "TTK_EditImage.h"
 #import "TTK_StampRotateView.h"
 
