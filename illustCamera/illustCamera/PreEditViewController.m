@@ -139,6 +139,7 @@
     // 画像を表示されている位置で切り取る
     UIImage *image = _imageView.image;
     
+   
     CGAffineTransform transform = _imageView.transform;
     CGFloat scale = transform.a;
     CGFloat x = _scrollView.contentOffset.x / scale;
