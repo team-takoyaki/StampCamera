@@ -38,8 +38,8 @@
 */
 + (UIImage *)cutImage:(UIImage *)image WithRect:(CGRect)rect
 {
-    CGFloat imageWidth = CGImageGetHeight(image.CGImage);
-    CGFloat imageHeight = CGImageGetWidth(image.CGImage);
+    CGFloat imageWidth = image.size.width;
+    CGFloat imageHeight = image.size.height;
 
     // 描画するためのキャンバスを生成する
     UIGraphicsBeginImageContext(CGSizeMake(rect.size.width, rect.size.height));

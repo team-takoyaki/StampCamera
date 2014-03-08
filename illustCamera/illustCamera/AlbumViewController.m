@@ -7,6 +7,7 @@
 //
 
 #import "AlbumViewController.h"
+#import "AppManager.h"
 
 @interface AlbumViewController ()
 @property (nonatomic, strong) UIImagePickerController *picker;
@@ -34,6 +35,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    // 一度目だけフォトライブラリを開く
+    // UIImagePickerControllerを閉じた時に呼ばれてしまい再度開いてしまうため
     if (_isShowPickerFirst) {
         self.isShowPickerFirst = NO;
         [self showPhotoLibrary];
@@ -48,6 +51,14 @@
 - (void)imagePickerController:(UIImagePickerController *)picker
         didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    // 選択された画像を取得する
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSAssert(image != nil, @"画像の取得に失敗しました");
+    
+    // 選択された画像を編集するため一度シングルトンに保存
+    [[AppManager sharedManager] setTakenImage:image];
+    
+    // 編集ビューに移動する
     [picker dismissViewControllerAnimated:NO completion:^{
         [self performSegueWithIdentifier:@"gotoPreEditView" sender:self];
     }];
@@ -58,6 +69,26 @@
     [picker dismissViewControllerAnimated:NO completion:^{
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender {
+
+    // 対象セグエ以外ならここでリターン
+    if(![[segue identifier] isEqualToString:@"gotoPreEditView"]) {
+        return;
+    }
+
+    // 遷移先コントローラを取得
+    PreEditViewController *controller = (PreEditViewController *)[segue destinationViewController];
+
+    // 遷移元ポインタを渡しておく
+    controller.delegate = self;
+}
+
+- (void)didDismissPreEditViewController
+{
+    // トップに戻る
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

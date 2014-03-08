@@ -35,9 +35,13 @@ static AppManager* sharedInstance = nil;
 
 - (void)initWithSettings
 {
-    self.takenImage = [UIImage imageNamed:@"abc.jpg"];
+    // デモのための画像を設定
+    self.takenImage = [UIImage imageNamed:@"def.jpg"];
+    // スタンプの一覧
     self.stamps = [[NSMutableArray alloc] init];
+    // スタンプ一覧から選択されたスタンプのindex
     self.selectedStampIdx = NOT_SELECTED_STAMP_IDX;
+    // 選択されたスタンプの一覧
     self.selectedStampView = [[NSMutableArray alloc] init];
     
     // スタンプを読み込む

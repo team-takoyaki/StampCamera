@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PreEditViewController.h"
 
 @interface AlbumViewController : UIViewController <UINavigationControllerDelegate,
-                                                   UIImagePickerControllerDelegate>
+                                                   UIImagePickerControllerDelegate,
+                                                   PreEditViewControllerDelegate>
 @end

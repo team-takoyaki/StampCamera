@@ -23,7 +23,8 @@
     // 撮影された画像を取得して表示する
     AppManager *manager = [AppManager sharedManager];
     UIImage *image = [manager takenImage];
-    
+    NSAssert(image != nil, @"画像の取得に失敗しました");
+        
     // 写真を表示するViewを表示する
     if (image) {
         [self.imageView setImage:image];
