@@ -24,4 +24,7 @@
 // スタンプリストで選択されたスタンプのindex
 @property (nonatomic) NSInteger selectedStampIdx;
 
+// 選択されているスタンプを格納する
+@property (nonatomic, strong) NSMutableArray *selectedStampView;
+
 @end

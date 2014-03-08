@@ -38,6 +38,7 @@ static AppManager* sharedInstance = nil;
     self.takenImage = [UIImage imageNamed:@"abc.jpg"];
     self.stamps = [[NSMutableArray alloc] init];
     self.selectedStampIdx = NOT_SELECTED_STAMP_IDX;
+    self.selectedStampView = [[NSMutableArray alloc] init];
     
     // スタンプを読み込む
     [self updateStamps];
