@@ -39,11 +39,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="albumButton" destination="AGk-fX-qDh" id="9uE-hM-Iht"/>
                         <outlet property="cameraButton" destination="byY-GN-hJd" id="FL9-o7-rxR"/>
                         <segue destination="PbC-1z-SSv" kind="modal" identifier="gotoCameraView" modalTransitionStyle="crossDissolve" id="U3c-gF-WFT"/>
+                        <segue destination="30H-FQ-3zu" kind="modal" identifier="gotoAlbumView" modalTransitionStyle="crossDissolve" id="JEu-gh-DyN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8a7-5o-UIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z17-0C-ocj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="315" y="214"/>
+            <point key="canvasLocation" x="479" y="236"/>
         </scene>
         <!--Edit View Controller-->
         <scene sceneID="7wU-Zy-pbJ">
@@ -237,7 +237,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILS-VG-Kpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767" y="214"/>
+            <point key="canvasLocation" x="1171" y="340"/>
+        </scene>
+        <!--Album View Controller-->
+        <scene sceneID="ZVc-6S-WlB">
+            <objects>
+                <viewController id="30H-FQ-3zu" customClass="AlbumViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0dm-k0-Qfb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Xg5-JJ-F5e" kind="modal" identifier="gotoPreEditView" animates="NO" id="Y8F-cs-Zlk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ZO-ab-k5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="315" y="919"/>
+        </scene>
+        <!--Pre Edit View Controller-->
+        <scene sceneID="0lU-Dt-qKg">
+            <objects>
+                <viewController id="Xg5-JJ-F5e" customClass="PreEditViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Quq-Z3-2xg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <segue destination="0dN-57-r6D" kind="modal" identifier="gotoEditView" modalTransitionStyle="crossDissolve" id="3d0-JW-8sI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehi-hh-C2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="723" y="919"/>
         </scene>
         <!--Stamp List View Controller-->
         <scene sceneID="8sT-ZW-0Uu">
@@ -302,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lh3-NH-Kgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="919"/>
+            <point key="canvasLocation" x="1660" y="1115"/>
         </scene>
         <!--Stamp View Controller-->
         <scene sceneID="j03-Y9-3Sc">
@@ -317,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g92-Hn-gay" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1559" y="227"/>
+            <point key="canvasLocation" x="1723" y="227"/>
         </scene>
     </scenes>
     <resources>
@@ -328,4 +363,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="MfK-Dh-SGe"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -26,6 +26,8 @@
 		591B674718B3CB0400263158 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674618B3CB0400263158 /* CameraViewController.m */; };
 		591B674A18B3CD6500263158 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674918B3CD6500263158 /* EditViewController.m */; };
 		591B675118B64A0300263158 /* TTK_Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B675018B64A0300263158 /* TTK_Camera.m */; };
+		5944519218CAFBA9008BFC64 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519118CAFBA9008BFC64 /* AlbumViewController.m */; };
+		5944519518CBB388008BFC64 /* PreEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519418CBB388008BFC64 /* PreEditViewController.m */; };
 		597564CA18C172EE008F61D0 /* abc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 597564C918C172EE008F61D0 /* abc.jpg */; };
 		597564CD18C176A0008F61D0 /* TTK_EditImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564CC18C176A0008F61D0 /* TTK_EditImage.m */; };
 		597564D318C1879F008F61D0 /* TTK_Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D218C1879F008F61D0 /* TTK_Utility.m */; };
@@ -79,6 +81,10 @@
 		591B674918B3CD6500263158 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		591B674F18B64A0300263158 /* TTK_Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Camera.h; sourceTree = "<group>"; };
 		591B675018B64A0300263158 /* TTK_Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_Camera.m; sourceTree = "<group>"; };
+		5944519018CAFBA9008BFC64 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
+		5944519118CAFBA9008BFC64 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
+		5944519318CBB388008BFC64 /* PreEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreEditViewController.h; sourceTree = "<group>"; };
+		5944519418CBB388008BFC64 /* PreEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreEditViewController.m; sourceTree = "<group>"; };
 		597564C918C172EE008F61D0 /* abc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = abc.jpg; sourceTree = "<group>"; };
 		597564CB18C176A0008F61D0 /* TTK_EditImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_EditImage.h; sourceTree = "<group>"; };
 		597564CC18C176A0008F61D0 /* TTK_EditImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_EditImage.m; sourceTree = "<group>"; };
@@ -229,10 +235,14 @@
 				591B674918B3CD6500263158 /* EditViewController.m */,
 				591B674218B3C94100263158 /* TopViewController.h */,
 				591B674318B3C94100263158 /* TopViewController.m */,
+				5944519018CAFBA9008BFC64 /* AlbumViewController.h */,
+				5944519118CAFBA9008BFC64 /* AlbumViewController.m */,
 				591B674518B3CB0300263158 /* CameraViewController.h */,
 				591B674618B3CB0400263158 /* CameraViewController.m */,
 				597564D418C3759E008F61D0 /* StampListViewController.h */,
 				597564D518C3759E008F61D0 /* StampListViewController.m */,
+				5944519318CBB388008BFC64 /* PreEditViewController.h */,
+				5944519418CBB388008BFC64 /* PreEditViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -353,8 +363,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5944519518CBB388008BFC64 /* PreEditViewController.m in Sources */,
 				591B674718B3CB0400263158 /* CameraViewController.m in Sources */,
 				16016DB518BF87D600C3FC24 /* TTK_StampRotateView.m in Sources */,
+				5944519218CAFBA9008BFC64 /* AlbumViewController.m in Sources */,
 				591B674418B3C94100263158 /* TopViewController.m in Sources */,
 				591B675118B64A0300263158 /* TTK_Camera.m in Sources */,
 				597564D318C1879F008F61D0 /* TTK_Utility.m in Sources */,
