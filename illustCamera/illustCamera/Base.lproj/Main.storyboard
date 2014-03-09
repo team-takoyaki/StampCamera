@@ -283,7 +283,7 @@
                                 <rect key="frame" x="0.0" y="71" width="320" height="427"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="def.jpg" id="7k1-WR-haW">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="def.jpg" id="7k1-WR-haW">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
