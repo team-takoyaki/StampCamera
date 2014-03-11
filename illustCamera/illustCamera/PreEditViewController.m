@@ -106,8 +106,7 @@
     _scrollView.contentInset = UIEdgeInsetsMake(-space, 0, -space, 0);
 
     // ImageViewの大きさがScrollViewのContentSizeになる
-    CGSize imageViewSize =  _imageView.frame.size;
-    _scrollView.contentSize = imageViewSize;
+    _scrollView.contentSize = _imageView.frame.size;
 }
 
 /**
@@ -161,16 +160,31 @@
 
 - (IBAction)edit:(id)sender
 {
-    // 画像を表示されている位置で切り取る
+    // 画像を表示されている位置で切り抜く
     UIImage *image = _imageView.image;
     
     CGAffineTransform transform = _imageView.transform;
     CGFloat scale = transform.a;
+    
     CGFloat x = _scrollView.contentOffset.x / scale;
     CGFloat y = _scrollView.contentOffset.y / scale;
-    CGFloat width = _scrollView.frame.size.width / scale;
-    CGFloat height = (_scrollView.frame.size.height - _offsetY * 2) / scale;
-    UIImage *preEditImage = [TTK_EditImage cutImage:image WithRect:CGRectMake(x, y, width, height)];
+    
+    // オフセットを無視する
+    y += _offsetY / scale;
+
+    // 実際の画像サイズを考慮したx, yに変更する
+    float rate = image.size.width / _scrollView.frame.size.width;
+    x *= rate;
+    y *= rate;
+
+    // TODO: スクロールビューの大きさに小数点.5が入ってないのでズレる
+    CGSize scrollViewSize = _scrollView.frame.size;
+    CGFloat width = scrollViewSize.width / scale * rate;
+    CGFloat height = (scrollViewSize.height / scale - _offsetY / scale * 2) * rate;
+    
+    // 切り抜き処理
+    UIImage *preEditImage = [TTK_EditImage cutImage:image
+                                           WithRect:CGRectMake(x, y, width, height)];
     
     // 編集画面に切り抜いた画像を送るためにシングルトンに保存する
     [[AppManager sharedManager] setTakenImage:preEditImage];
