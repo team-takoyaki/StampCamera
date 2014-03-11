@@ -9,6 +9,7 @@
 #import "PreEditViewController.h"
 #import "AppManager.h"
 #import "TTK_EditImage.h"
+#import "TTK_Macro.h"
 
 #define SCROLL_VIEW_SQUARE_OFFSET_Y 53.0f
 #define SCROLL_VIEW_BOX_OFFSET_Y    0.0f
@@ -38,6 +39,16 @@
     NSAssert(image != nil, @"画像の取得に失敗しました");
     [_imageView setImage:image];
     
+    // 横幅ぴったりになるようにImageViewの大きさを変更する
+    CGSize imageViewSize = _imageView.frame.size;
+    float width = _imageView.frame.size.width;
+    float rate = imageViewSize.width / image.size.width;
+    float height = image.size.height * rate;
+    
+    CGRect frame = CGRectMake(0, 0, width, height);
+    _imageView.bounds = frame;
+    
+
     self.isSquare = YES;
     [self settingAspect:_isSquare];
     
@@ -88,24 +99,15 @@
 */
 - (void)updateScrollView
 {
-    // ImageViewがベースになっているのでImageViewの大きさを変えたら決定される
-    CGSize imageViewSize =  _imageView.frame.size;
-    CGSize imageSize = _imageView.image.size;
-    
-    CGFloat scale = _imageView.transform.a;
-    CGFloat realImageSize = imageSize.height * scale;
-   
-    // 画像がない部分の一つ当たりの空白を求める
-    CGFloat space = (imageViewSize.height - realImageSize) / 2;
-    
     // 画像は自動で真ん中に配置されるため、そのオフセットは無視する
-    space -= _offsetY;
+    CGFloat space = -1 * _offsetY;
     
     // 空白分をInsetに設定してスクロール域を変更する
     _scrollView.contentInset = UIEdgeInsetsMake(-space, 0, -space, 0);
 
     // ImageViewの大きさがScrollViewのContentSizeになる
-    _scrollView.contentSize = _imageView.frame.size;
+    CGSize imageViewSize =  _imageView.frame.size;
+    _scrollView.contentSize = imageViewSize;
 }
 
 /**
@@ -162,7 +164,6 @@
     // 画像を表示されている位置で切り取る
     UIImage *image = _imageView.image;
     
-   
     CGAffineTransform transform = _imageView.transform;
     CGFloat scale = transform.a;
     CGFloat x = _scrollView.contentOffset.x / scale;
