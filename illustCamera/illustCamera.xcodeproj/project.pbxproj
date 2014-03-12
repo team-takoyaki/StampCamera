@@ -14,7 +14,6 @@
 		591B671618B3C37700263158 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 591B671418B3C37700263158 /* InfoPlist.strings */; };
 		591B671818B3C37700263158 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B671718B3C37700263158 /* main.m */; };
 		591B671C18B3C37700263158 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B671B18B3C37700263158 /* AppDelegate.m */; };
-		591B671F18B3C37700263158 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 591B671D18B3C37700263158 /* Main.storyboard */; };
 		591B672418B3C37700263158 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 591B672318B3C37700263158 /* Images.xcassets */; };
 		591B672B18B3C37700263158 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591B672A18B3C37700263158 /* XCTest.framework */; };
 		591B672C18B3C37700263158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591B670B18B3C37700263158 /* Foundation.framework */; };
@@ -42,6 +41,7 @@
 		599FB41018B833C9009377EE /* StampViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB40F18B833C9009377EE /* StampViewController.m */; };
 		599FB41318B8343F009377EE /* TTK_StampView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41218B8343F009377EE /* TTK_StampView.m */; };
 		599FB41618B83818009377EE /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41518B83818009377EE /* AppManager.m */; };
+		59A887A918D125450055BEB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A887A818D125450055BEB0 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 		591B671918B3C37700263158 /* illustCamera-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "illustCamera-Prefix.pch"; sourceTree = "<group>"; };
 		591B671A18B3C37700263158 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		591B671B18B3C37700263158 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		591B671E18B3C37700263158 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		591B672318B3C37700263158 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		591B672918B3C37700263158 /* illustCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = illustCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		591B672A18B3C37700263158 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -107,6 +106,7 @@
 		599FB41218B8343F009377EE /* TTK_StampView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_StampView.m; sourceTree = "<group>"; };
 		599FB41418B83818009377EE /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
 		599FB41518B83818009377EE /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
+		59A887A818D125450055BEB0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		59C8EC4018B65020002A1197 /* TTK_Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Macro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,7 +175,7 @@
 				599FB41518B83818009377EE /* AppManager.m */,
 				591B671A18B3C37700263158 /* AppDelegate.h */,
 				591B671B18B3C37700263158 /* AppDelegate.m */,
-				591B671D18B3C37700263158 /* Main.storyboard */,
+				59A887A818D125450055BEB0 /* Main.storyboard */,
 				59C7D52618B83D83002CAA10 /* ViewController */,
 				591B672318B3C37700263158 /* Images.xcassets */,
 				591B671218B3C37700263158 /* Supporting Files */,
@@ -347,8 +347,8 @@
 				591B671618B3C37700263158 /* InfoPlist.strings in Resources */,
 				597564D818C4C7CD008F61D0 /* stamps.json in Resources */,
 				597564DA18C75B53008F61D0 /* direction.png in Resources */,
+				59A887A918D125450055BEB0 /* Main.storyboard in Resources */,
 				597564CA18C172EE008F61D0 /* abc.jpg in Resources */,
-				591B671F18B3C37700263158 /* Main.storyboard in Resources */,
 				5944519718CBC0F9008BFC64 /* def.jpg in Resources */,
 				597564E018C75D96008F61D0 /* icon1.png in Resources */,
 				597564DF18C75D96008F61D0 /* icon2.png in Resources */,
@@ -414,14 +414,6 @@
 				591B671518B3C37700263158 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		591B671D18B3C37700263158 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				591B671E18B3C37700263158 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		591B673318B3C37700263158 /* InfoPlist.strings */ = {

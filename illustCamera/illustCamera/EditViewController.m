@@ -26,19 +26,17 @@
     NSAssert(image != nil, @"画像の取得に失敗しました");
         
     // 写真を表示するViewを表示する
-    if (image) {
-        [self.imageView setImage:image];
-        
-        CGRect rect = self.view.frame;
-        float rate = rect.size.width / image.size.width;
-        
-        float width = rect.size.width;
-        float height = image.size.height * rate;
-        
-        float y = (rect.size.height - height) / 2;
-        
-        self.imageView.frame = CGRectMake(0, y, width, height);
-    }
+    [self.imageView setImage:image];
+    
+    CGRect rect = self.view.frame;
+    float rate = rect.size.width / image.size.width;
+    
+    float width = rect.size.width;
+    float height = image.size.height * rate;
+    
+    float y = (rect.size.height - height) / 2;
+    
+    self.imageView.frame = CGRectMake(0, y, width, height);
 }
 
 - (void)didReceiveMemoryWarning
