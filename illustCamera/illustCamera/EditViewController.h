@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "StampListViewController.h"
-
+#import "TTK_StampRotateView.h"
 
 @protocol EditViewControllerDelegate;
 
-@interface EditViewController : UIViewController <StampListViewControllerDelegate>
+@interface EditViewController : UIViewController <StampListViewControllerDelegate,
+                                                  TTK_StampViewDelegate>
 - (IBAction)retake:(id)sender;
 - (IBAction)save:(id)sender;
 - (IBAction)stampList:(id)sender;

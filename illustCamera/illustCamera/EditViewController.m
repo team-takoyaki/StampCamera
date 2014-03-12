@@ -183,4 +183,14 @@
     [self.imageView addSubview:stampView];
 }
 
+/**
+* スタンプが削除した時に呼ばれる
+*/
+- (void)didDeleteStampView:(TTK_StampRotateView *)stampView
+{
+    // 削除されたスタンプを選択されているスタンプから削除する
+    AppManager *manager = [AppManager sharedManager];
+    [[manager selectedStampView] removeObject:stampView];
+}
+
 @end
