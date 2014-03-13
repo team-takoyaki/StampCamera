@@ -14,8 +14,7 @@
 - (IBAction)cancel:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
-
-@property (weak, nonatomic) id <StampListViewControllerDelegate> delegate;
+@property (weak, nonatomic) id<StampListViewControllerDelegate> delegate;
 @end
 
 @protocol StampListViewControllerDelegate <NSObject>

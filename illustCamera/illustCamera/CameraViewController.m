@@ -21,12 +21,17 @@
 
 @implementation CameraViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)viewDidLoad
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
+    [super viewDidLoad];
+
+    self.camera = [[TTK_Camera alloc] initWithFrame:self.previewView.bounds WithDelegate:self];
+    [self.previewView addSubview:self.camera];
+    [self.camera start];
+
+    [self initWithView];
+    
+	// Do any additional setup after loading the view.
 }
 
 - (void)initWithView
@@ -39,19 +44,6 @@
     // Camera kind
     self.isRearCamera = YES;
     [self settingCamera:_isRearCamera];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    self.camera = [[TTK_Camera alloc] initWithFrame:self.previewView.bounds WithDelegate:self];
-    [self.previewView addSubview:self.camera];
-    [self.camera start];
-
-    [self initWithView];
-    
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

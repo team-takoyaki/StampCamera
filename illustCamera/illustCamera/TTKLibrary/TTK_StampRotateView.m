@@ -265,5 +265,13 @@
     return sqrtf(vactorX * vactorX + vectorY * vectorY);
 }
 
+- (void)delete
+{
+    // TODO: スタンプを削除する処理
+    
+    if (_delegate) {
+        [_delegate didDeleteStampView:self];
+    }
+}
 
 @end

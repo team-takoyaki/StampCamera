@@ -23,21 +23,20 @@
     // 撮影された画像を取得して表示する
     AppManager *manager = [AppManager sharedManager];
     UIImage *image = [manager takenImage];
-    
+    NSAssert(image != nil, @"画像の取得に失敗しました");
+        
     // 写真を表示するViewを表示する
-    if (image) {
-        [self.imageView setImage:image];
-        
-        CGRect rect = self.view.frame;
-        float rate = rect.size.width / image.size.width;
-        
-        float width = rect.size.width;
-        float height = image.size.height * rate;
-        
-        float y = (rect.size.height - height) / 2;
-        
-        self.imageView.frame = CGRectMake(0, y, width, height);
-    }
+    [self.imageView setImage:image];
+    
+    CGRect rect = self.view.frame;
+    float rate = rect.size.width / image.size.width;
+    
+    float width = rect.size.width;
+    float height = image.size.height * rate;
+    
+    float y = (rect.size.height - height) / 2;
+    
+    self.imageView.frame = CGRectMake(0, y, width, height);
 }
 
 - (void)didReceiveMemoryWarning
@@ -202,6 +201,16 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
+}
+
+/**
+* スタンプが削除した時に呼ばれる
+*/
+- (void)didDeleteStampView:(TTK_StampRotateView *)stampView
+{
+    // 削除されたスタンプを選択されているスタンプから削除する
+    AppManager *manager = [AppManager sharedManager];
+    [[manager selectedStampView] removeObject:stampView];
 }
 
 @end
