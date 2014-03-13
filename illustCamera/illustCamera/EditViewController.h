@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "StampListViewController.h"
 #import "AppManager.h"
-#import "TTK_StampRotateView.h"
+
 
 @protocol EditViewControllerDelegate;
 

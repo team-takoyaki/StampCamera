@@ -19,6 +19,7 @@
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic) BOOL isDrawRect;
+@property (nonatomic, assign) id<TTK_StampViewDelegate> delegate;
 @end
 
 /**

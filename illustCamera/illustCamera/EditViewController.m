@@ -200,7 +200,15 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    AppManager *manager = [AppManager sharedManager];
+    NSInteger stampIdx = [manager selectedStampIdx];
+    // スタンプが選択されていない時は何もしない
+    if (stampIdx == NOT_SELECTED_STAMP_IDX) {
+        return;
+    }
     
+    //
+    [self clearStampBorder:manager];
 }
 
 /**

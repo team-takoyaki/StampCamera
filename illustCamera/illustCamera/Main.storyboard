@@ -426,4 +426,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="3d0-JW-8sI"/>
+    </inferredMetricsTieBreakers>
 </document>
