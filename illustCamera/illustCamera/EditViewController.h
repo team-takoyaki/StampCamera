@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "StampListViewController.h"
-
+#import "AppManager.h"
 
 @protocol EditViewControllerDelegate;
 
@@ -28,4 +28,5 @@
 
 @protocol EditViewControllerDelegate <NSObject>
 - (void)didDismissEditViewControllerAndGotoTop;
+- (void)clearStampBorder:(AppManager *)manager;
 @end

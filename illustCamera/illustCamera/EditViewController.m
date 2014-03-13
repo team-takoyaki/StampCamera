@@ -162,6 +162,9 @@
         return;
     }
     
+    //
+    [self clearStampBorder:manager];
+    
     // 選択されたスタンプを取得する
     // 全てのスタンプを取得
     NSArray *stamps = [manager stamps];
@@ -182,6 +185,23 @@
                                  imageSize.height / 2 - stampSize.height / 2,
                                  stampSize.width, stampSize.height);
     [self.imageView addSubview:stampView];
+    
+    [manager.selectedStampView addObject:stampView];
+    
+}
+
+- (void) clearStampBorder:(AppManager *)manager
+{
+    if ([manager.selectedStampView count] > 0) {
+        for (TTK_StampRotateView *stampView in manager.selectedStampView) {
+            [stampView clearRect];
+        }
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
 }
 
 @end

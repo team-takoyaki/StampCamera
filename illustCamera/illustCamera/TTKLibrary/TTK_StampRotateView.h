@@ -13,6 +13,8 @@
 @interface TTK_StampRotateView : UIView
 - (void)setImage:(UIImage *)image;
 - (UIImage *)image;
+- (void) clearRect;
 
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic) BOOL isDrawRect;
 @end

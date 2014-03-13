@@ -23,7 +23,6 @@
 @property (nonatomic) CGPoint tmpPoint;
 @property (nonatomic) CGAffineTransform startTransform;
 @property (nonatomic) CGRect imageFrame;
-@property (nonatomic) BOOL isDrawRect;
 @property (nonatomic) float tmpTheta;
 @property (nonatomic) float tmpRadius;
 - (float) getTheta:(float)pointX y:(float) pointY;
@@ -89,6 +88,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    NSLog(@"hogehoge");
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
 
@@ -191,10 +191,10 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // 指示Viewを非表示にする
-    [self.directionView setHidden:YES];
+//    [self.directionView setHidden:YES];
 
     // 枠を非表示にする
-    [self clearRect];
+//    [self clearRect];
 }
 
 - (void)drawRect:(CGRect)rect
