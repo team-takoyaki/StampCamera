@@ -33,6 +33,9 @@
 
 - (void)initWithView
 {
+    // ステータスバーを非表示にする
+    [UIApplication sharedApplication].statusBarHidden = YES;
+
     // スクロールビューの設定
     [_scrollView setDelegate:self];
 

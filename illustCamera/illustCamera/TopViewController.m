@@ -7,6 +7,7 @@
 //
 
 #import "TopViewController.h"
+#import "TTKLibrary/TTK_Macro.h"
 
 @interface TopViewController ()
 @end
@@ -18,6 +19,14 @@
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // ステータスバーを表示する
+    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,7 +44,5 @@
 {
     [self performSegueWithIdentifier:@"gotoAlbumView" sender:self];
 }
-
-
 
 @end

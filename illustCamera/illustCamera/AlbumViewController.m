@@ -21,16 +21,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
     [self initWithView];
 }
 
 - (void)initWithView
 {
+    // ステータスバーを非表示にする
+    [UIApplication sharedApplication].statusBarHidden = NO;
+
     self.picker = [[UIImagePickerController alloc] init];
     self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     self.picker.delegate = self;
-//    self.picker.allowsEditing = YES;
 
     self.isShowPickerFirst = YES;
 }

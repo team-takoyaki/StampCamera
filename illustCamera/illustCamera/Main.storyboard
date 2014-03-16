@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="0dN-57-r6D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="WQ4-0b-UrL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -37,8 +37,9 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="albumButton" destination="AGk-fX-qDh" id="9uE-hM-Iht"/>
                         <outlet property="cameraButton" destination="byY-GN-hJd" id="FL9-o7-rxR"/>
@@ -81,7 +82,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Tsg-em-f45">
                                 <rect key="frame" x="0.0" y="498" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="x44-MZ-jKr">
                                 <rect key="frame" x="13" y="13" width="40" height="40"/>
@@ -149,7 +150,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1IK-N8-7JB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="IPk-Uy-PX8">
                                 <rect key="frame" x="0.0" y="498" width="320" height="70"/>
@@ -159,7 +160,6 @@
                             <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="abc.jpg" id="s6Y-LS-78l">
                                 <rect key="frame" x="0.0" y="71" width="320" height="427"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.84705889229999998" green="0.89411771299999998" blue="0.43921571970000001" alpha="1" colorSpace="deviceRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yHH-6C-G90">
                                 <rect key="frame" x="13" y="13" width="40" height="40"/>
@@ -222,7 +222,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294123890000004" green="0.59215688710000003" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
@@ -283,7 +283,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.95294123890000004" green="0.59215688710000003" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                             <view alpha="0.5" contentMode="scaleToFill" id="pAh-xZ-2Lh">
                                 <rect key="frame" x="0.0" y="71" width="320" height="53"/>
@@ -298,7 +298,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Z00-fM-Gw0">
                                 <rect key="frame" x="0.0" y="498" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PT6-AW-HjO">
                                 <rect key="frame" x="268" y="515" width="40" height="40"/>

@@ -19,6 +19,14 @@
 {
     [super viewDidLoad];
     
+    [self initWithView];
+}
+
+- (void)initWithView
+{
+    // ステータスバーを非表示にする
+    [UIApplication sharedApplication].statusBarHidden = YES;
+
     AppManager *manager = [AppManager sharedManager];
     // 選択したスタンプのindexを初期化する
     [manager setSelectedStampIdx:NOT_SELECTED_STAMP_IDX];

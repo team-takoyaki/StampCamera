@@ -25,25 +25,30 @@
 {
     [super viewDidLoad];
 
-    self.camera = [[TTK_Camera alloc] initWithFrame:self.previewView.bounds WithDelegate:self];
-    [self.previewView addSubview:self.camera];
-    [self.camera start];
-
-    [self initWithView];
-    
 	// Do any additional setup after loading the view.
+    [self initWithView];
 }
 
 - (void)initWithView
 {
-    // Aspect
+    // ステータスバーを非表示にする
+    [UIApplication sharedApplication].statusBarHidden = YES;
+
+    // カメラの設定
+    self.camera = [[TTK_Camera alloc] initWithFrame:self.previewView.bounds WithDelegate:self];
+    [self.previewView addSubview:self.camera];
+
+    // アスペクト比の設定
     self.isSquare = YES;
     [self.camera setIsSquare:self.isSquare];
     [self settingAspect:_isSquare];
     
-    // Camera kind
+    // カメラの設定
     self.isRearCamera = YES;
     [self settingCamera:_isRearCamera];
+    
+    // カメラを表示する
+    [self.camera start];
 }
 
 - (void)didReceiveMemoryWarning

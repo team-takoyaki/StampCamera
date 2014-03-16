@@ -20,6 +20,14 @@
 {
     [super viewDidLoad];
     
+    [self initWithView];
+}
+
+- (void)initWithView
+{
+    // ステータスバーを非表示にする
+    [UIApplication sharedApplication].statusBarHidden = YES;    
+    
     // 撮影された画像を取得して表示する
     AppManager *manager = [AppManager sharedManager];
     UIImage *image = [manager takenImage];
