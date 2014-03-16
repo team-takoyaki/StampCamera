@@ -12,6 +12,8 @@
 #import "TTK_StampRotateView.h"
 
 @interface EditViewController ()
+@property (nonatomic) NSInteger stampNumber;
+@property (nonatomic) NSInteger nowSelectedStampNumber;
 @end
 
 @implementation EditViewController
@@ -35,7 +37,7 @@
     float height = image.size.height * rate;
     
     float y = (rect.size.height - height) / 2;
-    
+    _stampNumber = 0;
     self.imageView.frame = CGRectMake(0, y, width, height);
 }
 
@@ -171,7 +173,11 @@
     NSString *stampName = [stamps objectAtIndex:stampIdx];
     // 選択されたスタンプの画像を作る
     UIImage *stampImage = [UIImage imageNamed:stampName];
-
+    // 選択されたスタンプの番号を1加える
+    _stampNumber = _stampNumber + 1;
+    _nowSelectedStampNumber = _stampNumber;
+    
+    
     // スタンプを作る
     TTK_StampRotateView *stampView = [[TTK_StampRotateView alloc] initWithFrame:GET_STAMP_RECT];
     [stampView setImage:stampImage];
@@ -183,16 +189,18 @@
     stampView.frame = CGRectMake(imageSize.width  / 2 - stampSize.width  / 2,
                                  imageSize.height / 2 - stampSize.height / 2,
                                  stampSize.width, stampSize.height);
+    stampView.stampNumber = _stampNumber;
+    
     [self.imageView addSubview:stampView];
     
-    [manager.selectedStampView addObject:stampView];
+    [manager.selectedStampViewList addObject:stampView];
     
 }
 
 - (void) clearStampBorder:(AppManager *)manager
 {
-    if ([manager.selectedStampView count] > 0) {
-        for (TTK_StampRotateView *stampView in manager.selectedStampView) {
+    if ([manager.selectedStampViewList count] > 0) {
+        for (TTK_StampRotateView *stampView in manager.selectedStampViewList) {
             [stampView clearRect];
         }
     }
@@ -200,13 +208,27 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    NSLog(@"EditViewController");
     AppManager *manager = [AppManager sharedManager];
     NSInteger stampIdx = [manager selectedStampIdx];
     // スタンプが選択されていない時は何もしない
     if (stampIdx == NOT_SELECTED_STAMP_IDX) {
         return;
     }
+
+    NSInteger tmpSelectedStampNumber = 0;
+    for (NSInteger i = 0; i < [manager.selectedStampViewList count]; i++) {
+        TTK_StampRotateView *stampView = manager.selectedStampViewList[i];
+        
+        if (_nowSelectedStampNumber != stampView.stampNumber) {
+            [stampView clearRect];
+        } else {
+            tmpSelectedStampNumber = stampView.stampNumber;
+        }
+        
+    }
     
+    _nowSelectedStampNumber = tmpSelectedStampNumber;
     //
     [self clearStampBorder:manager];
 }
@@ -218,7 +240,7 @@
 {
     // 削除されたスタンプを選択されているスタンプから削除する
     AppManager *manager = [AppManager sharedManager];
-    [[manager selectedStampView] removeObject:stampView];
+    [[manager selectedStampViewList] removeObject:stampView];
 }
 
 @end

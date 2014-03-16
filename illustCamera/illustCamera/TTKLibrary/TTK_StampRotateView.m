@@ -66,7 +66,7 @@
     [self addSubview:self.directionView];
     
     [self.directionView setHidden:NO];
-    
+
     self.isDrawRect = YES;
     
     // 背景を透明にする
@@ -88,7 +88,6 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"hogehoge");
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
 

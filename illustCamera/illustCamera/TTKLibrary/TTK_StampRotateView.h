@@ -14,11 +14,13 @@
 
 @interface TTK_StampRotateView : UIView
 - (void)setImage:(UIImage *)image;
+//- (NSInteger) stampNumber;
 - (UIImage *)image;
 - (void) clearRect;
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic) BOOL isDrawRect;
+@property (nonatomic) NSInteger stampNumber;
 @property (nonatomic, assign) id<TTK_StampViewDelegate> delegate;
 @end
 

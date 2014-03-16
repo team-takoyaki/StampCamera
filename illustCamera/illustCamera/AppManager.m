@@ -42,7 +42,7 @@ static AppManager* sharedInstance = nil;
     // スタンプ一覧から選択されたスタンプのindex
     self.selectedStampIdx = NOT_SELECTED_STAMP_IDX;
     // 選択されたスタンプの一覧
-    self.selectedStampView = [[NSMutableArray alloc] init];
+    self.selectedStampViewList = [[NSMutableArray alloc] init];
     
     // スタンプを読み込む
     [self updateStamps];
