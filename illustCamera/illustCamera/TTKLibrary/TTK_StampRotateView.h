@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define DIRECTION_VIEW_SIZE 35.0f
+#define GARBAGE_VIEW_SIZE   35.0f
 
 @protocol TTK_StampViewDelegate;
 

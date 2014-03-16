@@ -38,6 +38,7 @@
 		597564DE18C75D96008F61D0 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564DB18C75D96008F61D0 /* icon3.png */; };
 		597564DF18C75D96008F61D0 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564DC18C75D96008F61D0 /* icon2.png */; };
 		597564E018C75D96008F61D0 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564DD18C75D96008F61D0 /* icon1.png */; };
+		5996E67818D5E1C400C84326 /* garbage.png in Resources */ = {isa = PBXBuildFile; fileRef = 5996E67718D5E1C400C84326 /* garbage.png */; };
 		599FB41018B833C9009377EE /* StampViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB40F18B833C9009377EE /* StampViewController.m */; };
 		599FB41318B8343F009377EE /* TTK_StampView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41218B8343F009377EE /* TTK_StampView.m */; };
 		599FB41618B83818009377EE /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41518B83818009377EE /* AppManager.m */; };
@@ -100,6 +101,7 @@
 		597564DB18C75D96008F61D0 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
 		597564DC18C75D96008F61D0 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
 		597564DD18C75D96008F61D0 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		5996E67718D5E1C400C84326 /* garbage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garbage.png; sourceTree = "<group>"; };
 		599FB40E18B833C9009377EE /* StampViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampViewController.h; sourceTree = "<group>"; };
 		599FB40F18B833C9009377EE /* StampViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampViewController.m; sourceTree = "<group>"; };
 		599FB41118B8343F009377EE /* TTK_StampView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_StampView.h; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		59C7D52A18B83EDF002CAA10 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5996E67718D5E1C400C84326 /* garbage.png */,
 				5944519818CBD31F008BFC64 /* test.jpg */,
 				5944519618CBC0F9008BFC64 /* def.jpg */,
 				597564DB18C75D96008F61D0 /* icon3.png */,
@@ -342,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5996E67818D5E1C400C84326 /* garbage.png in Resources */,
 				597564DE18C75D96008F61D0 /* icon3.png in Resources */,
 				591B672418B3C37700263158 /* Images.xcassets in Resources */,
 				591B671618B3C37700263158 /* InfoPlist.strings in Resources */,
