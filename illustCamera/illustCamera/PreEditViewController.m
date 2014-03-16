@@ -11,6 +11,8 @@
 #import "TTK_EditImage.h"
 #import "TTK_Macro.h"
 
+#define IMAGE_VIEW_SIZE_WIDTH 320.0f
+#define IMAGE_VIEW_SIZE_HEIGHT 427.0f
 #define SCROLL_VIEW_SQUARE_OFFSET_Y 53.0f
 #define SCROLL_VIEW_BOX_OFFSET_Y    0.0f
 
@@ -38,16 +40,6 @@
     UIImage *image = [[AppManager sharedManager] takenImage];
     NSAssert(image != nil, @"画像の取得に失敗しました");
     [_imageView setImage:image];
-    
-    // 横幅ぴったりになるようにImageViewの大きさを変更する
-    CGSize imageViewSize = _imageView.frame.size;
-    float width = _imageView.frame.size.width;
-    float rate = imageViewSize.width / image.size.width;
-    float height = image.size.height * rate;
-    
-    CGRect frame = CGRectMake(0, 0, width, height);
-    _imageView.bounds = frame;
-    
 
     self.isSquare = YES;
     [self settingAspect:_isSquare];
@@ -82,6 +74,25 @@
 {
     // ImageViewの変形を初期化する
     _imageView.transform = CGAffineTransformIdentity;
+    
+    // ImageViewの大きさを設定する
+    float width = 0, height = 0;
+    
+    // 画像の横の方が縦より大きい時
+    UIImage *image = _imageView.image;
+    if (image.size.width > image.size.height) {
+        // 縦はアスペクト比によって最低限の大きさが変わる
+        height = IMAGE_VIEW_SIZE_HEIGHT - _offsetY * 2;
+        float rate = height / image.size.height;
+        width = image.size.width * rate;
+    // 画像の縦の方が横より大きい時
+    } else {
+        width = IMAGE_VIEW_SIZE_WIDTH;
+        float rate = width / image.size.width;
+        height = image.size.height * rate;
+    }
+    CGRect frame = CGRectMake(0, 0, width, height);
+    _imageView.bounds = frame;
     _imageView.frame = _imageView.bounds;
 }
 
@@ -172,8 +183,17 @@
     // オフセットを無視する
     y += _offsetY / scale;
 
+    float rate = 0;
+    
+    NSLog(@"%f, %f", image.size.height, _scrollView.frame.size.height);
+    
     // 実際の画像サイズを考慮したx, yに変更する
-    float rate = image.size.width / _scrollView.frame.size.width;
+    if (image.size.width > image.size.height) {
+        rate = image.size.height / (_scrollView.frame.size.height - _offsetY * 2);
+    } else {
+        rate = image.size.width / _scrollView.frame.size.width;
+    }
+    
     x *= rate;
     y *= rate;
 
