@@ -13,7 +13,7 @@
 
 #define IMAGE_VIEW_SIZE_WIDTH 320.0f
 #define IMAGE_VIEW_SIZE_HEIGHT 427.0f
-#define SCROLL_VIEW_SQUARE_OFFSET_Y 53.0f
+#define SCROLL_VIEW_SQUARE_OFFSET_Y 53.5f
 #define SCROLL_VIEW_BOX_OFFSET_Y    0.0f
 
 @interface PreEditViewController ()
@@ -36,9 +36,23 @@
     // ステータスバーを非表示にする
     [UIApplication sharedApplication].statusBarHidden = YES;
 
+    // ビューの大きさの調整
+    CGRect frame = _topBar.frame;
+    _topBar.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 70.5f);
+    
+    frame = _bottomBar.frame;
+    _bottomBar.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 70.5f);
+    
+    frame = _changeAspectView1.frame;
+    _changeAspectView1.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, SCROLL_VIEW_SQUARE_OFFSET_Y);
+    
+    frame = _changeAspectView2.frame;
+    _changeAspectView2.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, SCROLL_VIEW_SQUARE_OFFSET_Y);
+
     // スクロールビューの設定
     [_scrollView setDelegate:self];
-
+    
+    
     // 選択中の画像を表示する
     UIImage *image = [[AppManager sharedManager] takenImage];
     NSAssert(image != nil, @"画像の取得に失敗しました");
@@ -104,8 +118,8 @@
 */
 - (void)initScrollViewOffset
 {
-    // ScrollViewの位置を初期化する
-    _scrollView.contentOffset = CGPointMake(0, -_offsetY);
+    // ScrollViewのスクロールの位置を初期化する
+    _scrollView.contentOffset = CGPointMake(0, 0);
 }
 
 /**
@@ -188,8 +202,6 @@
 
     float rate = 0;
     
-    NSLog(@"%f, %f", image.size.height, _scrollView.frame.size.height);
-    
     // 実際の画像サイズを考慮したx, yに変更する
     if (image.size.width > image.size.height) {
         rate = image.size.height / (_scrollView.frame.size.height - _offsetY * 2);
@@ -200,7 +212,7 @@
     x *= rate;
     y *= rate;
 
-    // TODO: スクロールビューの大きさに小数点.5が入ってないのでズレる
+    // 切り抜き後の大きさを求める
     CGSize scrollViewSize = _scrollView.frame.size;
     CGFloat width = scrollViewSize.width / scale * rate;
     CGFloat height = (scrollViewSize.height / scale - _offsetY / scale * 2) * rate;
@@ -208,6 +220,8 @@
     // 切り抜き処理
     UIImage *preEditImage = [TTK_EditImage cutImage:image
                                            WithRect:CGRectMake(x, y, width, height)];
+    
+    NSLog(@"ImageSize %f, %f", preEditImage.size.width, preEditImage.size.height);
     
     // 編集画面に切り抜いた画像を送るためにシングルトンに保存する
     [[AppManager sharedManager] setTakenImage:preEditImage];

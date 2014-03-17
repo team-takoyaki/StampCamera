@@ -153,13 +153,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="IPk-Uy-PX8">
-                                <rect key="frame" x="0.0" y="498" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="497" width="320" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="abc.jpg" id="s6Y-LS-78l">
                                 <rect key="frame" x="0.0" y="71" width="320" height="427"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.95294123890000004" green="0.59215688710000003" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yHH-6C-G90">
                                 <rect key="frame" x="13" y="13" width="40" height="40"/>
@@ -291,12 +292,12 @@
                                 <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view alpha="0.5" contentMode="scaleToFill" id="NRX-6e-ZNx">
-                                <rect key="frame" x="0.0" y="445" width="320" height="53"/>
+                                <rect key="frame" x="0.0" y="444" width="320" height="53"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Z00-fM-Gw0">
-                                <rect key="frame" x="0.0" y="498" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="497" width="320" height="71"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -321,14 +322,16 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="bottomBar" destination="Z00-fM-Gw0" id="Q2p-Ez-l6T"/>
                         <outlet property="changeAspectView1" destination="pAh-xZ-2Lh" id="c37-tU-8tM"/>
                         <outlet property="changeAspectView2" destination="NRX-6e-ZNx" id="drq-gP-IHX"/>
                         <outlet property="imageView" destination="7k1-WR-haW" id="asU-GR-Lk6"/>
                         <outlet property="scrollView" destination="sAR-VZ-Z5o" id="jk0-cK-1bq"/>
+                        <outlet property="topBar" destination="buc-I5-Dgu" id="Oma-9g-jos"/>
                         <segue destination="0dN-57-r6D" kind="modal" identifier="gotoEditView" modalTransitionStyle="crossDissolve" id="3d0-JW-8sI"/>
                     </connections>
                 </viewController>
@@ -427,6 +430,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="MfK-Dh-SGe"/>
+        <segue reference="3d0-JW-8sI"/>
     </inferredMetricsTieBreakers>
 </document>
