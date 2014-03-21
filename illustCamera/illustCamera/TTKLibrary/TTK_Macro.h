@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 TEAM TAKOYAKI. All rights reserved.
 //
 
-#define NSLogRect(rect) \
-NSLog(@"%f, %f, %f, %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+#define LOG(args...) \
+NSLog([[NSString stringWithFormat:@"%s ", __func__]  stringByAppendingFormat:args], nil)
 
 #define GET_WINSIZE [[UIScreen mainScreen] bounds].size
