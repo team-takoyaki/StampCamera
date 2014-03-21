@@ -38,6 +38,9 @@
     
     // ImageViewの大きさを画像の大きさに合わせる
     CGSize imageViewSize = _imageView.frame.size;
+    
+    NSLog(@"imageSize width:%f height:%f", image.size.width, image.size.height);
+    
     CGFloat width = 0, height = 0, rate = 0;
     if (image.size.width > image.size.height) {
         height = imageViewSize.height;
@@ -49,6 +52,10 @@
         height = image.size.height * rate;
     }
     float y = (imageViewSize.height - height) / 2;
+    
+    // 整数にする
+    width = floor(width);
+    height = floor(height);
     
     CGRect imageViewFrame = _imageView.frame;
     self.imageView.frame = CGRectMake(imageViewFrame.origin.x,
@@ -73,6 +80,9 @@
     // メインのImageViewから画像を生成する
     // 元の画像サイズのスケールで画像を生成する
     float scale = self.imageView.image.size.width / self.imageView.frame.size.width;
+    // 小数第5位以下を切り捨てる
+    scale = floor(scale * 10000) / 10000;
+    
     UIImage *image = [TTK_EditImage getImageFromView:self.imageView WithScale:scale];
     
     // アルバムに保存して保存後にメソッドを呼び出す

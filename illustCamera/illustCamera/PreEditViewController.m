@@ -128,12 +128,7 @@
     // ImageViewの大きさがScrollViewのContentSizeになる
     _scrollView.contentSize = _imageView.frame.size;
 
-//    // スクロールビューのオフセットを設定する
-//    _scrollView.contentOffset = CGPointMake(0, -space);
-    
     NSLog(@"offsetX:%f Y:%f", _scrollView.contentOffset.x, _scrollView.contentOffset.y);
-    
-    NSLog(@"%f %f", _scrollView.frame.size.width, _scrollView.frame.size.height);
 }
 
 /**
@@ -193,9 +188,6 @@
     CGAffineTransform transform = _imageView.transform;
     CGFloat scale = transform.a;
     
-    // 小数点第5位以下を切り捨てる
-    scale = (floor(scale * 10000)) / 10000;
-    
     CGFloat x = _scrollView.contentOffset.x / scale;
     CGFloat y = _scrollView.contentOffset.y / scale;
     
@@ -211,15 +203,18 @@
         rate = image.size.width / scrollViewSize.width;
     }
     
-    // 小数点第5位以下を切り捨てる
-    rate = (floor(rate * 10000)) / 10000;
-    
     x *= rate;
     y *= rate;
 
     // 切り抜き後の大きさを計算する
     CGFloat width = scrollViewSize.width / scale * rate;
     CGFloat height = (scrollViewSize.height - _offset * 2) / scale * rate;
+    
+    // 整数にする
+    x = floor(x);
+    y = floor(y);
+    width = floor(width);
+    height = floor(height);
     
     // 切り抜き処理
     UIImage *preEditImage = [TTK_EditImage cutImage:image
