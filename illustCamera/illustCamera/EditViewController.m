@@ -36,15 +36,25 @@
     // 写真を表示するViewを表示する
     [self.imageView setImage:image];
     
-    CGRect rect = self.view.frame;
-    float rate = rect.size.width / image.size.width;
+    // ImageViewの大きさを画像の大きさに合わせる
+    CGSize imageViewSize = _imageView.frame.size;
+    CGFloat width = 0, height = 0, rate = 0;
+    if (image.size.width > image.size.height) {
+        height = imageViewSize.height;
+        rate = height / image.size.height;
+        width = imageViewSize.width * rate;
+    } else {
+        width = imageViewSize.width;
+        rate = width / image.size.width;
+        height = image.size.height * rate;
+    }
+    float y = (imageViewSize.height - height) / 2;
     
-    float width = rect.size.width;
-    float height = image.size.height * rate;
-    
-    float y = (rect.size.height - height) / 2;
-    
-    self.imageView.frame = CGRectMake(0, y, width, height);
+    CGRect imageViewFrame = _imageView.frame;
+    self.imageView.frame = CGRectMake(imageViewFrame.origin.x,
+                                      imageViewFrame.origin.y + y,
+                                      width, height);
+
 }
 
 - (void)didReceiveMemoryWarning

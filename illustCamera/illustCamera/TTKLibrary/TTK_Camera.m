@@ -127,6 +127,9 @@
         // 最終的な画像の大きさより写真の方が大きい
         float rate = distImageWidth / realImageWidth;
         
+        // 小数点第5位以下を切り捨てる
+        rate = (floor(rate * 10000)) / 10000;
+        
         // 写真の縦の大きさに比をかけて最終的な画像の大きさに直す
         float imageHeight = realImageHeight * rate;
         
