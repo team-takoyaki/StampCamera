@@ -7,6 +7,7 @@
 //
 
 #import "TTK_StampRotateView.h"
+#import "EditViewController.h"
 
 #define STROKE_WIDTH 1.5f
 #define DIRECTION_IMAGE @"direction.png"
@@ -33,6 +34,7 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
+    NSLog(@"StampRotateView initWithFrame");
     self.imageFrame = CGRectMake(frame.origin.x,
                                  frame.origin.y + DIRECTION_VIEW_SIZE / 2,
                                  frame.size.width,
@@ -189,11 +191,14 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    // 指示Viewを非表示にする
+//    // 指示Viewを非表示にする
 //    [self.directionView setHidden:YES];
 
-    // 枠を非表示にする
+//    // 枠を非表示にする
 //    [self clearRect];
+    
+    //TTK_StampViewDelegateでEditViewControllerのtouchesEndedに自分のstampNumberとイベント検出を通知
+    [_delegate clearNoTouchedStampsBroder:_stampNumber];
 }
 
 - (void)drawRect:(CGRect)rect

@@ -14,7 +14,6 @@
 
 @interface TTK_StampRotateView : UIView
 - (void)setImage:(UIImage *)image;
-//- (NSInteger) stampNumber;
 - (UIImage *)image;
 - (void) clearRect;
 
@@ -33,4 +32,5 @@
 * @param stampView 削除されたスタンプ
 */
 - (void)didDeleteStampView:(TTK_StampRotateView *)stampView;
+- (void)clearNoTouchedStampsBroder:(NSInteger) touchedStampNumber;
 @end

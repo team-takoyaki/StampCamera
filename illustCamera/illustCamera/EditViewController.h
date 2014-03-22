@@ -25,10 +25,9 @@
 @property (weak, nonatomic) id <EditViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-
 @end
 
 @protocol EditViewControllerDelegate <NSObject>
 - (void)didDismissEditViewControllerAndGotoTop;
-- (void)clearStampBorder:(AppManager *)manager;
+- (void)clearNoTouchedStampsBroder:(NSInteger) touchedStampNumber;
 @end
