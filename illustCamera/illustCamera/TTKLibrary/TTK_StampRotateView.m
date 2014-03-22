@@ -11,14 +11,17 @@
 
 #define STROKE_WIDTH 1.5f
 #define DIRECTION_IMAGE @"direction.png"
+#define GARBAGE_IMAGE @"garbage.png"
 
 @interface TTK_StampRotateView()
 @property (nonatomic, strong) UIImageView *directionView;
+@property (nonatomic, strong) UIButton *garbageView;
 @property (nonatomic) CGPoint beganTouchPoint;
 @property (nonatomic) CGPoint startViewPoint;
 @property (nonatomic) CGPoint startViewCenterPoint;
 @property (nonatomic) CGSize startDirectionViewSize;
 @property (nonatomic) BOOL isDirection;
+@property (nonatomic) BOOL isGarbage;
 @property (nonatomic) float tmpMoveX;
 @property (nonatomic) float tmpMoveY;
 @property (nonatomic) CGPoint tmpPoint;
@@ -35,17 +38,18 @@
 - (id)initWithFrame:(CGRect)frame
 {
     NSLog(@"StampRotateView initWithFrame");
-    self.imageFrame = CGRectMake(frame.origin.x,
+    // ImageViewの位置
+    self.imageFrame = CGRectMake(frame.origin.x + GARBAGE_VIEW_SIZE / 2,
                                  frame.origin.y + DIRECTION_VIEW_SIZE / 2,
                                  frame.size.width,
                                  frame.size.height);
+    // Viewの位置
+    CGRect newFrame = CGRectMake(frame.origin.x,
+                                 frame.origin.y,
+                                 frame.size.width + DIRECTION_VIEW_SIZE / 2 + GARBAGE_VIEW_SIZE / 2,
+                                 frame.size.height + DIRECTION_VIEW_SIZE / 2 + GARBAGE_VIEW_SIZE / 2);
     
-    CGRect newF = CGRectMake(frame.origin.x,
-                             frame.origin.y,
-                             frame.size.width + DIRECTION_VIEW_SIZE / 2,
-                             frame.size.height + DIRECTION_VIEW_SIZE / 2);
-    
-    self = [super initWithFrame:newF];
+    self = [super initWithFrame:newFrame];
     if (self) {
         [self initWithView];
     }
@@ -54,21 +58,36 @@
 
 - (void)initWithView
 {
-    // 画像の領域
+    // 画像の設定
     self.imageView = [[UIImageView alloc] initWithFrame:self.imageFrame];
     [self addSubview:self.imageView];
  
-    // ディレクションの領域
-    CGRect frm = CGRectMake(self.imageFrame.size.width - DIRECTION_VIEW_SIZE / 2,
-                            0,
-                            DIRECTION_VIEW_SIZE ,
-                            DIRECTION_VIEW_SIZE);
-    self.directionView = [[UIImageView alloc] initWithFrame:frm];
-    [self.directionView setImage:[UIImage imageNamed:DIRECTION_IMAGE]];
-    [self addSubview:self.directionView];
+    // 指示Viewの設定
+    CGRect directionViewFrame = CGRectMake(GARBAGE_VIEW_SIZE / 2 + self.imageFrame.size.width - DIRECTION_VIEW_SIZE / 2,
+                                           0,
+                                           DIRECTION_VIEW_SIZE ,
+                                           DIRECTION_VIEW_SIZE);
+    self.directionView = [[UIImageView alloc] initWithFrame:directionViewFrame];
+    [_directionView setImage:[UIImage imageNamed:DIRECTION_IMAGE]];
+    [self addSubview:_directionView];
     
+    // 非表示にする
     [self.directionView setHidden:NO];
+    
+    // ゴミ箱Viewの設定
+    CGRect garbageViewFrame = CGRectMake(0,
+                                         GARBAGE_VIEW_SIZE / 2 + self.imageFrame.size.height - GARBAGE_VIEW_SIZE / 2,
+                                         GARBAGE_VIEW_SIZE,
+                                         GARBAGE_VIEW_SIZE);
+    self.garbageView = [[UIButton alloc] initWithFrame:garbageViewFrame];
+    [_garbageView setBackgroundImage:[UIImage imageNamed:GARBAGE_IMAGE] forState:UIControlStateNormal];
+    [_garbageView addTarget:self action:@selector(deleteForAnimation) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_garbageView];
+    
+    // 非表示にする
+    [self.garbageView setHidden:NO];
 
+    // 線を描画する
     self.isDrawRect = YES;
     
     // 背景を透明にする
@@ -165,6 +184,9 @@
         
         // 指示Viewを拡大率分小さくする処理を入れました
         self.directionView.transform = CGAffineTransformScale(self.directionView.transform, 1 / zoomRate, 1 / zoomRate);
+
+        // ゴミ箱Viewを拡大率分小さくする処理を入れました
+        self.garbageView.transform = CGAffineTransformScale(self.garbageView.transform, 1 / zoomRate, 1 / zoomRate);
         
         //tmpデータ更新
         self.tmpTheta = theta;
@@ -280,9 +302,20 @@
     return sqrtf(vactorX * vactorX + vectorY * vectorY);
 }
 
+- (void)deleteForAnimation
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.1f];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(delete)];
+    self.alpha = 0;
+    [UIView commitAnimations];
+}
+
 - (void)delete
 {
-    // TODO: スタンプを削除する処理
+    // スタンプを削除する
+    [self removeFromSuperview];
     
     if (_delegate) {
         [_delegate didDeleteStampView:self];

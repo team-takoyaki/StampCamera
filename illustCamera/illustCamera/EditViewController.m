@@ -20,7 +20,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     NSLog(@"EditViewController viewDidLoad");
+    
+    [self initWithView];
+}
+
+- (void)initWithView
+{
+    // ステータスバーを非表示にする
+    [UIApplication sharedApplication].statusBarHidden = YES;    
+    
     // 撮影された画像を取得して表示する
     AppManager *manager = [AppManager sharedManager];
     UIImage *image = [manager takenImage];
@@ -29,15 +39,34 @@
     // 写真を表示するViewを表示する
     [self.imageView setImage:image];
     
-    CGRect rect = self.view.frame;
-    float rate = rect.size.width / image.size.width;
+    // ImageViewの大きさを画像の大きさに合わせる
+    CGSize imageViewSize = _imageView.frame.size;
     
-    float width = rect.size.width;
-    float height = image.size.height * rate;
+    NSLog(@"imageSize width:%f height:%f", image.size.width, image.size.height);
     
-    float y = (rect.size.height - height) / 2;
     _stampNumber = 0;
-    self.imageView.frame = CGRectMake(0, y, width, height);
+
+    CGFloat width = 0, height = 0, rate = 0;
+    if (image.size.width > image.size.height) {
+        height = imageViewSize.height;
+        rate = height / image.size.height;
+        width = imageViewSize.width * rate;
+    } else {
+        width = imageViewSize.width;
+        rate = width / image.size.width;
+        height = image.size.height * rate;
+    }
+    float y = (imageViewSize.height - height) / 2;
+    
+    // 整数にする
+    width = floor(width);
+    height = floor(height);
+    
+    CGRect imageViewFrame = _imageView.frame;
+    self.imageView.frame = CGRectMake(imageViewFrame.origin.x,
+                                      imageViewFrame.origin.y + y,
+                                      width, height);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,6 +85,9 @@
     // メインのImageViewから画像を生成する
     // 元の画像サイズのスケールで画像を生成する
     float scale = self.imageView.image.size.width / self.imageView.frame.size.width;
+    // 小数第5位以下を切り捨てる
+    scale = floor(scale * 10000) / 10000;
+    
     UIImage *image = [TTK_EditImage getImageFromView:self.imageView WithScale:scale];
     
     // アルバムに保存して保存後にメソッドを呼び出す
@@ -184,6 +216,7 @@
     stampView.delegate = self;
     
     [stampView setImage:stampImage];
+    stampView.delegate = self;
 
     // 真ん中にスタンプを配置する
     CGSize imageSize = _imageView.frame.size;

@@ -11,14 +11,18 @@
 #import "TTK_EditImage.h"
 #import "TTK_Macro.h"
 
-#define IMAGE_VIEW_SIZE_WIDTH 320.0f
-#define IMAGE_VIEW_SIZE_HEIGHT 427.0f
-#define SCROLL_VIEW_SQUARE_OFFSET_Y 53.0f
-#define SCROLL_VIEW_BOX_OFFSET_Y    0.0f
+// ImageViewの初期サイズ / 3:4 (横:縦)
+#define IMAGE_VIEW_SIZE_WIDTH        318.0f
+#define IMAGE_VIEW_SIZE_HEIGHT       IMAGE_VIEW_SIZE_WIDTH / 3 * 4
+
+// ImageViewのオフセット / 長方形の時
+#define SCROLL_VIEW_BOX_OFFSET       0.0f
+// ImageViewのオフセット / 正方形の時
+#define SCROLL_VIEW_SQUARE_OFFSET    (IMAGE_VIEW_SIZE_HEIGHT - IMAGE_VIEW_SIZE_WIDTH) / 2
 
 @interface PreEditViewController ()
 @property (nonatomic, assign) BOOL isSquare;
-@property (nonatomic, assign) CGFloat offsetY;
+@property (nonatomic, assign) CGFloat offset;
 @end
 
 @implementation PreEditViewController
@@ -33,22 +37,39 @@
 
 - (void)initWithView
 {
+    // ステータスバーを非表示にする
+    [UIApplication sharedApplication].statusBarHidden = YES;
+
     // スクロールビューの設定
     [_scrollView setDelegate:self];
+    
+    // スクロールビューの大きさを調整する
+    CGRect frame = _scrollView.frame;
+    _scrollView.frame = CGRectMake(frame.origin.x,
+                                   frame.origin.y,
+                                   IMAGE_VIEW_SIZE_WIDTH,
+                                   IMAGE_VIEW_SIZE_HEIGHT);
+    NSLog(@"%f %f", _scrollView.frame.size.width, _scrollView.frame.size.height);
+    
+    // アスペクトビューの大きさを調整する
+    frame = _changeAspectView1.frame;
+    _changeAspectView1.frame = CGRectMake(frame.origin.x, frame.origin.y,
+                                          frame.size.width, SCROLL_VIEW_SQUARE_OFFSET);
 
+    frame = _changeAspectView2.frame;
+    _changeAspectView2.frame = CGRectMake(frame.origin.x, frame.origin.y,
+                                          frame.size.width, SCROLL_VIEW_SQUARE_OFFSET);
+    
     // 選択中の画像を表示する
     UIImage *image = [[AppManager sharedManager] takenImage];
     NSAssert(image != nil, @"画像の取得に失敗しました");
     [_imageView setImage:image];
-
+    
     self.isSquare = YES;
     [self settingAspect:_isSquare];
     
     // ImageViewの調整をする
     [self updateImageView];
-    
-    // スクロールビューの位置を初期化する
-    [self initScrollViewOffset];
     
     // スクロールビューの調整をする
     [self updateScrollView];
@@ -63,9 +84,6 @@
     // ImageViewの調整をする
     [self updateImageView];
     
-    // スクロールビューの位置を初期化する
-    [self initScrollViewOffset];
-    
     // スクロールビューの調整をする
     [self updateScrollView];
 }
@@ -76,19 +94,19 @@
     _imageView.transform = CGAffineTransformIdentity;
     
     // ImageViewの大きさを設定する
-    float width = 0, height = 0;
+    CGFloat width = 0, height = 0;
     
     // 画像の横の方が縦より大きい時
     UIImage *image = _imageView.image;
-    if (image.size.width > image.size.height) {
+    if (image.size.width >= image.size.height) {
         // 縦はアスペクト比によって最低限の大きさが変わる
-        height = IMAGE_VIEW_SIZE_HEIGHT - _offsetY * 2;
-        float rate = height / image.size.height;
+        height = IMAGE_VIEW_SIZE_HEIGHT - _offset * 2;
+        CGFloat rate = height / image.size.height;
         width = image.size.width * rate;
     // 画像の縦の方が横より大きい時
     } else {
         width = IMAGE_VIEW_SIZE_WIDTH;
-        float rate = width / image.size.width;
+        CGFloat rate = width / image.size.width;
         height = image.size.height * rate;
     }
     CGRect frame = CGRectMake(0, 0, width, height);
@@ -97,27 +115,20 @@
 }
 
 /**
-* @brief スクロールビューの位置を初期化する
-*/
-- (void)initScrollViewOffset
-{
-    // ScrollViewの位置を初期化する
-    _scrollView.contentOffset = CGPointMake(0, -_offsetY);
-}
-
-/**
 * @brief スクロールビューのスクロール域を変更する
 */
 - (void)updateScrollView
 {
     // 画像は自動で真ん中に配置されるため、そのオフセットは無視する
-    CGFloat space = -1 * _offsetY;
+    CGFloat space = _offset;
     
     // 空白分をInsetに設定してスクロール域を変更する
-    _scrollView.contentInset = UIEdgeInsetsMake(-space, 0, -space, 0);
+    _scrollView.contentInset = UIEdgeInsetsMake(space, 0, space, 0);
 
     // ImageViewの大きさがScrollViewのContentSizeになる
     _scrollView.contentSize = _imageView.frame.size;
+
+    NSLog(@"offsetX:%f Y:%f", _scrollView.contentOffset.x, _scrollView.contentOffset.y);
 }
 
 /**
@@ -137,9 +148,9 @@
     
     // アスペクト比によってオフセットを変更する
     if (isSquare) {
-        self.offsetY = SCROLL_VIEW_SQUARE_OFFSET_Y;
+        self.offset = SCROLL_VIEW_SQUARE_OFFSET;
     } else {
-        self.offsetY = SCROLL_VIEW_BOX_OFFSET_Y;
+        self.offset = SCROLL_VIEW_BOX_OFFSET;
     }
 }
 
@@ -181,30 +192,35 @@
     CGFloat y = _scrollView.contentOffset.y / scale;
     
     // オフセットを無視する
-    y += _offsetY / scale;
-
-    float rate = 0;
+    y += _offset / scale;
     
-    NSLog(@"%f, %f", image.size.height, _scrollView.frame.size.height);
-    
-    // 実際の画像サイズを考慮したx, yに変更する
-    if (image.size.width > image.size.height) {
-        rate = image.size.height / (_scrollView.frame.size.height - _offsetY * 2);
+    // 実際の画像サイズを考慮したx, yに変更するためのレートを計算する
+    CGFloat rate = 0;
+    CGSize scrollViewSize = _scrollView.frame.size;
+    if (image.size.width >= image.size.height) {
+        rate = image.size.height / (scrollViewSize.height - _offset * 2);
     } else {
-        rate = image.size.width / _scrollView.frame.size.width;
+        rate = image.size.width / scrollViewSize.width;
     }
     
     x *= rate;
     y *= rate;
 
-    // TODO: スクロールビューの大きさに小数点.5が入ってないのでズレる
-    CGSize scrollViewSize = _scrollView.frame.size;
+    // 切り抜き後の大きさを計算する
     CGFloat width = scrollViewSize.width / scale * rate;
-    CGFloat height = (scrollViewSize.height / scale - _offsetY / scale * 2) * rate;
+    CGFloat height = (scrollViewSize.height - _offset * 2) / scale * rate;
+    
+    // 整数にする
+    x = floor(x);
+    y = floor(y);
+    width = floor(width);
+    height = floor(height);
     
     // 切り抜き処理
     UIImage *preEditImage = [TTK_EditImage cutImage:image
                                            WithRect:CGRectMake(x, y, width, height)];
+    
+    NSLog(@"切り抜いた画像の大きさ %f, %f", preEditImage.size.width, preEditImage.size.height);
     
     // 編集画面に切り抜いた画像を送るためにシングルトンに保存する
     [[AppManager sharedManager] setTakenImage:preEditImage];

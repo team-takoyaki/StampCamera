@@ -57,6 +57,7 @@
 
     [self.session commitConfiguration];
     
+    
     // PreviewのためのViewを設定する
     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
     captureVideoPreviewLayer.frame = self.bounds;
@@ -120,13 +121,13 @@
 
         // 画像の大きさを取得する
         // 画面とは縦、横が逆のため逆にする
-        CGFloat realImageWidth = CGImageGetHeight(image.CGImage);
-        CGFloat realImageHeight = CGImageGetWidth(image.CGImage);
+        CGFloat realImageWidth = image.size.width;
+        CGFloat realImageHeight = image.size.height;
         
         // 画像の大きさと最終的な画像の大きさの比を取得する
         // 最終的な画像の大きさより写真の方が大きい
         float rate = distImageWidth / realImageWidth;
-        
+                    
         // 写真の縦の大きさに比をかけて最終的な画像の大きさに直す
         float imageHeight = realImageHeight * rate;
         
@@ -140,8 +141,18 @@
         // スペースを実際の写真の大きさの比をかけて取得する
         float realOneSpace = oneSpace * (1 / rate);
         
+        // 切り取る縦の大きさを取得する
+        realImageHeight = realImageHeight - realOneSpace * 2;
+        
+        // 整数にする
+        realImageWidth  = floor(realImageWidth);
+        realImageHeight = floor(realImageHeight);
+        
         // 切り取る領域を取得する
-        CGRect cutRect = CGRectMake(0, realOneSpace, realImageWidth, realImageHeight - realOneSpace * 2);
+        CGRect cutRect = CGRectMake(0,
+                                    realOneSpace,
+                                    realImageWidth,
+                                    realImageHeight);
         
         // 写真を切り取る
         UIImage *cutImage = [TTK_EditImage cutImage:image WithRect:cutRect];
