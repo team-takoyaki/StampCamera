@@ -165,7 +165,7 @@
     
     //
     
-    [self clearStampBorder:manager.selectedStampViewList];
+    [self clearStampDecoration:manager.selectedStampViewList];
     
     // 選択されたスタンプを取得する
     // 全てのスタンプを取得
@@ -203,12 +203,13 @@
 }
 
 /**
- * 渡されたStampViewの全ての枠線を消す
+ * 渡されたStampViewの全ての装飾を消す
  */
-- (void) clearStampBorder:(NSMutableArray *) stampViewList
+- (void) clearStampDecoration:(NSMutableArray *) stampViewList
 {
     for (TTK_StampRotateView *stampView in stampViewList) {
         [stampView clearRect];
+        [stampView cleardirectionView];
     }
 }
 
@@ -223,7 +224,7 @@
     }
     
     //EditViewControllerがタッチイベントを取得しているので現在のスタンプリストの全ての枠を消す
-    [self clearStampBorder:manager.selectedStampViewList];
+    [self clearStampDecoration:manager.selectedStampViewList];
 }
 
 /**
@@ -237,17 +238,18 @@
 }
 
 /**
- * タッチされていないスタンプの枠線を消す
+ * タッチされていないスタンプの装飾を消す
  * touchedStampNumber: タッチされたスタンプのStampNumber
  */
-- (void)clearNoTouchedStampsBroder:(NSInteger) touchedStampNumber
+- (void)clearNoTouchedStampsDecorations:(NSInteger) touchedStampNumber
 {
     AppManager *manager = [AppManager sharedManager];
 
-    //TTK_StampRotateViewからdelegateされたので押されたスタンプ以外のスタンプの枠を消す
+    //TTK_StampRotateViewからdelegateされたので押されたスタンプ以外のスタンプの装飾を消す
     for (TTK_StampRotateView *stampView in manager.selectedStampViewList) {
         if (stampView.stampNumber != touchedStampNumber) {
             [stampView clearRect];
+            [stampView cleardirectionView];
         }
     }
 }

@@ -198,7 +198,7 @@
 //    [self clearRect];
     
     //TTK_StampViewDelegateでEditViewControllerのtouchesEndedに自分のstampNumberとイベント検出を通知
-    [_delegate clearNoTouchedStampsBroder:_stampNumber];
+    [_delegate clearNoTouchedStampsDecorations:_stampNumber];
 }
 
 - (void)drawRect:(CGRect)rect
@@ -221,16 +221,24 @@
     CGContextStrokeRect(context, r);
 }
 
+//枠線描画
 - (void)drawRect
 {
     self.isDrawRect = YES;
     [self setNeedsDisplay];
 }
 
+//枠線を消す
 - (void)clearRect
 {
     self.isDrawRect = NO;
     [self setNeedsDisplay];
+}
+
+//指示ビューを消す
+- (void)cleardirectionView
+{
+    [self.directionView setHidden:YES];
 }
 
 

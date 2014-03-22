@@ -29,5 +29,5 @@
 
 @protocol EditViewControllerDelegate <NSObject>
 - (void)didDismissEditViewControllerAndGotoTop;
-- (void)clearNoTouchedStampsBroder:(NSInteger) touchedStampNumber;
+- (void)clearNoTouchedStampsDecorations:(NSInteger) touchedStampNumber;
 @end

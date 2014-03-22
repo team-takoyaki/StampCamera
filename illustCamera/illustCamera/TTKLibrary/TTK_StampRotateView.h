@@ -16,6 +16,7 @@
 - (void)setImage:(UIImage *)image;
 - (UIImage *)image;
 - (void) clearRect;
+- (void) cleardirectionView;
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic) BOOL isDrawRect;
@@ -32,5 +33,5 @@
 * @param stampView 削除されたスタンプ
 */
 - (void)didDeleteStampView:(TTK_StampRotateView *)stampView;
-- (void)clearNoTouchedStampsBroder:(NSInteger) touchedStampNumber;
+- (void)clearNoTouchedStampsDecorations:(NSInteger) touchedStampNumber;
 @end
