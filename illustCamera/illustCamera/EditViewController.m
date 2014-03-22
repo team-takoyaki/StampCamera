@@ -13,7 +13,6 @@
 
 @interface EditViewController ()
 @property (nonatomic) NSInteger stampNumber;
-@property (nonatomic) NSInteger nowSelectedStampNumber;
 @end
 
 @implementation EditViewController
@@ -176,7 +175,6 @@
     UIImage *stampImage = [UIImage imageNamed:stampName];
     // 選択されたスタンプの番号を1加える
     _stampNumber = _stampNumber + 1;
-    _nowSelectedStampNumber = _stampNumber;
     
     
     // スタンプを作る

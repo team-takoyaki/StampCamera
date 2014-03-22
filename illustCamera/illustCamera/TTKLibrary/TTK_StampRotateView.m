@@ -90,6 +90,9 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    //TTK_StampViewDelegateでEditViewControllerのtouchesEndedに自分のstampNumberとイベント検出を通知
+    [_delegate clearNoTouchedStampsDecorations:_stampNumber];
+    
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
 
@@ -193,12 +196,12 @@
 {
 //    // 指示Viewを非表示にする
 //    [self.directionView setHidden:YES];
-
+//
 //    // 枠を非表示にする
 //    [self clearRect];
-    
-    //TTK_StampViewDelegateでEditViewControllerのtouchesEndedに自分のstampNumberとイベント検出を通知
-    [_delegate clearNoTouchedStampsDecorations:_stampNumber];
+//    
+//    //TTK_StampViewDelegateでEditViewControllerのtouchesEndedに自分のstampNumberとイベント検出を通知
+//    [_delegate clearNoTouchedStampsDecorations:_stampNumber];
 }
 
 - (void)drawRect:(CGRect)rect
