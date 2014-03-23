@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EditViewController.h"
 
 @protocol PreEditViewControllerDelegate;
 
-@interface PreEditViewController : UIViewController <UIScrollViewDelegate>
+@interface PreEditViewController : UIViewController <UIScrollViewDelegate, EditViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) id <PreEditViewControllerDelegate> delegate;
@@ -23,5 +24,6 @@
 @end
 
 @protocol PreEditViewControllerDelegate <NSObject>
+- (void)didDismissPreEditViewControllerAndGotoTop;
 - (void)didDismissPreEditViewController;
 @end

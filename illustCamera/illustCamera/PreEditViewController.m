@@ -176,11 +176,26 @@
 
 - (IBAction)reselect:(id)sender
 {
+    // ViewControllerを閉じて写真を選び直す
     [self dismissViewControllerAnimated:NO completion:^{
         if (_delegate) {
             [_delegate didDismissPreEditViewController];
         }
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender {
+
+    // 対象セグエ以外ならここでリターン
+    if(![[segue identifier] isEqualToString:@"gotoEditView"]) {
+        return;
+    }
+
+    // 遷移先コントローラを取得
+    EditViewController *controller = (EditViewController *)[segue destinationViewController];
+
+    // 遷移元ポインタを渡しておく
+    controller.delegate = self;
 }
 
 - (IBAction)edit:(id)sender
@@ -229,5 +244,18 @@
     [[AppManager sharedManager] setTakenImage:preEditImage];
     
     [self performSegueWithIdentifier:@"gotoEditView" sender:self];
+}
+
+/**
+* EditViewControllerを閉じてTopViewControllerに戻りたい時に呼ばれる
+*/
+- (void)didDismissEditViewControllerAndGotoTop
+{
+    // CameraViewControllerを閉じてTopViewControllerに戻る
+    [self dismissViewControllerAnimated:NO completion:^{
+        if (_delegate) {
+            [_delegate didDismissPreEditViewControllerAndGotoTop];
+        }
+    }];
 }
 @end

@@ -10,6 +10,7 @@
 #import "AppManager.h"
 #import "TTK_EditImage.h"
 #import "TTK_StampRotateView.h"
+#import "TTK_Macro.h"
 
 @interface EditViewController ()
 @property (nonatomic) NSInteger stampNumber;
@@ -39,13 +40,14 @@
     // 写真を表示するViewを表示する
     [self.imageView setImage:image];
     
+    // スタンプの番号 (id)
+    _stampNumber = 0;
+    
     // ImageViewの大きさを画像の大きさに合わせる
     CGSize imageViewSize = _imageView.frame.size;
     
-    NSLog(@"imageSize width:%f height:%f", image.size.width, image.size.height);
+//    NSLog(@"imageSize width:%f height:%f", image.size.width, image.size.height);
     
-    _stampNumber = 0;
-
     CGFloat width = 0, height = 0, rate = 0;
     if (image.size.width > image.size.height) {
         height = imageViewSize.height;
@@ -56,15 +58,19 @@
         rate = width / image.size.width;
         height = image.size.height * rate;
     }
-    float y = (imageViewSize.height - height) / 2;
     
     // 整数にする
     width = floor(width);
     height = floor(height);
     
+    // ImageViewの位置を計算する
+    CGSize winSize = GET_WINSIZE;
+    CGFloat toolBarHeight = _toolBar.frame.size.height;
+    float y = (winSize.height - height - toolBarHeight) / 2;
+    
     CGRect imageViewFrame = _imageView.frame;
     self.imageView.frame = CGRectMake(imageViewFrame.origin.x,
-                                      imageViewFrame.origin.y + y,
+                                      y,
                                       width, height);
 
 }
@@ -236,7 +242,7 @@
 /**
  * 渡されたStampViewの全ての装飾を消す
  */
-- (void) clearStampDecoration:(NSMutableArray *) stampViewList
+- (void)clearStampDecoration:(NSMutableArray *)stampViewList
 {
     for (TTK_StampRotateView *stampView in stampViewList) {
         [stampView clearRect];
