@@ -16,6 +16,7 @@
 @property (weak, nonatomic) id <PreEditViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIView *changeAspectView1;
 @property (strong, nonatomic) IBOutlet UIView *changeAspectView2;
+@property (strong, nonatomic) IBOutlet UIImageView *toolBar;
 - (IBAction)reselect:(id)sender;
 - (IBAction)edit:(id)sender;
 - (IBAction)changeAspect:(id)sender;

@@ -45,19 +45,22 @@
     
     // スクロールビューの大きさを調整する
     CGRect frame = _scrollView.frame;
+    CGSize winSize = GET_WINSIZE;
+    CGFloat toolBarHeight = _toolBar.frame.size.height;
+    CGFloat scrollViewY = (winSize.height - IMAGE_VIEW_SIZE_HEIGHT - toolBarHeight) / 2;
     _scrollView.frame = CGRectMake(frame.origin.x,
-                                   frame.origin.y,
+                                   scrollViewY,
                                    IMAGE_VIEW_SIZE_WIDTH,
                                    IMAGE_VIEW_SIZE_HEIGHT);
-    NSLog(@"%f %f", _scrollView.frame.size.width, _scrollView.frame.size.height);
+//    NSLog(@"%f %f", _scrollView.frame.size.width, _scrollView.frame.size.height);
     
     // アスペクトビューの大きさを調整する
     frame = _changeAspectView1.frame;
-    _changeAspectView1.frame = CGRectMake(frame.origin.x, frame.origin.y,
+    _changeAspectView1.frame = CGRectMake(frame.origin.x, scrollViewY,
                                           frame.size.width, SCROLL_VIEW_SQUARE_OFFSET);
 
     frame = _changeAspectView2.frame;
-    _changeAspectView2.frame = CGRectMake(frame.origin.x, frame.origin.y,
+    _changeAspectView2.frame = CGRectMake(frame.origin.x, scrollViewY + IMAGE_VIEW_SIZE_HEIGHT,
                                           frame.size.width, SCROLL_VIEW_SQUARE_OFFSET);
     
     // 選択中の画像を表示する

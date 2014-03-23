@@ -260,14 +260,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="buc-I5-Dgu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" bouncesZoom="NO" id="sAR-VZ-Z5o">
+                                <rect key="frame" x="1" y="35" width="318" height="424"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView autoresizesSubviews="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="def.jpg" id="7k1-WR-haW">
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="424"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </scrollView>
+                            <view alpha="0.5" contentMode="scaleToFill" id="pAh-xZ-2Lh">
+                                <rect key="frame" x="0.0" y="35" width="320" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" id="NRX-6e-ZNx">
+                                <rect key="frame" x="0.0" y="406" width="320" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Z00-fM-Gw0">
+                                <rect key="frame" x="0.0" y="512" width="320" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ugf-xp-GUV">
-                                <rect key="frame" x="64" y="13" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="62" y="520" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <state key="normal" title="C">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -275,35 +296,9 @@
                                     <action selector="changeAspect:" destination="Xg5-JJ-F5e" eventType="touchUpInside" id="6vB-Ir-aQn"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" bouncesZoom="NO" id="sAR-VZ-Z5o">
-                                <rect key="frame" x="1" y="71" width="318" height="424"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <imageView autoresizesSubviews="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="def.jpg" id="7k1-WR-haW">
-                                        <rect key="frame" x="0.0" y="0.0" width="318" height="424"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </scrollView>
-                            <view alpha="0.5" contentMode="scaleToFill" id="pAh-xZ-2Lh">
-                                <rect key="frame" x="0.0" y="71" width="320" height="53"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view alpha="0.5" contentMode="scaleToFill" id="NRX-6e-ZNx">
-                                <rect key="frame" x="0.0" y="442" width="320" height="53"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.080077649380000004" green="0.083506058669999994" blue="0.08094976944" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Z00-fM-Gw0">
-                                <rect key="frame" x="0.0" y="495" width="320" height="73"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PT6-AW-HjO">
-                                <rect key="frame" x="268" y="515" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="268" y="520" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <state key="normal" title="N">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -312,8 +307,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ceI-ZM-p3P">
-                                <rect key="frame" x="13" y="13" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="11" y="520" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <state key="normal" title="T">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -322,7 +317,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
@@ -330,6 +325,7 @@
                         <outlet property="changeAspectView2" destination="NRX-6e-ZNx" id="drq-gP-IHX"/>
                         <outlet property="imageView" destination="7k1-WR-haW" id="asU-GR-Lk6"/>
                         <outlet property="scrollView" destination="sAR-VZ-Z5o" id="jk0-cK-1bq"/>
+                        <outlet property="toolBar" destination="Z00-fM-Gw0" id="MFp-0v-8jv"/>
                         <segue destination="0dN-57-r6D" kind="modal" identifier="gotoEditView" modalTransitionStyle="crossDissolve" id="3d0-JW-8sI"/>
                     </connections>
                 </viewController>
