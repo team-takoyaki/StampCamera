@@ -63,7 +63,7 @@
     width = floor(width);
     height = floor(height);
     
-    // ImageViewの位置を計算する
+    // ImageViewの位置を調整する
     CGSize winSize = GET_WINSIZE;
     CGFloat toolBarHeight = _toolBar.frame.size.height;
     float y = (winSize.height - height - toolBarHeight) / 2;
