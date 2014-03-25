@@ -9,7 +9,6 @@
 #import "EditViewController.h"
 #import "AppManager.h"
 #import "TTK_EditImage.h"
-#import "TTK_StampRotateView.h"
 
 @interface EditViewController ()
 @property (nonatomic) NSInteger stampNumber;
