@@ -21,6 +21,7 @@
 - (IBAction)rotate:(id)sender;
 - (IBAction)reverse:(id)sender;
 - (IBAction)gotoTop:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *toolBar;
 
 @property (weak, nonatomic) id <EditViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIView *view;
@@ -29,5 +30,4 @@
 
 @protocol EditViewControllerDelegate <NSObject>
 - (void)didDismissEditViewControllerAndGotoTop;
-- (void)clearNoTouchedStampsDecorations:(NSInteger) touchedStampNumber;
 @end

@@ -34,6 +34,31 @@
     // ステータスバーを非表示にする
     [UIApplication sharedApplication].statusBarHidden = YES;
 
+    // PreviewViewの位置を調整する
+    CGRect previewViewFrame = self.previewView.frame;
+    CGSize winSize = GET_WINSIZE;
+    CGFloat toolBarHeight = _toolBar.frame.size.height;
+    CGFloat previewViewY = (winSize.height - previewViewFrame.size.height - toolBarHeight) / 2;
+    
+    self.previewView.frame = CGRectMake(previewViewFrame.origin.x,
+                                        previewViewY,
+                                        previewViewFrame.size.width,
+                                        previewViewFrame.size.height);
+    
+    // AspectView1の位置を調整する
+    CGRect changeAspectView1Frame = self.changeAspectView1.frame;
+    self.changeAspectView1.frame = CGRectMake(changeAspectView1Frame.origin.x,
+                                              previewViewY,
+                                              changeAspectView1Frame.size.width,
+                                              changeAspectView1Frame.size.height);
+
+    // AspectView2の位置を調整する
+    CGRect changeAspectView2Frame = self.changeAspectView2.frame;
+    self.changeAspectView2.frame = CGRectMake(changeAspectView2Frame.origin.x,
+                                              previewViewY + previewViewFrame.size.height - changeAspectView1Frame.size.height,
+                                              changeAspectView2Frame.size.width,
+                                              changeAspectView2Frame.size.height);
+
     // カメラの設定
     self.camera = [[TTK_Camera alloc] initWithFrame:self.previewView.bounds WithDelegate:self];
     [self.previewView addSubview:self.camera];
