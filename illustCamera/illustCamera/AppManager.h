@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TTK_StampRotateView.h"
 
 #define NOT_SELECTED_STAMP_IDX -1
 #define GET_STAMP_RECT CGRectMake(0, 0, 75 + DIRECTION_VIEW_SIZE / 2, 75 + DIRECTION_VIEW_SIZE / 2)

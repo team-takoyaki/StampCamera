@@ -8,6 +8,12 @@
 
 #import "AppManager.h"
 
+// スタンプのリストが記述してあるファイル名
+#define STAMP_LIST_JSON_NAME "stamp.json"
+
+// デバッグ時に使う画像の名前
+#define DEBUG_IMAGE_NAME "def.jpg"
+
 @interface AppManager()
 @end
 
@@ -36,7 +42,7 @@ static AppManager* sharedInstance = nil;
 - (void)initWithSettings
 {
     // デモのための画像を設定
-    self.takenImage = [UIImage imageNamed:@"def.jpg"];
+    self.takenImage = [UIImage imageNamed:@DEBUG_IMAGE_NAME];
     // スタンプの一覧
     self.stamps = [[NSMutableArray alloc] init];
     // スタンプ一覧から選択されたスタンプのindex
@@ -54,7 +60,7 @@ static AppManager* sharedInstance = nil;
 - (void)updateStamps
 {
     // jsonファイルを読み込む
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"stamps" ofType:@"json"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@STAMP_LIST_JSON_NAME ofType:nil];
     NSError *error = nil;
     NSString *jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
     NSData *jsonData = [jsonString dataUsingEncoding:NSUnicodeStringEncoding];

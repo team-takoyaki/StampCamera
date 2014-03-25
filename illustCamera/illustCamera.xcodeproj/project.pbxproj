@@ -25,19 +25,19 @@
 		591B674718B3CB0400263158 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674618B3CB0400263158 /* CameraViewController.m */; };
 		591B674A18B3CD6500263158 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674918B3CD6500263158 /* EditViewController.m */; };
 		591B675118B64A0300263158 /* TTK_Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B675018B64A0300263158 /* TTK_Camera.m */; };
+		5938722118E22E9B006C318E /* abc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5938721A18E22E9B006C318E /* abc.jpg */; };
+		5938722218E22E9B006C318E /* def.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5938721B18E22E9B006C318E /* def.jpg */; };
+		5938722318E22E9B006C318E /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5938721C18E22E9B006C318E /* test.jpg */; };
+		5938722418E22E9B006C318E /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5938721E18E22E9B006C318E /* icon1.png */; };
+		5938722518E22E9B006C318E /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5938721F18E22E9B006C318E /* icon2.png */; };
+		5938722618E22E9B006C318E /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5938722018E22E9B006C318E /* icon3.png */; };
 		5944519218CAFBA9008BFC64 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519118CAFBA9008BFC64 /* AlbumViewController.m */; };
 		5944519518CBB388008BFC64 /* PreEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519418CBB388008BFC64 /* PreEditViewController.m */; };
-		5944519718CBC0F9008BFC64 /* def.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5944519618CBC0F9008BFC64 /* def.jpg */; };
-		5944519918CBD31F008BFC64 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5944519818CBD31F008BFC64 /* test.jpg */; };
-		597564CA18C172EE008F61D0 /* abc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 597564C918C172EE008F61D0 /* abc.jpg */; };
 		597564CD18C176A0008F61D0 /* TTK_EditImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564CC18C176A0008F61D0 /* TTK_EditImage.m */; };
 		597564D318C1879F008F61D0 /* TTK_Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D218C1879F008F61D0 /* TTK_Utility.m */; };
 		597564D618C3759E008F61D0 /* StampListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D518C3759E008F61D0 /* StampListViewController.m */; };
-		597564D818C4C7CD008F61D0 /* stamps.json in Resources */ = {isa = PBXBuildFile; fileRef = 597564D718C4C7CD008F61D0 /* stamps.json */; };
+		597564D818C4C7CD008F61D0 /* stamp.json in Resources */ = {isa = PBXBuildFile; fileRef = 597564D718C4C7CD008F61D0 /* stamp.json */; };
 		597564DA18C75B53008F61D0 /* direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564D918C75B53008F61D0 /* direction.png */; };
-		597564DE18C75D96008F61D0 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564DB18C75D96008F61D0 /* icon3.png */; };
-		597564DF18C75D96008F61D0 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564DC18C75D96008F61D0 /* icon2.png */; };
-		597564E018C75D96008F61D0 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564DD18C75D96008F61D0 /* icon1.png */; };
 		5996E67818D5E1C400C84326 /* garbage.png in Resources */ = {isa = PBXBuildFile; fileRef = 5996E67718D5E1C400C84326 /* garbage.png */; };
 		599FB41018B833C9009377EE /* StampViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB40F18B833C9009377EE /* StampViewController.m */; };
 		599FB41318B8343F009377EE /* TTK_StampView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41218B8343F009377EE /* TTK_StampView.m */; };
@@ -83,24 +83,24 @@
 		591B674918B3CD6500263158 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		591B674F18B64A0300263158 /* TTK_Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Camera.h; sourceTree = "<group>"; };
 		591B675018B64A0300263158 /* TTK_Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_Camera.m; sourceTree = "<group>"; };
+		5938721A18E22E9B006C318E /* abc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = abc.jpg; sourceTree = "<group>"; };
+		5938721B18E22E9B006C318E /* def.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = def.jpg; sourceTree = "<group>"; };
+		5938721C18E22E9B006C318E /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		5938721E18E22E9B006C318E /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		5938721F18E22E9B006C318E /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		5938722018E22E9B006C318E /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
 		5944519018CAFBA9008BFC64 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		5944519118CAFBA9008BFC64 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		5944519318CBB388008BFC64 /* PreEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreEditViewController.h; sourceTree = "<group>"; };
 		5944519418CBB388008BFC64 /* PreEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreEditViewController.m; sourceTree = "<group>"; };
-		5944519618CBC0F9008BFC64 /* def.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = def.jpg; sourceTree = "<group>"; };
-		5944519818CBD31F008BFC64 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
-		597564C918C172EE008F61D0 /* abc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = abc.jpg; sourceTree = "<group>"; };
 		597564CB18C176A0008F61D0 /* TTK_EditImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_EditImage.h; sourceTree = "<group>"; };
 		597564CC18C176A0008F61D0 /* TTK_EditImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_EditImage.m; sourceTree = "<group>"; };
 		597564D118C1879F008F61D0 /* TTK_Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Utility.h; sourceTree = "<group>"; };
 		597564D218C1879F008F61D0 /* TTK_Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_Utility.m; sourceTree = "<group>"; };
 		597564D418C3759E008F61D0 /* StampListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampListViewController.h; sourceTree = "<group>"; };
 		597564D518C3759E008F61D0 /* StampListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampListViewController.m; sourceTree = "<group>"; };
-		597564D718C4C7CD008F61D0 /* stamps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stamps.json; sourceTree = "<group>"; };
+		597564D718C4C7CD008F61D0 /* stamp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stamp.json; sourceTree = "<group>"; };
 		597564D918C75B53008F61D0 /* direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction.png; sourceTree = "<group>"; };
-		597564DB18C75D96008F61D0 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
-		597564DC18C75D96008F61D0 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
-		597564DD18C75D96008F61D0 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
 		5996E67718D5E1C400C84326 /* garbage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garbage.png; sourceTree = "<group>"; };
 		599FB40E18B833C9009377EE /* StampViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampViewController.h; sourceTree = "<group>"; };
 		599FB40F18B833C9009377EE /* StampViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampViewController.m; sourceTree = "<group>"; };
@@ -232,6 +232,26 @@
 			path = TTKLibrary;
 			sourceTree = "<group>";
 		};
+		5938721918E22E9B006C318E /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				5938721A18E22E9B006C318E /* abc.jpg */,
+				5938721B18E22E9B006C318E /* def.jpg */,
+				5938721C18E22E9B006C318E /* test.jpg */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		5938721D18E22E9B006C318E /* Stamp */ = {
+			isa = PBXGroup;
+			children = (
+				5938721E18E22E9B006C318E /* icon1.png */,
+				5938721F18E22E9B006C318E /* icon2.png */,
+				5938722018E22E9B006C318E /* icon3.png */,
+			);
+			path = Stamp;
+			sourceTree = "<group>";
+		};
 		59C7D52618B83D83002CAA10 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,15 +276,11 @@
 		59C7D52A18B83EDF002CAA10 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5938721918E22E9B006C318E /* Debug */,
+				5938721D18E22E9B006C318E /* Stamp */,
 				5996E67718D5E1C400C84326 /* garbage.png */,
-				5944519818CBD31F008BFC64 /* test.jpg */,
-				5944519618CBC0F9008BFC64 /* def.jpg */,
-				597564DB18C75D96008F61D0 /* icon3.png */,
-				597564DC18C75D96008F61D0 /* icon2.png */,
-				597564DD18C75D96008F61D0 /* icon1.png */,
 				597564D918C75B53008F61D0 /* direction.png */,
-				597564D718C4C7CD008F61D0 /* stamps.json */,
-				597564C918C172EE008F61D0 /* abc.jpg */,
+				597564D718C4C7CD008F61D0 /* stamp.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -346,17 +362,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5996E67818D5E1C400C84326 /* garbage.png in Resources */,
-				597564DE18C75D96008F61D0 /* icon3.png in Resources */,
 				591B672418B3C37700263158 /* Images.xcassets in Resources */,
 				591B671618B3C37700263158 /* InfoPlist.strings in Resources */,
-				597564D818C4C7CD008F61D0 /* stamps.json in Resources */,
+				597564D818C4C7CD008F61D0 /* stamp.json in Resources */,
+				5938722318E22E9B006C318E /* test.jpg in Resources */,
+				5938722118E22E9B006C318E /* abc.jpg in Resources */,
+				5938722218E22E9B006C318E /* def.jpg in Resources */,
+				5938722518E22E9B006C318E /* icon2.png in Resources */,
+				5938722618E22E9B006C318E /* icon3.png in Resources */,
 				597564DA18C75B53008F61D0 /* direction.png in Resources */,
+				5938722418E22E9B006C318E /* icon1.png in Resources */,
 				59A887A918D125450055BEB0 /* Main.storyboard in Resources */,
-				597564CA18C172EE008F61D0 /* abc.jpg in Resources */,
-				5944519718CBC0F9008BFC64 /* def.jpg in Resources */,
-				597564E018C75D96008F61D0 /* icon1.png in Resources */,
-				597564DF18C75D96008F61D0 /* icon2.png in Resources */,
-				5944519918CBD31F008BFC64 /* test.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
