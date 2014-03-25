@@ -28,9 +28,9 @@
 		5938722118E22E9B006C318E /* abc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5938721A18E22E9B006C318E /* abc.jpg */; };
 		5938722218E22E9B006C318E /* def.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5938721B18E22E9B006C318E /* def.jpg */; };
 		5938722318E22E9B006C318E /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5938721C18E22E9B006C318E /* test.jpg */; };
-		5938722418E22E9B006C318E /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5938721E18E22E9B006C318E /* icon1.png */; };
-		5938722518E22E9B006C318E /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5938721F18E22E9B006C318E /* icon2.png */; };
-		5938722618E22E9B006C318E /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5938722018E22E9B006C318E /* icon3.png */; };
+		5938722A18E231F2006C318E /* stamp3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5938722718E231F2006C318E /* stamp3.png */; };
+		5938722B18E231F2006C318E /* stamp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5938722818E231F2006C318E /* stamp2.png */; };
+		5938722C18E231F2006C318E /* stamp1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5938722918E231F2006C318E /* stamp1.png */; };
 		5944519218CAFBA9008BFC64 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519118CAFBA9008BFC64 /* AlbumViewController.m */; };
 		5944519518CBB388008BFC64 /* PreEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519418CBB388008BFC64 /* PreEditViewController.m */; };
 		597564CD18C176A0008F61D0 /* TTK_EditImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564CC18C176A0008F61D0 /* TTK_EditImage.m */; };
@@ -86,9 +86,9 @@
 		5938721A18E22E9B006C318E /* abc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = abc.jpg; sourceTree = "<group>"; };
 		5938721B18E22E9B006C318E /* def.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = def.jpg; sourceTree = "<group>"; };
 		5938721C18E22E9B006C318E /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
-		5938721E18E22E9B006C318E /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
-		5938721F18E22E9B006C318E /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
-		5938722018E22E9B006C318E /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
+		5938722718E231F2006C318E /* stamp3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp3.png; sourceTree = "<group>"; };
+		5938722818E231F2006C318E /* stamp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp2.png; sourceTree = "<group>"; };
+		5938722918E231F2006C318E /* stamp1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp1.png; sourceTree = "<group>"; };
 		5944519018CAFBA9008BFC64 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		5944519118CAFBA9008BFC64 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		5944519318CBB388008BFC64 /* PreEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreEditViewController.h; sourceTree = "<group>"; };
@@ -245,9 +245,9 @@
 		5938721D18E22E9B006C318E /* Stamp */ = {
 			isa = PBXGroup;
 			children = (
-				5938721E18E22E9B006C318E /* icon1.png */,
-				5938721F18E22E9B006C318E /* icon2.png */,
-				5938722018E22E9B006C318E /* icon3.png */,
+				5938722718E231F2006C318E /* stamp3.png */,
+				5938722818E231F2006C318E /* stamp2.png */,
+				5938722918E231F2006C318E /* stamp1.png */,
 			);
 			path = Stamp;
 			sourceTree = "<group>";
@@ -362,17 +362,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5996E67818D5E1C400C84326 /* garbage.png in Resources */,
+				5938722B18E231F2006C318E /* stamp2.png in Resources */,
 				591B672418B3C37700263158 /* Images.xcassets in Resources */,
+				5938722C18E231F2006C318E /* stamp1.png in Resources */,
 				591B671618B3C37700263158 /* InfoPlist.strings in Resources */,
 				597564D818C4C7CD008F61D0 /* stamp.json in Resources */,
 				5938722318E22E9B006C318E /* test.jpg in Resources */,
 				5938722118E22E9B006C318E /* abc.jpg in Resources */,
 				5938722218E22E9B006C318E /* def.jpg in Resources */,
-				5938722518E22E9B006C318E /* icon2.png in Resources */,
-				5938722618E22E9B006C318E /* icon3.png in Resources */,
 				597564DA18C75B53008F61D0 /* direction.png in Resources */,
-				5938722418E22E9B006C318E /* icon1.png in Resources */,
 				59A887A918D125450055BEB0 /* Main.storyboard in Resources */,
+				5938722A18E231F2006C318E /* stamp3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
