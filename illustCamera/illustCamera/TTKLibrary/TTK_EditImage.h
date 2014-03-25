@@ -36,7 +36,7 @@
 * @param angle 角度
 * @return 回転させた画像
 */
-+ (UIImage *)rotateImage:(UIImage *)image withAngle:(int)angle;
++ (UIImage *)rotateImage:(UIImage *)image WithAngle:(int)angle;
 
 /**
 * @brief 画像を反転させる
@@ -63,5 +63,25 @@
 * @return フィルタがかかった画像
 */
 + (UIImage *)imageFilterGrayScale:(UIImage *)image;
+
+/**
+* @brief 色調整フィルタ
+* @param image フィルタをかける画像
+* @param s 彩度 (デフォルト値: 1.0f, 範囲: 0.0〜3.0)
+* @param b 輝度 (デフォルト値: 0.0f, 範囲: -1.0〜1.0)
+* @param c コントラスト (デフォルト値: 1.0f, 範囲: 0.25〜4.0)
+* @return フィルタがかかった画像
+*/
++ (UIImage *)imageFilterColorAdjustment:(UIImage *)image WithSaturation:(CGFloat)s
+                                                             Brightness:(CGFloat)b
+                                                               Contrast:(CGFloat)c;
+
+/**
+* @brief トーンカーブフィルタ
+* @param image   フィルタをかける画像
+* @param vectors トーンカーブのポイント (CIVectorが5つ入った配列)
+* @return フィルタがかかった画像
+*/
++ (UIImage *)imageFilterToneCurve:(UIImage *)image WithVectors:(NSArray *)vectors;
 
 @end

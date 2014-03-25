@@ -37,6 +37,14 @@
     UIImage *image = [manager takenImage];
     NSAssert(image != nil, @"画像の取得に失敗しました");
 
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    [array addObject:[CIVector vectorWithX:0.0 Y:0.0]];
+    [array addObject:[CIVector vectorWithX:0.25 Y:0.1]];
+    [array addObject:[CIVector vectorWithX:0.5 Y:0.5]];
+    [array addObject:[CIVector vectorWithX:0.75 Y:0.9]];
+    [array addObject:[CIVector vectorWithX:1.0 Y:1.0]];
+    image = [TTK_EditImage imageFilterToneCurve:image WithVectors:array];
+
     // 写真を表示するViewを表示する
     [self.imageView setImage:image];
     
@@ -106,7 +114,7 @@
     UIImage *image = [manager takenImage];
     
     // 画像を90度回転させる
-    UIImage *rotateImage = [TTK_EditImage rotateImage:image withAngle:90];
+    UIImage *rotateImage = [TTK_EditImage rotateImage:image WithAngle:90];
     [manager setTakenImage:rotateImage];
     
     // 回転させた画像を表示する
