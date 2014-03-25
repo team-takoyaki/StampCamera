@@ -268,7 +268,7 @@
 
 
 //座標のなす角を求める
-- (float) getTheta:(float)pointX y:(float) pointY
+- (float)getTheta:(float)pointX y:(float) pointY
 {
     float vactorX, vectorY, theta;
     
@@ -292,7 +292,7 @@
 }
 
 // 中心から座標までの距離を求める
-- (float) getRadius:(float)pointX y:(float)pointY
+- (float)getRadius:(float)pointX y:(float)pointY
 {
     float vactorX, vectorY;
     
