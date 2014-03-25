@@ -10,6 +10,7 @@
 #import "AppManager.h"
 #import "TTK_EditImage.h"
 #import "TTK_StampRotateView.h"
+#import <CoreImage/CoreImage.h>
 
 @interface EditViewController ()
 @property (nonatomic) NSInteger stampNumber;
@@ -35,7 +36,7 @@
     AppManager *manager = [AppManager sharedManager];
     UIImage *image = [manager takenImage];
     NSAssert(image != nil, @"画像の取得に失敗しました");
-        
+
     // 写真を表示するViewを表示する
     [self.imageView setImage:image];
     

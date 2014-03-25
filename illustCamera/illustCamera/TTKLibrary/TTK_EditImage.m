@@ -118,4 +118,40 @@
     return reverseImage;
 }
 
+/**
+* @brief セピアフィルタ
+* @param image フィルタをかける画像
+* @return フィルタがかかった画像
+*/
++ (UIImage *)imageFilterSepia:(UIImage *)image
+{
+    CIImage *ciImage = [[CIImage alloc] initWithImage:image];
+    CIFilter *ciFilter = [CIFilter filterWithName:@"CISepiaTone"
+                                    keysAndValues:kCIInputImageKey, ciImage, @"inputIntensity", [NSNumber numberWithFloat:0.8f], nil];
+
+    CIContext *ciContext = [CIContext contextWithOptions:nil];
+    CGImageRef cgImage = [ciContext createCGImage:[ciFilter outputImage] fromRect:[[ciFilter outputImage] extent]];
+    UIImage *filterImage = [UIImage imageWithCGImage:cgImage scale:1.0f orientation:UIImageOrientationUp];
+    CGImageRelease(cgImage);
+    return filterImage;
+}
+
+/**
+* @brief グレースケールフィルタ
+* @param image フィルタをかける画像
+* @return フィルタがかかった画像
+*/
++ (UIImage *)imageFilterGrayScale:(UIImage *)image
+{
+    CIImage *ciImage = [[CIImage alloc] initWithImage:image];
+    CIFilter *ciFilter = [CIFilter filterWithName:@"CIColorMonochrome"
+                                    keysAndValues:kCIInputImageKey, ciImage, @"inputColor", [CIColor colorWithRed:0.75 green:0.75 blue:0.75], @"inputIntensity", [NSNumber numberWithFloat:1.0], nil];
+    
+    CIContext *ciContext = [CIContext contextWithOptions:nil];
+    CGImageRef cgImage = [ciContext createCGImage:[ciFilter outputImage] fromRect:[[ciFilter outputImage] extent]];
+    UIImage *filterImage = [UIImage imageWithCGImage:cgImage scale:1.0f orientation:UIImageOrientationUp];
+    CGImageRelease(cgImage);
+    return filterImage;
+}
+
 @end

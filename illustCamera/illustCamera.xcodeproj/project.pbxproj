@@ -25,6 +25,7 @@
 		591B674718B3CB0400263158 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674618B3CB0400263158 /* CameraViewController.m */; };
 		591B674A18B3CD6500263158 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674918B3CD6500263158 /* EditViewController.m */; };
 		591B675118B64A0300263158 /* TTK_Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B675018B64A0300263158 /* TTK_Camera.m */; };
+		5938722E18E236EA006C318E /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5938722D18E236EA006C318E /* CoreImage.framework */; };
 		5944519218CAFBA9008BFC64 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519118CAFBA9008BFC64 /* AlbumViewController.m */; };
 		5944519518CBB388008BFC64 /* PreEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519418CBB388008BFC64 /* PreEditViewController.m */; };
 		5944519718CBC0F9008BFC64 /* def.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5944519618CBC0F9008BFC64 /* def.jpg */; };
@@ -83,6 +84,7 @@
 		591B674918B3CD6500263158 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		591B674F18B64A0300263158 /* TTK_Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Camera.h; sourceTree = "<group>"; };
 		591B675018B64A0300263158 /* TTK_Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_Camera.m; sourceTree = "<group>"; };
+		5938722D18E236EA006C318E /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		5944519018CAFBA9008BFC64 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		5944519118CAFBA9008BFC64 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		5944519318CBB388008BFC64 /* PreEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreEditViewController.h; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5938722E18E236EA006C318E /* CoreImage.framework in Frameworks */,
 				591B674118B3C3C000263158 /* AVFoundation.framework in Frameworks */,
 				591B670E18B3C37700263158 /* CoreGraphics.framework in Frameworks */,
 				591B671018B3C37700263158 /* UIKit.framework in Frameworks */,
@@ -159,6 +162,7 @@
 		591B670A18B3C37700263158 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5938722D18E236EA006C318E /* CoreImage.framework */,
 				591B674018B3C3C000263158 /* AVFoundation.framework */,
 				591B670B18B3C37700263158 /* Foundation.framework */,
 				591B670D18B3C37700263158 /* CoreGraphics.framework */,

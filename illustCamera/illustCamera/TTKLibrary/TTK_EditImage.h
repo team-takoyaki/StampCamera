@@ -10,6 +10,10 @@
 
 @interface TTK_EditImage : NSObject
 
+/**********************************************
+* 画像加工関連
+**********************************************/
+
 /**
 * @brief Viewから画像を取得する
 * @param view 画像を取得したいView
@@ -40,5 +44,24 @@
 * @return 反転させた画像
 */
 + (UIImage *)reverseImage:(UIImage *)image;
+
+
+/**********************************************
+* フィルタ関連
+**********************************************/
+
+/**
+* @brief セピアフィルタ
+* @param image フィルタをかける画像
+* @return フィルタがかかった画像
+*/
++ (UIImage *)imageFilterSepia:(UIImage *)image;
+
+/**
+* @brief グレースケールフィルタ
+* @param image フィルタをかける画像
+* @return フィルタがかかった画像
+*/
++ (UIImage *)imageFilterGrayScale:(UIImage *)image;
 
 @end
