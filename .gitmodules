@@ -1,0 +1,3 @@
+[submodule "illustCamera/illustCamera/TTKLibrary"]
+	path = illustCamera/illustCamera/TTKLibrary
+	url = git@github.com:team-takoyaki/TTKLibrary.git
