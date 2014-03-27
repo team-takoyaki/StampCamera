@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16016DB518BF87D600C3FC24 /* TTK_StampRotateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16016DB418BF87D600C3FC24 /* TTK_StampRotateView.m */; };
+		16016DB518BF87D600C3FC24 /* TTKStampView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16016DB418BF87D600C3FC24 /* TTKStampView.m */; };
 		591B670C18B3C37700263158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591B670B18B3C37700263158 /* Foundation.framework */; };
 		591B670E18B3C37700263158 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591B670D18B3C37700263158 /* CoreGraphics.framework */; };
 		591B671018B3C37700263158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591B670F18B3C37700263158 /* UIKit.framework */; };
@@ -24,14 +24,15 @@
 		591B674418B3C94100263158 /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674318B3C94100263158 /* TopViewController.m */; };
 		591B674718B3CB0400263158 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674618B3CB0400263158 /* CameraViewController.m */; };
 		591B674A18B3CD6500263158 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674918B3CD6500263158 /* EditViewController.m */; };
-		591B675118B64A0300263158 /* TTK_Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B675018B64A0300263158 /* TTK_Camera.m */; };
+		591B675118B64A0300263158 /* TTKCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B675018B64A0300263158 /* TTKCamera.m */; };
+		5938722E18E236EA006C318E /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5938722D18E236EA006C318E /* CoreImage.framework */; };
 		5944519218CAFBA9008BFC64 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519118CAFBA9008BFC64 /* AlbumViewController.m */; };
 		5944519518CBB388008BFC64 /* PreEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519418CBB388008BFC64 /* PreEditViewController.m */; };
 		5944519718CBC0F9008BFC64 /* def.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5944519618CBC0F9008BFC64 /* def.jpg */; };
 		5944519918CBD31F008BFC64 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5944519818CBD31F008BFC64 /* test.jpg */; };
 		597564CA18C172EE008F61D0 /* abc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 597564C918C172EE008F61D0 /* abc.jpg */; };
-		597564CD18C176A0008F61D0 /* TTK_EditImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564CC18C176A0008F61D0 /* TTK_EditImage.m */; };
-		597564D318C1879F008F61D0 /* TTK_Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D218C1879F008F61D0 /* TTK_Utility.m */; };
+		597564CD18C176A0008F61D0 /* TTKEditImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564CC18C176A0008F61D0 /* TTKEditImage.m */; };
+		597564D318C1879F008F61D0 /* TTKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D218C1879F008F61D0 /* TTKUtility.m */; };
 		597564D618C3759E008F61D0 /* StampListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D518C3759E008F61D0 /* StampListViewController.m */; };
 		597564D818C4C7CD008F61D0 /* stamps.json in Resources */ = {isa = PBXBuildFile; fileRef = 597564D718C4C7CD008F61D0 /* stamps.json */; };
 		597564DA18C75B53008F61D0 /* direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564D918C75B53008F61D0 /* direction.png */; };
@@ -40,7 +41,6 @@
 		597564E018C75D96008F61D0 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564DD18C75D96008F61D0 /* icon1.png */; };
 		5996E67818D5E1C400C84326 /* garbage.png in Resources */ = {isa = PBXBuildFile; fileRef = 5996E67718D5E1C400C84326 /* garbage.png */; };
 		599FB41018B833C9009377EE /* StampViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB40F18B833C9009377EE /* StampViewController.m */; };
-		599FB41318B8343F009377EE /* TTK_StampView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41218B8343F009377EE /* TTK_StampView.m */; };
 		599FB41618B83818009377EE /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41518B83818009377EE /* AppManager.m */; };
 		59A887A918D125450055BEB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A887A818D125450055BEB0 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -56,8 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16016DB318BF87D600C3FC24 /* TTK_StampRotateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_StampRotateView.h; sourceTree = "<group>"; };
-		16016DB418BF87D600C3FC24 /* TTK_StampRotateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_StampRotateView.m; sourceTree = "<group>"; };
+		16016DB318BF87D600C3FC24 /* TTKStampView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKStampView.h; sourceTree = "<group>"; };
+		16016DB418BF87D600C3FC24 /* TTKStampView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTKStampView.m; sourceTree = "<group>"; };
 		591B670818B3C37700263158 /* illustCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = illustCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		591B670B18B3C37700263158 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		591B670D18B3C37700263158 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,8 +81,9 @@
 		591B674618B3CB0400263158 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		591B674818B3CD6500263158 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		591B674918B3CD6500263158 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
-		591B674F18B64A0300263158 /* TTK_Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Camera.h; sourceTree = "<group>"; };
-		591B675018B64A0300263158 /* TTK_Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_Camera.m; sourceTree = "<group>"; };
+		591B674F18B64A0300263158 /* TTKCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKCamera.h; sourceTree = "<group>"; };
+		591B675018B64A0300263158 /* TTKCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTKCamera.m; sourceTree = "<group>"; };
+		5938722D18E236EA006C318E /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		5944519018CAFBA9008BFC64 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		5944519118CAFBA9008BFC64 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		5944519318CBB388008BFC64 /* PreEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreEditViewController.h; sourceTree = "<group>"; };
@@ -90,10 +91,10 @@
 		5944519618CBC0F9008BFC64 /* def.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = def.jpg; sourceTree = "<group>"; };
 		5944519818CBD31F008BFC64 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		597564C918C172EE008F61D0 /* abc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = abc.jpg; sourceTree = "<group>"; };
-		597564CB18C176A0008F61D0 /* TTK_EditImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_EditImage.h; sourceTree = "<group>"; };
-		597564CC18C176A0008F61D0 /* TTK_EditImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_EditImage.m; sourceTree = "<group>"; };
-		597564D118C1879F008F61D0 /* TTK_Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Utility.h; sourceTree = "<group>"; };
-		597564D218C1879F008F61D0 /* TTK_Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_Utility.m; sourceTree = "<group>"; };
+		597564CB18C176A0008F61D0 /* TTKEditImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKEditImage.h; sourceTree = "<group>"; };
+		597564CC18C176A0008F61D0 /* TTKEditImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTKEditImage.m; sourceTree = "<group>"; };
+		597564D118C1879F008F61D0 /* TTKUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKUtility.h; sourceTree = "<group>"; };
+		597564D218C1879F008F61D0 /* TTKUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTKUtility.m; sourceTree = "<group>"; };
 		597564D418C3759E008F61D0 /* StampListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampListViewController.h; sourceTree = "<group>"; };
 		597564D518C3759E008F61D0 /* StampListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampListViewController.m; sourceTree = "<group>"; };
 		597564D718C4C7CD008F61D0 /* stamps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stamps.json; sourceTree = "<group>"; };
@@ -104,12 +105,10 @@
 		5996E67718D5E1C400C84326 /* garbage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garbage.png; sourceTree = "<group>"; };
 		599FB40E18B833C9009377EE /* StampViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampViewController.h; sourceTree = "<group>"; };
 		599FB40F18B833C9009377EE /* StampViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampViewController.m; sourceTree = "<group>"; };
-		599FB41118B8343F009377EE /* TTK_StampView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_StampView.h; sourceTree = "<group>"; };
-		599FB41218B8343F009377EE /* TTK_StampView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_StampView.m; sourceTree = "<group>"; };
 		599FB41418B83818009377EE /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
 		599FB41518B83818009377EE /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 		59A887A818D125450055BEB0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		59C8EC4018B65020002A1197 /* TTK_Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Macro.h; sourceTree = "<group>"; };
+		59C8EC4018B65020002A1197 /* TTKMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,17 +216,15 @@
 		591B674E18B64A0300263158 /* TTKLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				597564D118C1879F008F61D0 /* TTK_Utility.h */,
-				597564D218C1879F008F61D0 /* TTK_Utility.m */,
-				597564CB18C176A0008F61D0 /* TTK_EditImage.h */,
-				597564CC18C176A0008F61D0 /* TTK_EditImage.m */,
-				591B674F18B64A0300263158 /* TTK_Camera.h */,
-				591B675018B64A0300263158 /* TTK_Camera.m */,
-				599FB41118B8343F009377EE /* TTK_StampView.h */,
-				599FB41218B8343F009377EE /* TTK_StampView.m */,
-				59C8EC4018B65020002A1197 /* TTK_Macro.h */,
-				16016DB318BF87D600C3FC24 /* TTK_StampRotateView.h */,
-				16016DB418BF87D600C3FC24 /* TTK_StampRotateView.m */,
+				597564D118C1879F008F61D0 /* TTKUtility.h */,
+				597564D218C1879F008F61D0 /* TTKUtility.m */,
+				597564CB18C176A0008F61D0 /* TTKEditImage.h */,
+				597564CC18C176A0008F61D0 /* TTKEditImage.m */,
+				591B674F18B64A0300263158 /* TTKCamera.h */,
+				591B675018B64A0300263158 /* TTKCamera.m */,
+				59C8EC4018B65020002A1197 /* TTKMacro.h */,
+				16016DB318BF87D600C3FC24 /* TTKStampView.h */,
+				16016DB418BF87D600C3FC24 /* TTKStampView.m */,
 			);
 			path = TTKLibrary;
 			sourceTree = "<group>";
@@ -313,7 +310,7 @@
 		591B670018B3C37700263158 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "TEAM TAKOYAKI";
 				TargetAttributes = {
 					591B672818B3C37700263158 = {
@@ -377,16 +374,15 @@
 			files = (
 				5944519518CBB388008BFC64 /* PreEditViewController.m in Sources */,
 				591B674718B3CB0400263158 /* CameraViewController.m in Sources */,
-				16016DB518BF87D600C3FC24 /* TTK_StampRotateView.m in Sources */,
+				16016DB518BF87D600C3FC24 /* TTKStampView.m in Sources */,
 				5944519218CAFBA9008BFC64 /* AlbumViewController.m in Sources */,
 				591B674418B3C94100263158 /* TopViewController.m in Sources */,
-				591B675118B64A0300263158 /* TTK_Camera.m in Sources */,
-				597564D318C1879F008F61D0 /* TTK_Utility.m in Sources */,
-				597564CD18C176A0008F61D0 /* TTK_EditImage.m in Sources */,
+				591B675118B64A0300263158 /* TTKCamera.m in Sources */,
+				597564D318C1879F008F61D0 /* TTKUtility.m in Sources */,
+				597564CD18C176A0008F61D0 /* TTKEditImage.m in Sources */,
 				591B671C18B3C37700263158 /* AppDelegate.m in Sources */,
 				599FB41018B833C9009377EE /* StampViewController.m in Sources */,
 				597564D618C3759E008F61D0 /* StampListViewController.m in Sources */,
-				599FB41318B8343F009377EE /* TTK_StampView.m in Sources */,
 				591B674A18B3CD6500263158 /* EditViewController.m in Sources */,
 				591B671818B3C37700263158 /* main.m in Sources */,
 				599FB41618B83818009377EE /* AppManager.m in Sources */,
@@ -435,7 +431,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -482,7 +477,6 @@
 		59121CDE18D11C26001026B2 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/illustCamera.app/illustCamera";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -502,7 +496,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -541,7 +534,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -603,7 +595,6 @@
 		591B673E18B3C37700263158 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/illustCamera.app/illustCamera";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -626,7 +617,6 @@
 		591B673F18B3C37700263158 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/illustCamera.app/illustCamera";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

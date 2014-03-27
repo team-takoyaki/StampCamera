@@ -8,8 +8,8 @@
 
 #import "EditViewController.h"
 #import "AppManager.h"
-#import "TTK_EditImage.h"
-#import "TTK_StampRotateView.h"
+#import "TTKEditImage.h"
+#import "TTKStampView.h"
 
 @interface EditViewController ()
 @property (nonatomic) NSInteger stampNumber;
@@ -35,7 +35,7 @@
     AppManager *manager = [AppManager sharedManager];
     UIImage *image = [manager takenImage];
     NSAssert(image != nil, @"画像の取得に失敗しました");
-        
+
     // 写真を表示するViewを表示する
     [self.imageView setImage:image];
     
@@ -88,7 +88,7 @@
     // 小数第5位以下を切り捨てる
     scale = floor(scale * 10000) / 10000;
     
-    UIImage *image = [TTK_EditImage getImageFromView:self.imageView WithScale:scale];
+    UIImage *image = [TTKEditImage getImageFromView:self.imageView withScale:scale];
     
     // アルバムに保存して保存後にメソッドを呼び出す
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
@@ -105,7 +105,7 @@
     UIImage *image = [manager takenImage];
     
     // 画像を90度回転させる
-    UIImage *rotateImage = [TTK_EditImage rotateImage:image withAngle:90];
+    UIImage *rotateImage = [TTKEditImage rotateImage:image withAngle:90];
     [manager setTakenImage:rotateImage];
     
     // 回転させた画像を表示する
@@ -118,7 +118,7 @@
     UIImage *image = [manager takenImage];
     
     // 画像を反転させる
-    UIImage *reverseImage = [TTK_EditImage reverseImage:image];
+    UIImage *reverseImage = [TTKEditImage reverseImage:image];
     [manager setTakenImage:reverseImage];
     
     // 回転させた画像を表示する
@@ -210,7 +210,7 @@
     
     
     // スタンプを作る
-    TTK_StampRotateView *stampView = [[TTK_StampRotateView alloc] initWithFrame:GET_STAMP_RECT];
+    TTKStampView *stampView = [[TTKStampView alloc] initWithFrame:GET_STAMP_RECT];
     
     //TTK_StampRotateViewからdelegate出来るようにする
     stampView.delegate = self;
@@ -238,7 +238,7 @@
  */
 - (void) clearStampDecoration:(NSMutableArray *) stampViewList
 {
-    for (TTK_StampRotateView *stampView in stampViewList) {
+    for (TTKStampView *stampView in stampViewList) {
         [stampView clearRect];
         [stampView cleardirectionView];
     }
@@ -261,7 +261,7 @@
 /**
 * スタンプが削除した時に呼ばれる
 */
-- (void)didDeleteStampView:(TTK_StampRotateView *)stampView
+- (void)didDeleteStampView:(TTKStampView *)stampView
 {
     // 削除されたスタンプを選択されているスタンプから削除する
     AppManager *manager = [AppManager sharedManager];
@@ -277,7 +277,7 @@
     AppManager *manager = [AppManager sharedManager];
 
     //TTK_StampRotateViewからdelegateされたので押されたスタンプ以外のスタンプの装飾を消す
-    for (TTK_StampRotateView *stampView in manager.selectedStampViewList) {
+    for (TTKStampView *stampView in manager.selectedStampViewList) {
         if (stampView.stampNumber != touchedStampNumber) {
             [stampView clearRect];
             [stampView cleardirectionView];

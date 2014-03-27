@@ -1,15 +1,12 @@
 //
-//  TTK_Stamp.h
+//  TTK_Utility.h
 //  illustCamera
 //
 //  Created by Kashima Takumi on 2014/02/22.
 //  Copyright (c) 2014年 TEAM TAKOYAKI. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface TTK_StampView : UIView
-
-- (void)setImage:(UIImage *)image;
-
+@interface TTKUtility : NSObject
 @end

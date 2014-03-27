@@ -6,11 +6,10 @@
 //  Copyright (c) 2014年 TEAM TAKOYAKI. All rights reserved.
 //
 
-#import "TTK_Utility.h"
+#import "TTKUtility.h"
 
-@interface TTK_Utility()
+@interface TTKUtility()
 @end
 
-@implementation TTK_Utility
-
+@implementation TTKUtility
 @end

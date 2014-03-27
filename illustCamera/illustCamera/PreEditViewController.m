@@ -8,8 +8,8 @@
 
 #import "PreEditViewController.h"
 #import "AppManager.h"
-#import "TTK_EditImage.h"
-#import "TTK_Macro.h"
+#import "TTKEditImage.h"
+#import "TTKMacro.h"
 
 // ImageViewの初期サイズ / 3:4 (横:縦)
 #define IMAGE_VIEW_SIZE_WIDTH        318.0f
@@ -217,8 +217,8 @@
     height = floor(height);
     
     // 切り抜き処理
-    UIImage *preEditImage = [TTK_EditImage cutImage:image
-                                           WithRect:CGRectMake(x, y, width, height)];
+    UIImage *preEditImage = [TTKEditImage cutImage:image
+                                          withRect:CGRectMake(x, y, width, height)];
     
     NSLog(@"切り抜いた画像の大きさ %f, %f", preEditImage.size.width, preEditImage.size.height);
     

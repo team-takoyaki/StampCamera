@@ -6,22 +6,22 @@
 //  Copyright (c) 2014年 TEAM TAKOYAKI. All rights reserved.
 //
 
-#import "TTK_Camera.h"
-#import "TTK_Macro.h"
+#import "TTKCamera.h"
+#import "TTKMacro.h"
 #import <AVFoundation/AVFoundation.h>
-#import "TTK_EditImage.h"
+#import "TTKEditImage.h"
 
-@interface TTK_Camera ()
+@interface TTKCamera ()
 @property (strong, nonatomic) UIView *previewView;
 @property (strong, nonatomic) AVCaptureSession *session;
 @property (strong, nonatomic) AVCaptureDeviceInput *videoInput;
 @property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
-@property (weak, nonatomic) id <TTK_CameraDelegate> delegate;
+@property (weak, nonatomic) id <TTKCameraDelegate> delegate;
 @end
 
-@implementation TTK_Camera
+@implementation TTKCamera
 
-- (id)initWithFrame:(CGRect)frame WithDelegate:(id)delegate
+- (id)initWithFrame:(CGRect)frame withDelegate:(id)delegate
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -155,7 +155,7 @@
                                     realImageHeight);
         
         // 写真を切り取る
-        UIImage *cutImage = [TTK_EditImage cutImage:image WithRect:cutRect];
+        UIImage *cutImage = [TTKEditImage cutImage:image withRect:cutRect];
         
         // 撮影して切り抜いた画像をデリゲートに渡す
         if (self.delegate) {

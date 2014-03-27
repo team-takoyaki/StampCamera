@@ -7,7 +7,6 @@
 //
 
 #import "TopViewController.h"
-#import "TTKLibrary/TTK_Macro.h"
 
 @interface TopViewController ()
 @end

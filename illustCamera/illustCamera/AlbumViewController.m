@@ -8,8 +8,8 @@
 
 #import "AlbumViewController.h"
 #import "AppManager.h"
-#import "TTK_EditImage.h"
-#import "TTK_Macro.h"
+#import "TTKEditImage.h"
+#import "TTKMacro.h"
 
 @interface AlbumViewController ()
 @property (nonatomic, strong) UIImagePickerController *picker;

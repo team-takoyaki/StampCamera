@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "StampListViewController.h"
 #import "AppManager.h"
-
+#import "TTKLibrary/TTKStampView.h"
 
 @protocol EditViewControllerDelegate;
 
 @interface EditViewController : UIViewController <StampListViewControllerDelegate,
-                                                  TTK_StampViewDelegate>
+                                                  TTKStampViewDelegate>
 - (IBAction)retake:(id)sender;
 - (IBAction)save:(id)sender;
 - (IBAction)stampList:(id)sender;

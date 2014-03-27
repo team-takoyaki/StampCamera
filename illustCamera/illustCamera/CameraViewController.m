@@ -7,13 +7,13 @@
 //
 
 #import "CameraViewController.h"
-#import "TTK_Camera.h"
+#import "TTKCamera.h"
 #import "EditViewController.h"
 #import "AppManager.h"
-#import "TTK_Macro.h"
+#import "TTKMacro.h"
 
-@interface CameraViewController () <TTK_CameraDelegate>
-@property (strong, nonatomic) TTK_Camera *camera;
+@interface CameraViewController () <TTKCameraDelegate>
+@property (strong, nonatomic) TTKCamera *camera;
 @property (strong, nonatomic) UIImage *takenImage;
 @property (nonatomic) BOOL isSquare;
 @property (nonatomic) BOOL isRearCamera;
@@ -35,7 +35,7 @@
     [UIApplication sharedApplication].statusBarHidden = YES;
 
     // カメラの設定
-    self.camera = [[TTK_Camera alloc] initWithFrame:self.previewView.bounds WithDelegate:self];
+    self.camera = [[TTKCamera alloc] initWithFrame:self.previewView.bounds withDelegate:self];
     [self.previewView addSubview:self.camera];
 
     // アスペクト比の設定

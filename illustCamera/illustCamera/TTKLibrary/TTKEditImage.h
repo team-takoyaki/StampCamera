@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TTK_EditImage : NSObject
+@interface TTKEditImage : NSObject
 
 /**
 * @brief Viewから画像を取得する
@@ -16,7 +16,7 @@
 * @param scale スケール
 * @return 取得した画像
 */
-+ (UIImage *)getImageFromView:(UIView *)view WithScale:(float)scale;
++ (UIImage *)getImageFromView:(UIView *)view withScale:(float)scale;
 
 /**
 * @brief 画像を指定した座標で切り抜く
@@ -24,7 +24,7 @@
 * @param rect 切り抜く座標
 * @return 切り抜いた画像
 */
-+ (UIImage *)cutImage:(UIImage *)image WithRect:(CGRect)rect;
++ (UIImage *)cutImage:(UIImage *)image withRect:(CGRect)rect;
 
 /**
 * @brief 画像を回転させる

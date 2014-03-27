@@ -6,14 +6,13 @@
 //  Copyright (c) 2014年 TEAM TAKOYAKI. All rights reserved.
 //
 
-#import "TTK_StampRotateView.h"
-#import "EditViewController.h"
+#import "TTKStampView.h"
 
 #define STROKE_WIDTH 1.5f
 #define DIRECTION_IMAGE @"direction.png"
 #define GARBAGE_IMAGE @"garbage.png"
 
-@interface TTK_StampRotateView()
+@interface TTKStampView()
 @property (nonatomic, strong) UIImageView *directionView;
 @property (nonatomic, strong) UIButton *garbageView;
 @property (nonatomic) CGPoint beganTouchPoint;
@@ -33,7 +32,7 @@
 - (float) getRadius:(float)pointX y:(float) pointY;
 @end
 
-@implementation TTK_StampRotateView
+@implementation TTKStampView
 
 - (id)initWithFrame:(CGRect)frame
 {

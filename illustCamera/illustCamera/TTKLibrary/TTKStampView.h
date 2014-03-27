@@ -11,28 +11,28 @@
 #define DIRECTION_VIEW_SIZE 35.0f
 #define GARBAGE_VIEW_SIZE   35.0f
 
-@protocol TTK_StampViewDelegate;
+@protocol TTKStampViewDelegate;
 
-@interface TTK_StampRotateView : UIView
+@interface TTKStampView : UIView
 - (void)setImage:(UIImage *)image;
 - (UIImage *)image;
-- (void) clearRect;
-- (void) cleardirectionView;
+- (void)clearRect;
+- (void)cleardirectionView;
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic) BOOL isDrawRect;
 @property (nonatomic) NSInteger stampNumber;
-@property (nonatomic, assign) id<TTK_StampViewDelegate> delegate;
+@property (nonatomic, assign) id<TTKStampViewDelegate> delegate;
 @end
 
 /**
 * @brief スタンプで起きたことを通知する
 */
-@protocol TTK_StampViewDelegate <NSObject>
+@protocol TTKStampViewDelegate <NSObject>
 /**
 * @brief スタンプが削除された後に呼び出される
 * @param stampView 削除されたスタンプ
 */
-- (void)didDeleteStampView:(TTK_StampRotateView *)stampView;
-- (void)clearNoTouchedStampsDecorations:(NSInteger) touchedStampNumber;
+- (void)didDeleteStampView:(TTKStampView *)stampView;
+- (void)clearNoTouchedStampsDecorations:(NSInteger)touchedStampNumber;
 @end

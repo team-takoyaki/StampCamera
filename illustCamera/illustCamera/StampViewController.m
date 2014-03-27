@@ -7,8 +7,7 @@
 //
 
 #import "StampViewController.h"
-#import "TTK_StampView.h"
-#import "TTK_StampRotateView.h"
+#import "TTKStampView.h"
 
 @interface StampViewController ()
 
@@ -27,14 +26,14 @@
     
     //回転用のImage
     CGRect rectRotate = CGRectMake(0, 0, 100, 100);
-    TTK_StampRotateView *stampRotateView = [[TTK_StampRotateView alloc] initWithFrame:rectRotate];
+    TTKStampView *stampView = [[TTKStampView alloc] initWithFrame:rectRotate];
     UIImage *imageRotate = [UIImage imageNamed:@"icon1.png"];
-    [stampRotateView setImage:imageRotate];
+    [stampView setImage:imageRotate];
 
 //    UIImageView *stampView = [[UIImageView alloc] initWithImage:image];
     
 //    [self.view addSubview:stampView];
-    [self.view addSubview:stampRotateView];
+    [self.view addSubview:stampView];
 	// Do any additional setup after loading the view.
 }
 

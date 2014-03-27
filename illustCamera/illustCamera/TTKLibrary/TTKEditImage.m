@@ -6,19 +6,22 @@
 //  Copyright (c) 2014年 TEAM TAKOYAKI. All rights reserved.
 //
 
-#import "TTK_EditImage.h"
+#import "TTKEditImage.h"
 
-@interface TTK_EditImage()
+// フィルタを使う時にCoreImage.frameworkが必要になる
+#import <CoreImage/CoreImage.h>
+
+@interface TTKEditImage()
 @end
 
-@implementation TTK_EditImage
+@implementation TTKEditImage
 
 /**
 * @brief Viewから画像を取得する
 * @param view 画像を取得したいView
 * @return 取得した画像
 */
-+ (UIImage *)getImageFromView:(UIView *)view WithScale:(float)scale
++ (UIImage *)getImageFromView:(UIView *)view withScale:(float)scale
 {
     CGSize size = view.frame.size;
     CALayer *layer = view.layer;
@@ -36,7 +39,7 @@
 * @param rect 切り抜く座標
 * @return 切り抜いた画像
 */
-+ (UIImage *)cutImage:(UIImage *)image WithRect:(CGRect)rect
++ (UIImage *)cutImage:(UIImage *)image withRect:(CGRect)rect
 {
     CGFloat imageWidth = image.size.width;
     CGFloat imageHeight = image.size.height;

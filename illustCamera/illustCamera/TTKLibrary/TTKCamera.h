@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol TTK_CameraDelegate;
+@protocol TTKCameraDelegate;
 
-@interface TTK_Camera : UIView
+@interface TTKCamera : UIView
 typedef enum : NSInteger {
     kDeviceTypeRearCamera,
     kDeviceTypeFrontCamera
@@ -19,7 +19,7 @@ typedef enum : NSInteger {
 // 写真を正方形に撮影するかどうか
 @property (nonatomic, readwrite) BOOL isSquare;
 
-- (id)initWithFrame:(CGRect)frame WithDelegate:(id)delegate;
+- (id)initWithFrame:(CGRect)frame withDelegate:(id)delegate;
 
 /**
 * @brief プレビューをスタート
@@ -51,7 +51,7 @@ typedef enum : NSInteger {
 /**
 * @brief 撮影の時に呼ばれるデリゲート
 */
-@protocol TTK_CameraDelegate <NSObject>
+@protocol TTKCameraDelegate <NSObject>
 
 @optional
 /**
