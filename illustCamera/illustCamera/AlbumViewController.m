@@ -90,10 +90,16 @@
     controller.delegate = self;
 }
 
-- (void)didDismissPreEditViewController
+- (void)didDismissPreEditViewControllerAndGotoTop
 {
     // トップに戻る
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)didDismissPreEditViewController
+{
+    // エディタ画面を閉じた時にフォトライブラリを開く
+    [self showPhotoLibrary];
 }
 
 @end

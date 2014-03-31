@@ -16,7 +16,7 @@
 - (IBAction)changeCamera:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIView *previewView;
-
+@property (strong, nonatomic) IBOutlet UIImageView *toolBar;
 @property (strong, nonatomic) IBOutlet UIView *changeAspectView1;
 @property (strong, nonatomic) IBOutlet UIView *changeAspectView2;
 @end
