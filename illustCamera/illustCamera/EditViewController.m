@@ -8,6 +8,7 @@
 
 #import "EditViewController.h"
 #import "AppManager.h"
+#import "TTKMacro.h"
 #import "TTKEditImage.h"
 #import "TTKStampView.h"
 

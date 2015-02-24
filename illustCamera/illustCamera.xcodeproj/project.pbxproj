@@ -24,7 +24,6 @@
 		591B674418B3C94100263158 /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674318B3C94100263158 /* TopViewController.m */; };
 		591B674718B3CB0400263158 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674618B3CB0400263158 /* CameraViewController.m */; };
 		591B674A18B3CD6500263158 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B674918B3CD6500263158 /* EditViewController.m */; };
-		591B675118B64A0300263158 /* TTK_Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B675018B64A0300263158 /* TTK_Camera.m */; };
 		5938722118E22E9B006C318E /* abc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5938721A18E22E9B006C318E /* abc.jpg */; };
 		5938722218E22E9B006C318E /* def.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5938721B18E22E9B006C318E /* def.jpg */; };
 		5938722318E22E9B006C318E /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5938721C18E22E9B006C318E /* test.jpg */; };
@@ -33,8 +32,6 @@
 		5938722C18E231F2006C318E /* stamp1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5938722918E231F2006C318E /* stamp1.png */; };
 		5944519218CAFBA9008BFC64 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519118CAFBA9008BFC64 /* AlbumViewController.m */; };
 		5944519518CBB388008BFC64 /* PreEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5944519418CBB388008BFC64 /* PreEditViewController.m */; };
-		597564CD18C176A0008F61D0 /* TTK_EditImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564CC18C176A0008F61D0 /* TTK_EditImage.m */; };
-		597564D318C1879F008F61D0 /* TTK_Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D218C1879F008F61D0 /* TTK_Utility.m */; };
 		597564D618C3759E008F61D0 /* StampListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597564D518C3759E008F61D0 /* StampListViewController.m */; };
 		597564D818C4C7CD008F61D0 /* stamp.json in Resources */ = {isa = PBXBuildFile; fileRef = 597564D718C4C7CD008F61D0 /* stamp.json */; };
 		597564DA18C75B53008F61D0 /* direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 597564D918C75B53008F61D0 /* direction.png */; };
@@ -42,6 +39,9 @@
 		599FB41018B833C9009377EE /* StampViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB40F18B833C9009377EE /* StampViewController.m */; };
 		599FB41618B83818009377EE /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 599FB41518B83818009377EE /* AppManager.m */; };
 		59A887A918D125450055BEB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A887A818D125450055BEB0 /* Main.storyboard */; };
+		59E765F71A9CE19C00EED0FC /* TTKCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E765F21A9CE19C00EED0FC /* TTKCamera.m */; };
+		59E765F81A9CE19C00EED0FC /* TTKEditImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E765F41A9CE19C00EED0FC /* TTKEditImage.m */; };
+		59E765F91A9CE19C00EED0FC /* TTKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E765F61A9CE19C00EED0FC /* TTKUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +80,6 @@
 		591B674618B3CB0400263158 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		591B674818B3CD6500263158 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		591B674918B3CD6500263158 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
-		591B674F18B64A0300263158 /* TTK_Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Camera.h; sourceTree = "<group>"; };
-		591B675018B64A0300263158 /* TTK_Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_Camera.m; sourceTree = "<group>"; };
 		5938721A18E22E9B006C318E /* abc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = abc.jpg; sourceTree = "<group>"; };
 		5938721B18E22E9B006C318E /* def.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = def.jpg; sourceTree = "<group>"; };
 		5938721C18E22E9B006C318E /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
@@ -92,10 +90,6 @@
 		5944519118CAFBA9008BFC64 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		5944519318CBB388008BFC64 /* PreEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreEditViewController.h; sourceTree = "<group>"; };
 		5944519418CBB388008BFC64 /* PreEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreEditViewController.m; sourceTree = "<group>"; };
-		597564CB18C176A0008F61D0 /* TTK_EditImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_EditImage.h; sourceTree = "<group>"; };
-		597564CC18C176A0008F61D0 /* TTK_EditImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_EditImage.m; sourceTree = "<group>"; };
-		597564D118C1879F008F61D0 /* TTK_Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTK_Utility.h; sourceTree = "<group>"; };
-		597564D218C1879F008F61D0 /* TTK_Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTK_Utility.m; sourceTree = "<group>"; };
 		597564D418C3759E008F61D0 /* StampListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampListViewController.h; sourceTree = "<group>"; };
 		597564D518C3759E008F61D0 /* StampListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampListViewController.m; sourceTree = "<group>"; };
 		597564D718C4C7CD008F61D0 /* stamp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stamp.json; sourceTree = "<group>"; };
@@ -107,6 +101,12 @@
 		599FB41518B83818009377EE /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 		59A887A818D125450055BEB0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		59C8EC4018B65020002A1197 /* TTKMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKMacro.h; sourceTree = "<group>"; };
+		59E765F11A9CE19C00EED0FC /* TTKCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKCamera.h; sourceTree = "<group>"; };
+		59E765F21A9CE19C00EED0FC /* TTKCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTKCamera.m; sourceTree = "<group>"; };
+		59E765F31A9CE19C00EED0FC /* TTKEditImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKEditImage.h; sourceTree = "<group>"; };
+		59E765F41A9CE19C00EED0FC /* TTKEditImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTKEditImage.m; sourceTree = "<group>"; };
+		59E765F51A9CE19C00EED0FC /* TTKUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKUtility.h; sourceTree = "<group>"; };
+		59E765F61A9CE19C00EED0FC /* TTKUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTKUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,12 +214,12 @@
 		591B674E18B64A0300263158 /* TTKLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				597564D118C1879F008F61D0 /* TTKUtility.h */,
-				597564D218C1879F008F61D0 /* TTKUtility.m */,
-				597564CB18C176A0008F61D0 /* TTKEditImage.h */,
-				597564CC18C176A0008F61D0 /* TTKEditImage.m */,
-				591B674F18B64A0300263158 /* TTKCamera.h */,
-				591B675018B64A0300263158 /* TTKCamera.m */,
+				59E765F11A9CE19C00EED0FC /* TTKCamera.h */,
+				59E765F21A9CE19C00EED0FC /* TTKCamera.m */,
+				59E765F31A9CE19C00EED0FC /* TTKEditImage.h */,
+				59E765F41A9CE19C00EED0FC /* TTKEditImage.m */,
+				59E765F51A9CE19C00EED0FC /* TTKUtility.h */,
+				59E765F61A9CE19C00EED0FC /* TTKUtility.m */,
 				59C8EC4018B65020002A1197 /* TTKMacro.h */,
 				16016DB318BF87D600C3FC24 /* TTKStampView.h */,
 				16016DB418BF87D600C3FC24 /* TTKStampView.m */,
@@ -391,9 +391,9 @@
 				16016DB518BF87D600C3FC24 /* TTKStampView.m in Sources */,
 				5944519218CAFBA9008BFC64 /* AlbumViewController.m in Sources */,
 				591B674418B3C94100263158 /* TopViewController.m in Sources */,
-				591B675118B64A0300263158 /* TTKCamera.m in Sources */,
-				597564D318C1879F008F61D0 /* TTKUtility.m in Sources */,
-				597564CD18C176A0008F61D0 /* TTKEditImage.m in Sources */,
+				59E765F81A9CE19C00EED0FC /* TTKEditImage.m in Sources */,
+				59E765F71A9CE19C00EED0FC /* TTKCamera.m in Sources */,
+				59E765F91A9CE19C00EED0FC /* TTKUtility.m in Sources */,
 				591B671C18B3C37700263158 /* AppDelegate.m in Sources */,
 				599FB41018B833C9009377EE /* StampViewController.m in Sources */,
 				597564D618C3759E008F61D0 /* StampListViewController.m in Sources */,
@@ -581,12 +581,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Takumi Kashima (DEM3ZKARBK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "illustCamera/illustCamera-Prefix.pch";
 				INFOPLIST_FILE = "illustCamera/illustCamera-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A3EDDFA3-A472-4996-8EFB-6B5F2A62E500";
+				PROVISIONING_PROFILE = "6a409f2d-398f-4633-87db-edbe2077dde5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
