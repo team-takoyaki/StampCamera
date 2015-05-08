@@ -39,6 +39,7 @@
 
     // 写真を表示するViewを表示する
     [self.imageView setImage:image];
+    self.imageView.userInteractionEnabled = YES;
     
     // スタンプの番号 (id)
     _stampNumber = 0;
@@ -199,8 +200,6 @@
     if (stampIdx == NOT_SELECTED_STAMP_IDX) {
         return;
     }
-    
-    //
     
     [self clearStampDecoration:manager.selectedStampViewList];
     
